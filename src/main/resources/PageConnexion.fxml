@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<HBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controllers.ConnexionController"
+      alignment="CENTER"
+      spacing="50"
+      style="-fx-background-color: linear-gradient(to bottom right, #f8fafc, #e0e7ff); -fx-padding: 40;">
+
+    <!-- Partie gauche (Image) -->
+    <VBox alignment="CENTER" spacing="20">
+        <ImageView fitWidth="350" fitHeight="350" preserveRatio="true">
+            <image>
+                <Image url="@image/logo1.jpg" />
+            </image>
+        </ImageView>
+    </VBox>
+
+    <!-- Formulaire de connexion -->
+    <VBox alignment="CENTER" spacing="30"
+          style="-fx-padding: 40; -fx-background-color: white; -fx-border-radius: 15; -fx-background-radius: 15;">
+
+        <Label text="Connexion" 
+               style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #4338ca; -fx-font-family: 'Segoe UI', 'Roboto', sans-serif;" />
+
+        <TextField fx:id="emailField" promptText="Email"
+                   style="-fx-padding: 12px; -fx-font-size: 14px; -fx-background-color: white; 
+                          -fx-border-radius: 8; -fx-background-radius: 8;
+                          -fx-border-color: #e2e8f0; -fx-border-width: 1;" />
+
+        <PasswordField fx:id="passwordField" promptText="Mot de passe"
+                       style="-fx-padding: 12px; -fx-font-size: 14px; -fx-background-color: white;
+                              -fx-border-radius: 8; -fx-background-radius: 8;
+                              -fx-border-color: #e2e8f0; -fx-border-width: 1;" />
+
+        <!-- Section CAPTCHA -->
+        <VBox spacing="15" alignment="CENTER" style="-fx-background-color: #f8fafc; -fx-padding: 20; -fx-background-radius: 10;">
+            <Label text="Veuillez entrer le texte ci-dessous" 
+                   style="-fx-font-size: 14px; -fx-text-fill: #4b5563; -fx-font-weight: 500;"/>
+            <ImageView fx:id="captchaImage" fitWidth="200" fitHeight="50" preserveRatio="true"/>
+            <TextField fx:id="captchaField" promptText="Entrez le texte du CAPTCHA"
+                       style="-fx-padding: 12px; -fx-font-size: 14px; -fx-background-color: white;
+                              -fx-border-radius: 8; -fx-background-radius: 8;
+                              -fx-border-color: #e2e8f0; -fx-border-width: 1;"/>
+            <Button text="Actualiser le CAPTCHA" onAction="#refreshCaptcha"
+                    style="-fx-background-color: #6366f1; -fx-text-fill: white;
+                           -fx-font-size: 12px; -fx-padding: 8px 16px;
+                           -fx-background-radius: 6px; -fx-cursor: hand;"/>
+        </VBox>
+
+        <Button text="Mot de passe oublié ?" onAction="#goToForgotPassword"
+                style="-fx-background-color: transparent; -fx-text-fill: #6366f1;
+                       -fx-font-size: 14px; -fx-cursor: hand;"/>
+
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="Se connecter" onAction="#handleConnexion"
+                    style="-fx-background-color: #4f46e5; -fx-text-fill: white;
+                           -fx-font-size: 14px; -fx-padding: 12px 30px;
+                           -fx-background-radius: 8px; -fx-cursor: hand;"/>
+            
+            <Button text="Créer un compte" onAction="#handleCreationCompte"
+                    style="-fx-background-color: #10b981; -fx-text-fill: white;
+                           -fx-font-size: 14px; -fx-padding: 12px 30px;
+                           -fx-background-radius: 8px; -fx-cursor: hand;"/>
+        </HBox>
+    </VBox>
+</HBox>

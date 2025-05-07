@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.AccueilController"
+            prefWidth="1200.0" prefHeight="800.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #f8fafc, #e0e7ff);">
+
+    <!-- Left Image with Border -->
+    <ImageView fx:id="rightImage"
+               fitWidth="600.0" fitHeight="700.0"
+               AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0"
+               style="-fx-border-color: #6366f1; -fx-border-width: 5px; -fx-background-radius: 10px;">
+        <Image url="@/image/flyer.jpeg" />
+    </ImageView>
+
+    <!-- Navbar -->
+    <HBox spacing="0.0"
+          alignment="CENTER_LEFT"
+          AnchorPane.topAnchor="0.0"
+          AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0"
+          style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 3); -fx-border-color: #e2e8f0; -fx-border-width: 0 0 1px 0;">
+        <padding>
+            <Insets top="15" right="40" bottom="15" left="40"/>
+        </padding>
+
+        <Label text="CareEra"
+               style="-fx-font-size: 28px; -fx-text-fill: #4338ca; -fx-font-weight: 800; -fx-font-family: 'Segoe UI', 'Roboto', sans-serif;" />
+
+        <Region HBox.hgrow="ALWAYS" />
+
+        <!-- Boutons avec séparation -->
+        <HBox spacing="0">
+            <Button fx:id="offreButton" text="Offres d'emploi" onAction="#handleOffreClick"
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
+            <Button text="Freelance"
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
+            <Button text="Événements"
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
+            <Button text="Forum et Discussion"
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20;" />
+            <!-- Admin Panel MenuButton -->
+            <MenuButton fx:id="adminPanelButton" text="Admin Panel"
+                        visible="false"
+                        style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;">
+                <items>
+                    <MenuItem text="Statistique" onAction="#handleStatistque" />
+
+                </items>
+            </MenuButton>
+        </HBox>
+
+        <!-- Boutons Profil et Déconnexion -->
+        <HBox spacing="15" alignment="CENTER_RIGHT">
+            <Button fx:id="profileButton" text="Profil" onAction="#handleProfile"
+                    style="-fx-background-color: #4f46e5; -fx-text-fill: white;
+                           -fx-font-weight: bold; -fx-padding: 8 20;
+                           -fx-background-radius: 5px; -fx-cursor: hand;"/>
+
+            <Button fx:id="logoutButton" text="Déconnexion" onAction="#handleDeconnexion"
+                    style="-fx-background-color: #ef4444; -fx-text-fill: white;
+                           -fx-font-weight: bold; -fx-padding: 8 20;
+                           -fx-background-radius: 5px; -fx-cursor: hand;"/>
+        </HBox>
+    </HBox>
+
+    <!-- Main Content -->
+    <HBox spacing="50.0"
+          alignment="CENTER_RIGHT"
+          AnchorPane.topAnchor="80.0"
+          AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0"
+          AnchorPane.bottomAnchor="0.0">
+
+        <!-- Text Content -->
+        <VBox spacing="15.0" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+            <padding>
+                <Insets top="80" right="40" bottom="0" left="80" />
+            </padding>
+            <Label text="CareEra," style="-fx-font-size: 65px; -fx-font-weight: 800; -fx-text-fill: #3730a3; -fx-font-family: 'Segoe UI', 'Roboto', sans-serif;" />
+            <Label text="la plateforme des opportunités" style="-fx-font-size: 50px; -fx-font-weight: 700; -fx-text-fill: #6366f1;" />
+            <Label text="pour les étudiants et jeunes professionnels." style="-fx-font-size: 35px; -fx-text-fill: #40e0d0; -fx-font-weight: 600;" />
+        </VBox>
+    </HBox>
+
+</AnchorPane>
