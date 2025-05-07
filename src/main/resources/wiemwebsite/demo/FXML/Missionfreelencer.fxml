@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+
+<?import javafx.scene.image.ImageView?>
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="wiemwebsite.demo.controllers.MissionfreelencerController"
+            style="-fx-background-color: #f4f7fb;">
+
+    <HBox fx:id="mainHBox" spacing="0" alignment="TOP_CENTER"
+          AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+          AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+        <!-- Left Side: Branding with Solid Background -->
+        <VBox alignment="CENTER" style="-fx-background-color: #1A3C34;" HBox.hgrow="ALWAYS">
+            <Text text="Mission Freelancer" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-fill: white;"/>
+            <Text text="Connectez-vous avec les meilleurs talents" style="-fx-font-size: 16px; -fx-fill: #A9C7C2; -fx-padding: 10 0 0 0;"/>
+        </VBox>
+
+        <!-- Right Side: Form -->
+        <VBox fx:id="formVBox" spacing="20" alignment="TOP_CENTER" HBox.hgrow="ALWAYS"
+              style="-fx-background-color: white; -fx-padding: 40;"
+              stylesheets="@../style/missionform.css">
+
+            <!-- Header -->
+            <VBox alignment="CENTER" spacing="5">
+                <Text text="Créer une Mission" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #333333;"/>
+                <Text text="Remplissez les détails ci-dessous" style="-fx-font-size: 14px; -fx-fill: #666666;"/>
+            </VBox>
+
+            <!-- Form Fields -->
+            <GridPane hgap="15" vgap="15" alignment="CENTER" style="-fx-max-width: 400;">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="NEVER" prefWidth="150"/>
+                    <ColumnConstraints hgrow="ALWAYS" prefWidth="250"/>
+                </columnConstraints>
+
+                <!-- Mission Title -->
+                <Label text="Titre de la mission *" styleClass="form-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtTitre" promptText="Ex: Développement d'une app"
+                           styleClass="form-input" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <!-- Budget -->
+                <Label text="Budget estimé (€) *" styleClass="form-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <HBox spacing="10" alignment="CENTER_LEFT" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                    <TextField fx:id="txtPrix" promptText="Ex: 1000" styleClass="form-input" style="-fx-pref-width: 150;"/>
+                    <Label text="€" style="-fx-text-fill: #FF6200; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                </HBox>
+
+                <!-- Required Skills -->
+                <Label text="Compétences requises *" styleClass="form-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtSpecialite" promptText="Ex: Java, UX Design"
+                           styleClass="form-input" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <!-- Application Deadline -->
+                <Label text="Date limite *" styleClass="form-label" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <DatePicker fx:id="dpDateLimite" styleClass="form-input" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <!-- Mission Start Date -->
+                <Label text="Date de début *" styleClass="form-label" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <DatePicker fx:id="dpDate" styleClass="form-input" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <!-- Mission Description -->
+            <Label text="Description *" styleClass="form-label" style="-fx-padding: 0 0 5 0;"/>
+            <TextArea fx:id="txtDescription" promptText="Décrivez les objectifs et attentes..."
+                      styleClass="form-input" wrapText="true" prefRowCount="4" style="-fx-pref-width: 400;"/>
+
+            <!-- Image Upload -->
+            <VBox spacing="10" alignment="CENTER">
+                <Label text="Image (optionnel)" styleClass="form-label"/>
+                <ImageView fx:id="imgMission" fitWidth="180" fitHeight="120" preserveRatio="true"
+                           styleClass="image-view"/>
+                <Button fx:id="uploadImageBtn" text="Choisir une image" onAction="#handleImageUpload"
+                        styleClass="secondary-button" style="-fx-pref-width: 180;"/>
+            </VBox>
+
+            <!-- Submit Button -->
+            <Button text="Publier la Mission" onAction="#ajouterMission"
+                    styleClass="primary-button" style="-fx-pref-width: 200; -fx-pref-height: 40;"/>
+
+        </VBox>
+    </HBox>
+</AnchorPane>

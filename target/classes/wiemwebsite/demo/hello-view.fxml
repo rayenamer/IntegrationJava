@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="wiemwebsite.demo.controllers.MissionfreelencerController">
+    <children>
+        <VBox spacing="10.0" alignment="TOP_LEFT" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0">
+            <children>
+
+                <Label text="Titre"/>
+                <TextField fx:id="txtTitre"/>
+
+                <Label text="Prix"/>
+                <TextField fx:id="txtPrix"/>
+
+                <Label text="Description"/>
+                <TextArea fx:id="txtDescription"/>
+
+                <Label text="Date Limite"/>
+                <DatePicker fx:id="dpDateLimite"/>
+
+                <Label text="Spécialité"/>
+                <TextField fx:id="txtSpecialite"/>
+
+                <Label text="Date"/>
+                <DatePicker fx:id="dpDate"/>
+
+                <Label text="Image"/>
+                <ImageView fx:id="imgMission" fitHeight="150" fitWidth="150"/>
+
+
+            </children>
+            <padding><Insets top="10" left="10" right="10" bottom="10"/></padding>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="84f41fe2-ffdc-48ee-81c4-5c4b748a903d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/controllers/DemandeMissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/controllers/DemandeMissionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/controllers/MissionListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/controllers/MissionListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/services/DemandeMissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/services/DemandeMissionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/services/MissionfreelencerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/services/MissionfreelencerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/wiemwebsite/demo/FXML/listmissionfreelencer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wiemwebsite/demo/FXML/listmissionfreelencer.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "khiariwiem"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/khiariwiem/missionfreelencer.git",
+    "accountId": "091b3e63-4a74-4aa5-8a5c-d0ef7b8114a5"
+  }
+}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2vlkleFQcY09AwI3dzeTPeoCe0h" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/wiem/Downloads/pidevahmed/pidevahmed",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.JavaFX",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wiem\Downloads\demo\src\main\resources\wiemwebsite\demo\style" />
+      <recent name="C:\Users\wiem\Downloads\demo\src\main\resources\wiemwebsite\demo" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="84f41fe2-ffdc-48ee-81c4-5c4b748a903d" name="Changes" comment="" />
+      <created>1744727205073</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744727205073</updated>
+      <workItem from="1744727206265" duration="2771000" />
+      <workItem from="1744730013961" duration="2120000" />
+      <workItem from="1744885643675" duration="11478000" />
+      <workItem from="1744920565027" duration="13800000" />
+      <workItem from="1744972171295" duration="4101000" />
+      <workItem from="1745314745430" duration="13746000" />
+      <workItem from="1745339091688" duration="1595000" />
+      <workItem from="1745569203936" duration="9892000" />
+      <workItem from="1745672391708" duration="3568000" />
+      <workItem from="1745828846920" duration="13168000" />
+      <workItem from="1745852031546" duration="2933000" />
+      <workItem from="1745952658526" duration="2496000" />
+      <workItem from="1746025719536" duration="6726000" />
+      <workItem from="1746091904334" duration="1823000" />
+      <workItem from="1746108049068" duration="4299000" />
+      <workItem from="1746112607159" duration="26340000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/wiemwebsite/demo/controllers/DemandeMissionController.java</url>
+          <line>237</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
