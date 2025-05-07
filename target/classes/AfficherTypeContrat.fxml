@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.AfficherTypeContratController"
+            style="-fx-background-color: linear-gradient(to bottom right, #f8fafc, #e0e7ff);"
+            prefWidth="1500.0" prefHeight="900.0">
+    <!-- Top section (HBox) -->
+    <HBox spacing="0.0"
+          alignment="CENTER_LEFT"
+          style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 3); -fx-border-color: #e2e8f0; -fx-border-width: 0 0 1px 0;" prefWidth="1550">
+        <padding>
+            <Insets top="15" right="40" bottom="15" left="40"/>
+        </padding>
+
+        <Label text="CareEra"
+               style="-fx-font-size: 28px; -fx-text-fill: #4338ca; -fx-font-weight: 800; -fx-font-family: 'Segoe UI', 'Roboto', sans-serif;" />
+
+        <Region HBox.hgrow="ALWAYS" />
+
+        <HBox spacing="0">
+            <Button fx:id="offreButton" text="Offres d'emploi" onAction="#handleOffreClick"
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
+            <Button text="Freelance"
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
+            <Button text="Événements"
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
+            <Button text="Forum et Discussion"
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20;" />
+        </HBox>
+    </HBox>
+    <children>
+        <VBox alignment="TOP_CENTER" spacing="30.0" prefWidth="600.0" layoutY="50.0" AnchorPane.leftAnchor="300.0">
+            <padding>
+                <Insets top="30" bottom="30" left="30" right="30"/>
+            </padding>
+
+            <!-- Titre -->
+            <Label text="Liste des Types de Contrat"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold;" />
+
+            <!-- ListView des types d'offres -->
+            <ListView fx:id="listView"
+                      maxWidth="500.0"
+                      prefHeight="300.0"
+                      style="-fx-font-size: 16px;" />
+
+            <!-- Ligne de boutons -->
+            <HBox spacing="20" alignment="CENTER">
+                <children>
+                    <Button text="Ajouter"
+                            fx:id="ajouterBtn"
+                            onAction="#ajouterTypeContrat"
+                            style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10px 20px;" />
+                    <Button text="Modifier"
+                            fx:id="modifierButton"
+                            onAction="#modifTypeContrat"
+                            style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10px 20px;" />
+
+                    <Button text="Supprimer"
+                            fx:id="supprimerBtn"
+                            onAction="#supprimerTypeContrat"
+                            style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10px 20px;" />
+
+                    <Button fx:id="ajouterOffreBtn"
+                            text="Retour"
+                            onAction="#ajouterOffre"
+                            style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10px 20px;" />
+                </children>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.AfficherOffreController">
+
+    <!-- Contenu principal -->
+    <VBox spacing="15" alignment="TOP_CENTER" maxWidth="1000.0"
+          AnchorPane.topAnchor="30.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
+        <padding>
+            <Insets top="30" bottom="30"/>
+        </padding>
+        <children>
+
+            <Text text="Liste des Offres">
+                <font>
+                    <Font name="System Bold" size="40"/>
+                </font>
+            </Text>
+
+            <HBox spacing="20" alignment="CENTER">
+                <TextField fx:id="searchField" promptText="Rechercher une offre  par nom, type offre, type contrat, localisation.." maxWidth="400"
+                           style="-fx-font-size: 18px;"/>
+                <Button text="Rechercher"
+                        onAction="#rechercherOffre"
+                        style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 18px;"/>
+                <Button fx:id="AjouterCandidatureBtn" text="Ajouter Candidature"
+                        style="-fx-background-color: #20c997; -fx-text-fill: white; -fx-font-size: 18px;"
+                        onAction="#ajouterCandidature"/>
+            </HBox>
+
+            <ListView fx:id="listView" prefHeight="400.0" maxWidth="1500.0"
+                      style="-fx-font-size: 18px;" />
+
+        </children>
+    </VBox>
+
+    <HBox spacing="20" alignment="CENTER" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+        <Button fx:id="quizButton" onAction="#startQuiz"
+                style="-fx-background-color: transparent; -fx-text-fill: black; -fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 15px 25px; -fx-border-color: pink; -fx-border-width: 2px; -fx-border-radius: 20px; -fx-pref-width: 150px;">
+            🎓 Quiz
+        </Button>
+
+        <Button fx:id="chatbotButton" onAction="#chatbot"
+                style="-fx-background-color: transparent; -fx-text-fill: black; -fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 15px 25px; -fx-border-color: green; -fx-border-width: 2px; -fx-border-radius: 20px; -fx-pref-width: 150px;">
+            🤖 Chatbot
+        </Button>
+    </HBox>
+
+
+
+</AnchorPane>

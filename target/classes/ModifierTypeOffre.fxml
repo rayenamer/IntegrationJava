@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.ModifierTypeOffreController"
+            prefWidth="1500.0" prefHeight="900.0">
+    <!-- Top section (HBox) -->
+    <HBox spacing="0.0"
+          alignment="CENTER_LEFT"
+          style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 3); -fx-border-color: #e2e8f0; -fx-border-width: 0 0 1px 0;" prefWidth="1550">
+        <padding>
+            <Insets top="15" right="40" bottom="15" left="40"/>
+        </padding>
+
+        <Label text="CareEra"
+               style="-fx-font-size: 28px; -fx-text-fill: #4338ca; -fx-font-weight: 800; -fx-font-family: 'Segoe UI', 'Roboto', sans-serif;" />
+
+        <Region HBox.hgrow="ALWAYS" />
+
+        <HBox spacing="0">
+            <Button fx:id="offreButton" text="Offres d'emploi" onAction="#handleOffreClick"
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
+            <Button text="Freelance"
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
+            <Button text="Événements"
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
+            <Button text="Forum et Discussion"
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20;" />
+        </HBox>
+    </HBox>
+    <children>
+        <VBox spacing="30" alignment="TOP_CENTER"
+              prefWidth="600.0"
+              layoutY="80.0"
+              AnchorPane.leftAnchor="300.0">
+            <padding>
+                <Insets top="40" bottom="20" left="50" right="50"/>
+            </padding>
+
+            <!-- Titre -->
+            <Text text="Modifier Type Offre">
+                <font>
+                    <Font name="System Bold" size="30"/>
+                </font>
+            </Text>
+
+            <!-- Champ de saisie -->
+            <VBox spacing="10" alignment="CENTER">
+                <children>
+                    <Label text="Nom du Type de Offre" style="-fx-font-size: 16px;"/>
+                    <TextField fx:id="nomTypeOffreTF"
+                               promptText="Ex : Stage, Emploi..."
+                               maxWidth="350"
+                               style="-fx-font-size: 14px; -fx-padding: 10px;"/>
+                </children>
+            </VBox>
+
+            <!-- Bouton Ajouter -->
+            <HBox spacing="15" alignment="CENTER">
+                <children>
+                    <Button fx:id="modifierBtn"
+                            text="Modifier"
+                            onAction="#modifierTypeOffre"
+                            style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10px 25px;"/>
+                </children>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

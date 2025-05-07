@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.ModifierOffreController"
+            prefWidth="1500.0" prefHeight="900.0">
+    <children>
+        <VBox spacing="20" alignment="TOP_CENTER"
+              style="-fx-font-size: 16px;"
+              AnchorPane.topAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <HBox spacing="0.0"
+                  alignment="CENTER_LEFT"
+                  style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 3); -fx-border-color: #e2e8f0; -fx-border-width: 0 0 1px 0;" prefWidth="1550">
+                <padding>
+                    <Insets top="15" right="40" bottom="15" left="40"/>
+                </padding>
+
+                <Label text="CareEra"
+                       style="-fx-font-size: 28px; -fx-text-fill: #4338ca; -fx-font-weight: 800; -fx-font-family: 'Segoe UI', 'Roboto', sans-serif;" />
+
+                <Region HBox.hgrow="ALWAYS" />
+
+                <HBox spacing="0">
+                    <Button fx:id="offreButton" text="Offres d'emploi" onAction="#handleOffreClick"
+                            style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
+                    <Button text="Freelance"
+                            style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
+                    <Button text="Événements"
+                            style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
+                    <Button text="Forum et Discussion"
+                            style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20;" />
+                </HBox>
+            </HBox>
+            <children>
+
+
+                <!-- Titre -->
+                <Text text="Modifier Offre">
+                    <font>
+                        <Font name="System Bold" size="30"/>
+                    </font>
+                </Text>
+
+                <!-- Formulaire -->
+                <GridPane hgap="20" vgap="15" alignment="CENTER">
+                    <padding>
+                        <Insets top="10" left="20" right="20" bottom="10"/>
+                    </padding>
+                    <children>
+
+                        <Label text="nom et prénom" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+                        <TextField fx:id="utilisateurTF" promptText="votre nom" prefWidth="400"
+                                   GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+                        <Label text=" Type Contrat" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="typeContratCB" promptText=" Type Contrat" prefWidth="400"
+                                  GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+
+                        <Label text="Type Offre" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="typeOffreCB" promptText=" Type Offre" prefWidth="400"
+                                  GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+
+                        <Label text="Nom du Poste" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <TextField fx:id="posteTF" promptText="Nom du Poste" prefWidth="400"
+                                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                        <Label text="Entreprise" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                        <TextField fx:id="entrepriseTF" promptText="Entreprise" prefWidth="400"
+                                   GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                        <Label text="Localisation" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                        <TextField fx:id="localisationTF" promptText="Localisation" prefWidth="400"
+                                   GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                        <Label text="Salaire" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                        <TextField fx:id="salaireTF" promptText="Salaire" prefWidth="400"
+                                   GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                        <Label text="Disponible" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                        <CheckBox fx:id="disponibleCB" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+                        <Label text="Image (URL)" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                        <TextField fx:id="imageTF" promptText="Lien image" prefWidth="400"
+                                   GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+
+                    </children>
+                </GridPane>
+
+                <!-- Boutons d'action -->
+                <HBox spacing="15" alignment="CENTER">
+                    <children>
+                        <Button fx:id="modifierBtn" text="Modifier"
+                                style="-fx-background-color: #28a745; -fx-text-fill: white;"
+                                onAction="#modifierOffre"/>
+
+                    </children>
+                </HBox>
+
+            </children>
+            <padding>
+                <Insets top="20" bottom="20" left="50" right="50"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

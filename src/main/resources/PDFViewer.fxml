@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.WebView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefWidth="1000.0" prefHeight="700.0"
+            style="-fx-background-color: white;"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.PDFViewerController">
+
+    <!-- Top Bar -->
+    <HBox layoutY="0.0" layoutX="0.0" spacing="10.0"
+          style="-fx-background-color: #f8fafc; -fx-border-color: #e2e8f0; -fx-border-width: 0 0 1px 0;"
+          AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+
+        <Button fx:id="closeButton" text="Fermer"
+                style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 15; -fx-background-radius: 5;"/>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <Button fx:id="printButton" text="Imprimer"
+                style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 15; -fx-background-radius: 5;"/>
+    </HBox>
+
+    <!-- Toolbar -->
+    <HBox layoutY="50.0" layoutX="0.0" spacing="10.0"
+          style="-fx-background-color: #f8fafc; -fx-border-color: #e2e8f0; -fx-border-width: 0 0 1px 0;"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <padding>
+            <Insets top="5" right="10" bottom="5" left="10"/>
+        </padding>
+
+        <Button fx:id="zoomInButton" text="+"
+                style="-fx-background-color: #4338ca; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10; -fx-background-radius: 5;"/>
+
+        <Button fx:id="zoomOutButton" text="-"
+                style="-fx-background-color: #4338ca; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10; -fx-background-radius: 5;"/>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <Label fx:id="pageLabel" text="Page: 1/1"
+               style="-fx-text-fill: #1e3a8a; -fx-font-size: 14px;"/>
+
+        <Button fx:id="prevPageButton" text="<"
+                style="-fx-background-color: #4338ca; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10; -fx-background-radius: 5;"/>
+
+        <Button fx:id="nextPageButton" text=">"
+                style="-fx-background-color: #4338ca; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5 10; -fx-background-radius: 5;"/>
+    </HBox>
+
+    <!-- PDF Viewer -->
+    <WebView fx:id="webView" AnchorPane.topAnchor="100.0" AnchorPane.leftAnchor="0.0"
+             AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="50.0" prefWidth="1000.0" prefHeight="600.0"/>
+
+    <!-- Status Bar -->
+    <HBox layoutY="700.0" layoutX="0.0" spacing="10.0"
+          style="-fx-background-color: #f8fafc; -fx-border-color: #e2e8f0; -fx-border-width: 1px 0 0 0;"
+          AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <padding>
+            <Insets top="5" right="10" bottom="5" left="10"/>
+        </padding>
+
+        <Label fx:id="statusLabel" text="Prêt"
+               style="-fx-text-fill: #1e3a8a; -fx-font-size: 12px;"/>
+    </HBox>
+
+</AnchorPane>
