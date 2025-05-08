@@ -5,12 +5,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84f41fe2-ffdc-48ee-81c4-5c4b748a903d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/controllers/DemandeMissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/controllers/DemandeMissionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/controllers/MissionListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/controllers/MissionListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/services/DemandeMissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/services/DemandeMissionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/services/MissionfreelencerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/services/MissionfreelencerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/wiemwebsite/demo/FXML/listmissionfreelencer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wiemwebsite/demo/FXML/listmissionfreelencer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/DatabaseConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/controllers/AdminDashboardController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/controllers/DemandeMissionController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/controllers/DemandeMissionDetailsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/controllers/MissionListController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/controllers/MissionfreelencerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/controllers/PostulerMissionController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/models/CandidatureMission.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/models/DemandeMission.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/models/Missionfreelencer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/services/CloudinaryUploader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/services/DemandeMissionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wiemwebsite/demo/services/MissionfreelencerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/wiemwebsite/demo/FXML/Missionfreelencer.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/wiemwebsite/demo/FXML/admin_dashboard.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/wiemwebsite/demo/FXML/demande_mission.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/wiemwebsite/demo/FXML/demande_mission_details.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/wiemwebsite/demo/FXML/listmissionfreelencer.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/wiemwebsite/demo/FXML/postulemission.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/wiemwebsite/demo/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/wiemwebsite/demo/style/missionform.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/DatabaseConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/FXML/Missionfreelencer.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/FXML/admin_dashboard.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/FXML/demande_mission.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/FXML/demande_mission_details.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/FXML/listmissionfreelencer.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/FXML/postulemission.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/HelloApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/HelloController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/controllers/AdminDashboardController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/controllers/DemandeMissionController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/controllers/DemandeMissionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/controllers/DemandeMissionDetailsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/controllers/MissionListController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/controllers/MissionfreelencerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/controllers/PostulerMissionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/models/CandidatureMission.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/models/DemandeMission.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/models/Missionfreelencer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/services/CloudinaryUploader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/services/DemandeMissionService$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/services/DemandeMissionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/services/MissionfreelencerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wiemwebsite/demo/style/missionform.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,15 +75,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "khiariwiem"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;khiariwiem&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "https://github.com/khiariwiem/missionfreelencer.git",
+    "url": "https://github.com/rayenamer/IntegrationJava",
     "accountId": "091b3e63-4a74-4aa5-8a5c-d0ef7b8114a5"
   }
 }]]></component>
@@ -64,11 +112,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.HelloApplication.executor": "Run",
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "wiwi",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/wiem/Downloads/pidevahmed/pidevahmed",
+    "last_opened_file_path": "C:/Users/wiem/Desktop/IntegrationJava",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -83,8 +134,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wiem\Desktop\Missionfreelencer\src\main\resources" />
       <recent name="C:\Users\wiem\Downloads\demo\src\main\resources\wiemwebsite\demo\style" />
       <recent name="C:\Users\wiem\Downloads\demo\src\main\resources\wiemwebsite\demo" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="test" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -119,6 +177,8 @@
       <workItem from="1746091904334" duration="1823000" />
       <workItem from="1746108049068" duration="4299000" />
       <workItem from="1746112607159" duration="26340000" />
+      <workItem from="1746729009580" duration="3048000" />
+      <workItem from="1746732639684" duration="1000000" />
     </task>
     <servers />
   </component>
@@ -129,7 +189,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/wiemwebsite/demo/controllers/DemandeMissionController.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/controllers/DemandeMissionController.java</url>
           <line>237</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>

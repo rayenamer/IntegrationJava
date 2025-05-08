@@ -1,4 +1,4 @@
-module wiemwebsite.demo {
+module java {
     requires javafx.controls;
     requires javafx.fxml;
     requires com.google.protobuf;
@@ -8,11 +8,17 @@ module wiemwebsite.demo {
     requires com.google.gson;
     requires java.sql;
     requires java.desktop;
-    opens wiemwebsite.demo to javafx.fxml;
-    opens wiemwebsite.demo.controllers to javafx.fxml;
-    opens wiemwebsite.demo.models to javafx.fxml;
 
-    exports wiemwebsite.demo;
-    exports wiemwebsite.demo.controllers;
-    exports wiemwebsite.demo.models;
+    // Ouvrir les packages pour FXML
+    opens controllers to javafx.fxml;
+    opens entities to javafx.fxml;
+    opens services to javafx.fxml;
+    opens utils to javafx.fxml; // Add this if utils needs to be accessed by FXML
+
+    // Exporter les packages
+    exports controllers;
+    exports entities;
+    exports services;
+    exports utils;
+    exports test;// Add this if utils needs to be accessed by other modules
 }
