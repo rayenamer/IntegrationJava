@@ -31,6 +31,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
+import entities.User;
+
 
 public class EventListController {
     private final EvenementService eventService = new EvenementService();
@@ -38,7 +40,13 @@ public class EventListController {
     private final WeatherService weatherService = new WeatherService();
     private ObservableList<Evenement> events = FXCollections.observableArrayList();
     private ObservableList<Evenement> filteredEvents = FXCollections.observableArrayList();
-    private final int loggedInUserId = 7;
+
+    private User currentUser;
+
+    currentUser = Session.getCurrentUser();
+    int loggedInUserId = currentUser.getId();
+
+
     private String currentLanguage = "FR"; // DeepL language codes
     private VBox mainLayout;
     private final Config config = Config.getInstance();
