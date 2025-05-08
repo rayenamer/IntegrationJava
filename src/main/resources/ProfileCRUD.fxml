@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.ProfileCRUDController"
+            prefWidth="800" prefHeight="600"
+            style="-fx-padding: 30; -fx-background-color: #f1f5f9;">
+
+    <VBox spacing="25" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+
+        <Label text="Mon Profil"
+               style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #1e3a8a;"/>
+
+        <!-- Carte Profil -->
+        <VBox spacing="20"
+              style="-fx-background-color: white; -fx-background-radius: 12px; -fx-padding: 30; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 4);">
+
+            <HBox spacing="20">
+                <ImageView fx:id="imageProfil" fitWidth="120" fitHeight="120"
+                           style="-fx-background-radius: 100px;"
+                           pickOnBounds="true" preserveRatio="true"/>
+                <VBox spacing="12">
+                    <Label text="Nom :" style="-fx-font-size: 16px; -fx-text-fill: #334155;"/>
+                    <Label fx:id="lblNom" style="-fx-font-size: 16px; -fx-text-fill: #1e293b;"/>
+
+                    <Label text="Prénom :" style="-fx-font-size: 16px; -fx-text-fill: #334155;"/>
+                    <Label fx:id="lblPrenom" style="-fx-font-size: 16px; -fx-text-fill: #1e293b;"/>
+                </VBox>
+            </HBox>
+
+            <GridPane hgap="20" vgap="18">
+                <Label text="Email :" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                       style="-fx-font-size: 16px; -fx-text-fill: #334155;"/>
+                <Label fx:id="lblEmail" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                       style="-fx-font-size: 16px; -fx-text-fill: #1e293b;"/>
+
+                <Label text="Téléphone :" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                       style="-fx-font-size: 16px; -fx-text-fill: #334155;"/>
+                <Label fx:id="lblTel" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                       style="-fx-font-size: 16px; -fx-text-fill: #1e293b;"/>
+
+                <Label text="Adresse :" GridPane.rowIndex="2" GridPane.columnIndex="0"
+                       style="-fx-font-size: 16px; -fx-text-fill: #334155;"/>
+                <Label fx:id="lblAdresse" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                       style="-fx-font-size: 16px; -fx-text-fill: #1e293b;"/>
+
+                <Label text="Domaine :" GridPane.rowIndex="3" GridPane.columnIndex="0"
+                       style="-fx-font-size: 16px; -fx-text-fill: #334155;"/>
+                <Label fx:id="lblDomaine" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                       style="-fx-font-size: 16px; -fx-text-fill: #1e293b;"/>
+
+                <Label text="Années d'expérience :" GridPane.rowIndex="4" GridPane.columnIndex="0"
+                       style="-fx-font-size: 16px; -fx-text-fill: #334155;"/>
+                <Label fx:id="lblAnneesExperience" GridPane.rowIndex="4" GridPane.columnIndex="1"
+                       style="-fx-font-size: 16px; -fx-text-fill: #1e293b;"/>
+
+                <Label text="CV :" GridPane.rowIndex="5" GridPane.columnIndex="0"
+                       style="-fx-font-size: 16px; -fx-text-fill: #334155;"/>
+                <Label fx:id="lblCV" GridPane.rowIndex="5" GridPane.columnIndex="1"
+                       style="-fx-font-size: 16px; -fx-text-fill: #1e293b;"/>
+            </GridPane>
+        </VBox>
+
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Button fx:id="btnModifier" text="Modifier" onAction="#handleModifier"
+                    style="-fx-background-color: #4f46e5; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8px; -fx-padding: 8 20;"/>
+            <Button fx:id="btnSupprimer" text="Supprimer" onAction="#handleSupprimer"
+                    style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8px; -fx-padding: 8 20;"/>
+            <Button fx:id="btnClose" text="Fermer" onAction="#handleClose"
+                    style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8px; -fx-padding: 8 20;"/>
+        </HBox>
+
+    </VBox>
+</AnchorPane>

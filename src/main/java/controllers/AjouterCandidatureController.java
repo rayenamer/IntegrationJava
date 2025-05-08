@@ -3,6 +3,7 @@ package controllers;
 import entities.Candidature;
 import entities.Offre;
 import entities.Candidature.StatutCandidature;
+import entities.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import services.CandidatureService;
 import services.OffreService;
+import utils.Session;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -66,6 +68,15 @@ public class AjouterCandidatureController {
                 showAlert(Alert.AlertType.ERROR, "Erreur lors du chargement des offres : " + e.getMessage());
             }
         }
+
+        // Remplir le champ utilisateur avec l'utilisateur courant
+        User currentUser = Session.getCurrentUser();
+        if (currentUser != null) {
+            utilisateurTF.setText(currentUser.getNom() + " " + currentUser.getPrenom());
+            utilisateurTF.setEditable(false); // Désactiver l'édition du champ
+        } else {
+            showAlert(Alert.AlertType.ERROR, "Aucun utilisateur connecté.");
+        }
     }
 
     @FXML
@@ -104,6 +115,10 @@ public class AjouterCandidatureController {
             candidatureService.ajouter(candidature);
             showAlert(Alert.AlertType.INFORMATION, "Candidature ajoutée avec succès.");
 
+            // Fermer la fenêtre après l'ajout
+            Stage stage = (Stage) ajouterBtn.getScene().getWindow();
+            stage.close();
+
         } catch (SQLException e) {
             showAlert(Alert.AlertType.ERROR, "Erreur SQL : " + e.getMessage());
         } catch (Exception e) {
@@ -136,6 +151,7 @@ public class AjouterCandidatureController {
             showAlert(Alert.AlertType.ERROR, "Erreur de chargement : " + e.getMessage());
         }
     }
+
     @FXML
     private void handleOffreClick(ActionEvent event) {
         try {

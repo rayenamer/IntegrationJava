@@ -3,8 +3,9 @@ package controllers;
 import entities.Offre;
 import entities.TypeContrat;
 import entities.TypeOffre;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import entities.User;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,19 +13,17 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import services.OffreService;
 import services.TypeContratService;
 import services.TypeOffreService;
+import utils.Session;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class AjouterOffreController implements Initializable {
 
@@ -37,33 +36,35 @@ public class AjouterOffreController implements Initializable {
     public TextField localisationTF;
     public TextField salaireTF;
     public CheckBox disponibleCB;
-    public TextField imageTF;
     public TextField utilisateurTF;
+    @FXML
+    public TextField imageTF;
+    @FXML
     public Button gererContratBtn;
     public Button gererOffreBtn;
-    @FXML
-    private ImageView imagePreview;
-    @FXML
-    private Label imageNameLabel;
 
-    // Mappage nom -> objet
     private Map<String, TypeContrat> mapTypeContrat = new HashMap<>();
     private Map<String, TypeOffre> mapTypeOffre = new HashMap<>();
 
-    private File selectedImageFile;
     private final OffreService offreService = new OffreService();
     private final TypeContratService typeContratService = new TypeContratService();
     private final TypeOffreService typeOffreService = new TypeOffreService();
 
+    private User currentUser;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Charger les types de contrat
         loadTypeContrats();
-
-        // Charger les types d'offre
         loadTypeOffres();
 
-        disponibleCB.setSelected(true); // Par défaut, l'offre est disponible
+        currentUser = Session.getCurrentUser();
+        if (currentUser != null) {
+            // On met à jour utilisateurTF pour afficher le nom complet (Nom + Prénom)
+            utilisateurTF.setText(currentUser.getNom() + " " + currentUser.getPrenom());
+            utilisateurTF.setDisable(true);
+        }
+
+        disponibleCB.setSelected(true);
     }
 
     private void loadTypeContrats() {
@@ -127,7 +128,6 @@ public class AjouterOffreController implements Initializable {
                     throw new IllegalArgumentException("Le salaire doit être positif.");
                 }
 
-                // Récupérer les objets à partir du ComboBox
                 TypeContrat typeContrat = mapTypeContrat.get(typeContratCB.getValue());
                 TypeOffre typeOffre = mapTypeOffre.get(typeOffreCB.getValue());
 
@@ -135,7 +135,11 @@ public class AjouterOffreController implements Initializable {
                     throw new IllegalArgumentException("Type de contrat ou d'offre non valide.");
                 }
 
-                // Création et insertion
+                if (currentUser == null) {
+                    throw new IllegalStateException("Aucun utilisateur connecté.");
+                }
+
+                // Crée une nouvelle offre avec le nom complet (nom + prénom)
                 Offre offre = new Offre(
                         typeContrat,
                         typeOffre,
@@ -145,17 +149,8 @@ public class AjouterOffreController implements Initializable {
                         salaire,
                         disponibleCB.isSelected(),
                         imageTF.getText().trim(),
-                        utilisateurTF.getText().trim()
+                        currentUser.getNom() + " " + currentUser.getPrenom() // Ajout du prénom
                 );
-
-                // Gérer l'image
-                if (selectedImageFile != null) {
-                    // Ici, vous pouvez ajouter la logique pour sauvegarder l'image
-                    // Par exemple, copier l'image dans un dossier de votre application
-                    // et stocker le chemin relatif dans la base de données
-                    String imagePath = saveImage(selectedImageFile);
-                    offre.setImage(imagePath);
-                }
 
                 offreService.ajouter(offre);
                 showSuccess("Offre ajoutée !", "L'offre a été ajoutée avec succès.");
@@ -166,48 +161,10 @@ public class AjouterOffreController implements Initializable {
         }
     }
 
-    @FXML
-    public void handleImageUpload() {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Choisir une image");
-        fileChooser.getExtensionFilters().addAll(
-            new FileChooser.ExtensionFilter("Images", "*.png", "*.jpg", "*.jpeg", "*.gif")
-        );
-
-        selectedImageFile = fileChooser.showOpenDialog(imagePreview.getScene().getWindow());
-        if (selectedImageFile != null) {
-            Image image = new Image(selectedImageFile.toURI().toString());
-            imagePreview.setImage(image);
-            imageNameLabel.setText(selectedImageFile.getName());
-        }
-    }
-
-    private String saveImage(File imageFile) {
-        // Créer le dossier images s'il n'existe pas
-        File imagesDir = new File("src/main/resources/images");
-        if (!imagesDir.exists()) {
-            imagesDir.mkdirs();
-        }
-
-        // Générer un nom unique pour l'image
-        String fileName = System.currentTimeMillis() + "_" + imageFile.getName();
-        File destFile = new File(imagesDir, fileName);
-
-        try {
-            // Copier l'image
-            java.nio.file.Files.copy(imageFile.toPath(), destFile.toPath());
-            return "images/" + fileName;
-        } catch (IOException e) {
-            showError("Erreur", "Impossible de sauvegarder l'image : " + e.getMessage());
-            return null;
-        }
-    }
-
     private boolean validateInputs() {
         if (posteTF.getText().isEmpty() || entrepriseTF.getText().isEmpty() ||
-            localisationTF.getText().isEmpty() || salaireTF.getText().isEmpty() ||
-            typeContratCB.getValue() == null || typeOffreCB.getValue() == null ||
-            utilisateurTF.getText().isEmpty()) {
+                localisationTF.getText().isEmpty() || salaireTF.getText().isEmpty() ||
+                typeContratCB.getValue() == null || typeOffreCB.getValue() == null) {
             showError("Erreur", "Veuillez remplir tous les champs obligatoires");
             return false;
         }
@@ -229,23 +186,7 @@ public class AjouterOffreController implements Initializable {
         typeContratCB.setValue(null);
         typeOffreCB.setValue(null);
         utilisateurTF.clear();
-        imagePreview.setImage(null);
-        imageNameLabel.setText("Aucune image sélectionnée");
-        selectedImageFile = null;
-    }
-
-    @FXML
-    private void handleOffreClick(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterOffre.fxml"));
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Ajouter une Offre");
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        imageTF.clear();
     }
 
     private double parseSalaire() {
@@ -262,5 +203,19 @@ public class AjouterOffreController implements Initializable {
         alert.setHeaderText(title);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    @FXML
+    private void handleOffreClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterOffre.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Ajouter une Offre");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

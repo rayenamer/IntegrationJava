@@ -8,7 +8,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controllers.AfficherOffreController">
+            fx:controller="controllers.AfficherOffresUserController">
 
     <!-- Contenu principal -->
     <VBox spacing="15" alignment="TOP_CENTER" maxWidth="1000.0"
@@ -25,7 +25,7 @@
             </Text>
 
             <HBox spacing="20" alignment="CENTER">
-                <TextField fx:id="searchField" promptText="Rechercher une offre  par nom, type offre, type contrat, localisation.." maxWidth="400"
+                <TextField fx:id="searchField" promptText="Rechercher une offre par nom, type offre, type contrat, localisation.." maxWidth="400"
                            style="-fx-font-size: 18px;"/>
                 <Button text="Rechercher"
                         onAction="#rechercherOffre"
@@ -52,7 +52,5 @@
             🤖 Chatbot
         </Button>
     </HBox>
-
-
 
 </AnchorPane>

@@ -10,7 +10,7 @@
         style="-fx-background-color: linear-gradient(to bottom right, #f8fafc, #e0e7ff);"
         xmlns="http://javafx.com/javafx/17"
         xmlns:fx="http://javafx.com/fxml/1"
-        fx:controller="controllers.AfficherCandidaturesUserController">
+        fx:controller="controllers.AfficherCandidatureController">
 
 
     <!-- Contenu centré -->
@@ -39,7 +39,7 @@
                     style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 5; -fx-border-radius: 5; -fx-effect: dropshadow(gaussian, #000, 5, 0, 2, 2);"/>
             <Button fx:id="exportPdfBtn" text="Exporter en PDF"
                     onAction="#exporterPDF"
-                    visible="false"
+                    visible="true"
                     style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 5; -fx-border-radius: 5; -fx-effect: dropshadow(gaussian, #000, 5, 0, 2, 2);"/>
         </HBox>
     </VBox>

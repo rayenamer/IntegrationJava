@@ -1,6 +1,7 @@
 package controllers;
 
 import entities.Offre;
+import entities.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,6 +15,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import services.OffreService;
+import utils.Session;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.geometry.Pos;
@@ -34,6 +36,9 @@ public class AfficherOffreController implements Initializable {
     @FXML
     private TextField searchField;
 
+    @FXML
+    private Button ajouterOffreBtn;
+
     private ObservableList<Offre> obs;
     private final OffreService offreService = new OffreService();
 
@@ -47,8 +52,24 @@ public class AfficherOffreController implements Initializable {
     }
 
     private void loadOffres() throws SQLException {
-        List<Offre> offres = offreService.recuperer();
-        obs = FXCollections.observableArrayList(offres);
+        // Récupérer l'utilisateur courant
+        User currentUser = Session.getCurrentUser();
+        if (currentUser == null) {
+            showError("Erreur", "Aucun utilisateur connecté.");
+            return;
+        }
+
+        // Récupérer toutes les offres
+        List<Offre> allOffres = offreService.recuperer();
+        
+        // Filtrer pour n'avoir que les offres de l'utilisateur courant
+        String currentUserName = currentUser.getNom() + " " + currentUser.getPrenom();
+        List<Offre> userOffres = allOffres.stream()
+            .filter(o -> o.getUtilisateur().equals(currentUserName))
+            .collect(Collectors.toList());
+
+        // Afficher les offres filtrées
+        obs = FXCollections.observableArrayList(userOffres);
         listView.setItems(obs);
 
         listView.setCellFactory(param -> new ListCell<Offre>() {
@@ -60,37 +81,19 @@ public class AfficherOffreController implements Initializable {
                     setGraphic(null);
                 } else {
                     HBox hbox = new HBox(10);
-                    hbox.setAlignment(Pos.CENTER_LEFT);
+                    hbox.setStyle("-fx-padding: 5;");
 
-                    // Nom du poste en gras
-                    Label nomPosteLabel = new Label("Nom du poste: " + item.getNomposte());
-                    nomPosteLabel.setStyle("-fx-font-weight: bold;");
+                    Label nomPosteLabel = new Label(item.getNomposte());
+                    nomPosteLabel.setStyle("-fx-font-weight: bold; -fx-font-size: 14px;");
 
-                    // Autres infos
-                    Label entrepriseLabel = new Label(" | Entreprise: " + item.getEntreprise() + " | Localisation: ");
+                    Label entrepriseLabel = new Label(" | " + item.getEntreprise());
+                    entrepriseLabel.setStyle("-fx-font-size: 14px;");
 
-                    FontAwesomeIconView locationIcon = new FontAwesomeIconView(FontAwesomeIcon.MAP_MARKER);
-                    locationIcon.setGlyphSize(17);
-                    locationIcon.setFill(Color.RED);
-                    locationIcon.setStyle("-fx-cursor: hand; -fx-font-family: FontAwesome;");
+                    Label locationIcon = new Label("📍");
+                    locationIcon.setStyle("-fx-font-size: 14px;");
 
                     Label locationLabel = new Label(item.getLocalisation());
-                    locationLabel.setStyle("-fx-text-fill: #1976D2;");
-
-                    locationIcon.setOnMouseClicked(e -> {
-                        try {
-                            FXMLLoader loader = new FXMLLoader(getClass().getResource("/MapView.fxml"));
-                            Parent root = loader.load();
-                            MapViewController controller = loader.getController();
-                            controller.setLocation(item.getLocalisation());
-                            Stage stage = new Stage();
-                            stage.setTitle("Localisation de l'offre");
-                            stage.setScene(new Scene(root));
-                            stage.show();
-                        } catch (IOException ex) {
-                            showError("Erreur carte", "Impossible d'ouvrir la carte : " + ex.getMessage());
-                        }
-                    });
+                    locationLabel.setStyle("-fx-font-size: 14px;");
 
                     Label remainingInfo = new Label(
                             " | Salaire: " + item.getSalaire() + " | " +
@@ -107,16 +110,19 @@ public class AfficherOffreController implements Initializable {
         });
     }
 
-
-
     @FXML
     public void supprimerOffre(ActionEvent actionEvent) {
         Offre selected = listView.getSelectionModel().getSelectedItem();
         if (selected != null) {
-            offreService.supprimer(selected);
-            obs.remove(selected);
+            try {
+                offreService.supprimer(selected);
+                obs.remove(selected);
+                showError("Succès", "Offre supprimée avec succès.");
+            } catch (Exception e) {
+                showError("Erreur", "Erreur lors de la suppression : " + e.getMessage());
+            }
         } else {
-            showError("Suppression", "Veuillez sélectionner une offre à supprimer.");
+            showError("Attention", "Veuillez sélectionner une offre à supprimer.");
         }
     }
 
@@ -124,23 +130,39 @@ public class AfficherOffreController implements Initializable {
     public void rechercherOffre(ActionEvent actionEvent) {
         String searchText = searchField.getText().toLowerCase().trim();
         try {
-            List<Offre> toutesLesOffres = offreService.recuperer();
-            if (searchText.isEmpty()) {
-                obs = FXCollections.observableArrayList(toutesLesOffres);
-            } else {
-                List<Offre> offresFiltrees = toutesLesOffres.stream()
-                        .filter(o -> o.getNomposte().toLowerCase().contains(searchText)
-                                || o.getTypeOffre().getNom().toLowerCase().contains(searchText)
-                                || o.getTypeContrat().getNom().toLowerCase().contains(searchText)
-                                || o.getLocalisation().toLowerCase().contains(searchText))
-                        .collect(Collectors.toList());
-                obs = FXCollections.observableArrayList(offresFiltrees);
+            // Récupérer l'utilisateur courant
+            User currentUser = Session.getCurrentUser();
+            if (currentUser == null) {
+                showError("Erreur", "Aucun utilisateur connecté.");
+                return;
             }
+
+            // Récupérer toutes les offres
+            List<Offre> allOffres = offreService.recuperer();
+            
+            // Filtrer pour n'avoir que les offres de l'utilisateur courant
+            String currentUserName = currentUser.getNom() + " " + currentUser.getPrenom();
+            List<Offre> userOffres = allOffres.stream()
+                .filter(o -> o.getUtilisateur().equals(currentUserName))
+                .collect(Collectors.toList());
+
+            // Appliquer le filtre de recherche si nécessaire
+            if (!searchText.isEmpty()) {
+                userOffres = userOffres.stream()
+                    .filter(o -> o.getNomposte().toLowerCase().contains(searchText)
+                            || o.getTypeOffre().getNom().toLowerCase().contains(searchText)
+                            || o.getTypeContrat().getNom().toLowerCase().contains(searchText)
+                            || o.getLocalisation().toLowerCase().contains(searchText))
+                    .collect(Collectors.toList());
+            }
+
+            obs = FXCollections.observableArrayList(userOffres);
             listView.setItems(obs);
         } catch (SQLException e) {
-            showError("Erreur lors de la recherche", e.getMessage());
+            showError("Erreur", "Erreur lors de la recherche : " + e.getMessage());
         }
     }
+
     @FXML
     private void handleOffreClick(ActionEvent event) {
         try {
@@ -151,13 +173,46 @@ public class AfficherOffreController implements Initializable {
             stage.setScene(new Scene(root));
             stage.show();
         } catch (Exception e) {
-            e.printStackTrace();
+            showError("Erreur", "Impossible d'ouvrir la page d'ajout d'offre : " + e.getMessage());
         }
     }
 
     @FXML
-    public void ajouterOffre(ActionEvent actionEvent) {
-        changerDeScene("/AjouterOffre.fxml", actionEvent);
+    private void ajouterOffre(ActionEvent event) {
+        try {
+            // Vérifier si l'utilisateur est un modérateur
+            if (Session.getCurrentUser() != null && "moderateur".equalsIgnoreCase(Session.getCurrentUser().getType())) {
+                // Charger la page AjouterOffre.fxml
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterOffre.fxml"));
+                Parent root = loader.load();
+                
+                // Récupérer la scène actuelle
+                Scene currentScene = ajouterOffreBtn.getScene();
+                if (currentScene != null) {
+                    // Remplacer le contenu de la scène
+                    currentScene.setRoot(root);
+                } else {
+                    // Si pas de scène existante, créer une nouvelle fenêtre
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(root));
+                    stage.setTitle("Ajouter une Offre");
+                    stage.show();
+                }
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Accès restreint");
+                alert.setHeaderText(null);
+                alert.setContentText("Cette fonctionnalité est réservée aux modérateurs.");
+                alert.showAndWait();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur");
+            alert.setHeaderText(null);
+            alert.setContentText("Impossible de charger la page d'ajout d'offre : " + e.getMessage());
+            alert.showAndWait();
+        }
     }
 
     @FXML
@@ -207,22 +262,22 @@ public class AfficherOffreController implements Initializable {
 
     private void changerDeScene(String fxmlPath, ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
-            Parent root = loader.load();
+            Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
+            Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
+            stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
-            showError("Erreur", "Impossible de charger la nouvelle scène : " + e.getMessage());
+            showError("Erreur", "Impossible de charger la page : " + e.getMessage());
         }
     }
 
     private void showError(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);
-        alert.show();
+        alert.showAndWait();
     }
 
     private void showAlert(Alert.AlertType type, String title, String content) {

@@ -10,29 +10,6 @@
             fx:controller="controllers.AfficherTypeOffreController"
             style="-fx-background-color: linear-gradient(to bottom right, #f8fafc, #e0e7ff);"
             prefWidth="1500.0" prefHeight="900.0">
-    <HBox spacing="0.0"
-          alignment="CENTER_LEFT"
-          style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 3); -fx-border-color: #e2e8f0; -fx-border-width: 0 0 1px 0;" prefWidth="1550">
-        <padding>
-            <Insets top="15" right="40" bottom="15" left="40"/>
-        </padding>
-
-        <Label text="CareEra"
-               style="-fx-font-size: 28px; -fx-text-fill: #4338ca; -fx-font-weight: 800; -fx-font-family: 'Segoe UI', 'Roboto', sans-serif;" />
-
-        <Region HBox.hgrow="ALWAYS" />
-
-        <HBox spacing="0">
-            <Button fx:id="offreButton" text="Offres d'emploi" onAction="#handleOffreClick"
-                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
-            <Button text="Freelance"
-                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
-            <Button text="Événements"
-                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
-            <Button text="Forum et Discussion"
-                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20;" />
-        </HBox>
-    </HBox>
 
     <children>
         <VBox alignment="TOP_CENTER" spacing="30.0" prefWidth="600.0" layoutY="50.0" AnchorPane.leftAnchor="300.0">

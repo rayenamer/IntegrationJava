@@ -5,18 +5,26 @@ import com.lowagie.text.DocumentException;
 import com.lowagie.text.Paragraph;
 import com.lowagie.text.pdf.PdfWriter;
 import entities.Candidature;
+import entities.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import services.CandidatureService;
+import utils.Session;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static utils.Session.getCurrentUser;
 
 public class AfficherCandidatureController {
 
@@ -36,12 +44,52 @@ public class AfficherCandidatureController {
 
     private void refreshListView() {
         try {
-            ObservableList<Candidature> list = FXCollections.observableArrayList(new CandidatureService().getAll());
+            // Obtenir l'utilisateur courant
+            User utilisateurCourant = Session.getCurrentUser();
+
+            if (utilisateurCourant == null) {
+                showAlert("Aucun utilisateur connecté.");
+                return;
+            }
+
+            // Construire le nom complet
+            String nomComplet = utilisateurCourant.getNom() + " " + utilisateurCourant.getPrenom();
+
+
+            // Récupérer et filtrer les candidatures appartenant à cet utilisateur
+            ObservableList<Candidature> list = FXCollections.observableArrayList(
+                    new CandidatureService().getAll().stream()
+                            .filter(c -> c.getUtilisateur() != null && c.getUtilisateur().equalsIgnoreCase(nomComplet))
+                            .collect(Collectors.toList())
+            );
             listView.setItems(list);
+
+            // Personnalisation de l'affichage de chaque cellule
+            listView.setCellFactory(param -> new ListCell<>() {
+                @Override
+                protected void updateItem(Candidature candidature, boolean empty) {
+                    super.updateItem(candidature, empty);
+                    if (empty || candidature == null) {
+                        setText(null);
+                    } else {
+                        setText(
+                                "ID Candidature : " + candidature.getId() + "\n" +
+                                        "Offre ID : " + candidature.getOffre().getId() + "\n" +
+                                        "Statut : " + candidature.getStatut() + "\n" +
+                                        "Date de Soumission : " + candidature.getDateSoumission() + "\n" +
+                                        "Utilisateur : " + candidature.getUtilisateur() + "\n" +
+                                        "CV : " + candidature.getCv() + "\n" +
+                                        "Lettre de Motivation : " + candidature.getLettreMotivation()
+                        );
+                    }
+                }
+            });
         } catch (SQLException e) {
-            showAlert("Erreur chargement des candidatures : " + e.getMessage());
+            showAlert("Erreur lors du chargement des candidatures : " + e.getMessage());
         }
     }
+
+
 
     @FXML
     private void supprimerCandidature(ActionEvent event) {
@@ -93,11 +141,18 @@ public class AfficherCandidatureController {
         }
     }
 
+
     private void showAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information");
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    // Méthode fictive pour obtenir l'utilisateur courant (ajuster selon ton système d'authentification)
+    private User getUtilisateurCourant() {
+        // À ajuster selon ta logique d'authentification, par exemple :
+        return getCurrentUser(); // Remplace cette ligne par ton mécanisme d'obtention de l'utilisateur courant
     }
 }

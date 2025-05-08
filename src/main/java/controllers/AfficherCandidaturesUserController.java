@@ -183,7 +183,7 @@ public class AfficherCandidaturesUserController {
                 String userHome = System.getProperty("user.home");
                 String pdfPath = userHome + File.separator + "Downloads" + File.separator + "candidature_" + selected.getId() + ".pdf";
                 cs.generatePDFForAcceptedCandidature(selected);
-                
+
                 // Open PDF with system default application
                 File pdfFile = new File(pdfPath);
                 if (pdfFile.exists()) {

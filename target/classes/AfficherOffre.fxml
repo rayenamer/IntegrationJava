@@ -13,38 +13,6 @@
         xmlns:fx="http://javafx.com/fxml/1"
         fx:controller="controllers.AfficherOffreController">
 
-    <!-- Top section (HBox) -->
-    <HBox spacing="0.0"
-          alignment="CENTER_LEFT"
-          AnchorPane.topAnchor="0.0"
-          AnchorPane.leftAnchor="0.0"
-          AnchorPane.rightAnchor="0.0"
-          style="-fx-background-color: white;
-             -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 3);
-             -fx-border-color: #e2e8f0;
-             -fx-border-width: 0 0 1px 0;"
-          prefHeight="70">
-        <padding>
-            <Insets top="15" right="40" bottom="15" left="40"/>
-        </padding>
-
-        <Label text="CareEra"
-               style="-fx-font-size: 28px; -fx-text-fill: #4338ca; -fx-font-weight: 800;" />
-
-        <Region HBox.hgrow="ALWAYS" />
-
-        <!-- Navbar buttons -->
-        <HBox spacing="0">
-            <Button fx:id="offreButton" text="Offres d'emploi" onAction="#handleOffreClick"
-                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
-            <Button text="Freelance"
-                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
-            <Button text="Événements"
-                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
-            <Button text="Forum et Discussion"
-                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20;" />
-        </HBox>
-    </HBox>
 
     <children>
         <VBox spacing="20" alignment="TOP_CENTER"
@@ -89,9 +57,9 @@
                 <Button fx:id="deleteBtn" text="Supprimer"
                         onAction="#supprimerOffre"
                         style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 16px;"/>
-                <Button fx:id="ajouterOffreBtn" text="Retour"
-                        style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-font-size: 16px;"
-                        onAction="#ajouterOffre"/>
+                <Button fx:id="ajouterOffreBtn" text="Ajouter une offre"
+                        onAction="#ajouterOffre"
+                        style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 16px;"/>
                 <Button fx:id="modifierButton" text="Modifier"
                         onAction="#modifierOffre"
                         style="-fx-background-color: linear-gradient(to right, #6366f1, #4f46e5);

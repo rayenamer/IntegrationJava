@@ -26,13 +26,13 @@ public class PDFService {
                 Image logo = Image.getInstance(LOGO_PATH);
                 logo.scaleToFit(100, 100);
                 logo.setAlignment(Element.ALIGN_RIGHT);
-                
+
                 // Create a paragraph for the logo to ensure it stays on top
                 Paragraph logoParagraph = new Paragraph();
                 logoParagraph.add(logo);
                 logoParagraph.setAlignment(Element.ALIGN_RIGHT);
                 document.add(logoParagraph);
-                
+
                 // Add some space after the logo
                 document.add(new Paragraph(" "));
             } catch (Exception e) {
@@ -76,13 +76,13 @@ public class PDFService {
             signatureFont.setColor(66, 56, 202); // Couleur bleue indigo (comme votre logo)
             Paragraph signature = new Paragraph("CareEra", signatureFont);
             signature.setAlignment(Element.ALIGN_RIGHT);
-            
+
             // Add current date under signature
             Font dateFont = FontFactory.getFont(FontFactory.HELVETICA, 10);
             Paragraph date = new Paragraph(LocalDateTime.now().format(
-                DateTimeFormatter.ofPattern("dd/MM/yyyy")), dateFont);
+                    DateTimeFormatter.ofPattern("dd/MM/yyyy")), dateFont);
             date.setAlignment(Element.ALIGN_RIGHT);
-            
+
             document.add(signature);
             document.add(date);
 
