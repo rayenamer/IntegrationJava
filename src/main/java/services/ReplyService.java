@@ -16,13 +16,13 @@ public class ReplyService implements Service<Reply> {
 
     @Override
     public void ajouter(Reply reply) throws SQLException {
-        String sql = "INSERT INTO reply(content, created_at, user_id, discussion_id, user_name, user_photo) " +
-                "VALUES(?, CURRENT_TIMESTAMP, ?, ?, ?, ?)";
+        String sql = "INSERT INTO reply(discussion_id, content, created_at, user_id, user_name, user_photo) " +
+                "VALUES(?, ?, CURRENT_TIMESTAMP, ?, ?, ?)";
         
         PreparedStatement ps = cnx.prepareStatement(sql);
-        ps.setString(1, reply.getContent());
-        ps.setInt(2, reply.getUserId());
-        ps.setInt(3, reply.getDiscussionId());
+        ps.setInt(1, reply.getDiscussionId());
+        ps.setString(2, reply.getContent());
+        ps.setInt(3, reply.getUserId());
         ps.setString(4, reply.getUserName());
         ps.setString(5, reply.getUserPhoto());
         ps.executeUpdate();
@@ -57,10 +57,10 @@ public class ReplyService implements Service<Reply> {
         while (rs.next()) {
             Reply r = new Reply();
             r.setId(rs.getInt("id"));
+            r.setDiscussionId(rs.getInt("discussion_id"));
             r.setContent(rs.getString("content"));
             r.setCreatedAt(rs.getTimestamp("created_at").toLocalDateTime());
             r.setUserId(rs.getInt("user_id"));
-            r.setDiscussionId(rs.getInt("discussion_id"));
             r.setLikes(rs.getInt("likes"));
             r.setDislikes(rs.getInt("dislikes"));
             r.setUserName(rs.getString("user_name"));
@@ -81,10 +81,10 @@ public class ReplyService implements Service<Reply> {
         while (rs.next()) {
             Reply r = new Reply();
             r.setId(rs.getInt("id"));
+            r.setDiscussionId(rs.getInt("discussion_id"));
             r.setContent(rs.getString("content"));
             r.setCreatedAt(rs.getTimestamp("created_at").toLocalDateTime());
             r.setUserId(rs.getInt("user_id"));
-            r.setDiscussionId(rs.getInt("discussion_id"));
             r.setLikes(rs.getInt("likes"));
             r.setDislikes(rs.getInt("dislikes"));
             r.setUserName(rs.getString("user_name"));

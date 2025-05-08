@@ -16,7 +16,7 @@ public class DiscussionService implements Service<Discussion> {
 
     @Override
     public void ajouter(Discussion discussion) throws SQLException {
-        String sql = "INSERT INTO discussion(title, content, createdAt, UserId, userName, userPhoto) " +
+        String sql = "INSERT INTO discussion(title, content, created_at, user_id, user_name, user_photo) " +
                 "VALUES(?, ?, CURRENT_TIMESTAMP, ?, ?, ?)";
 
         PreparedStatement ps = cnx.prepareStatement(sql);
@@ -60,12 +60,12 @@ public class DiscussionService implements Service<Discussion> {
             d.setId(rs.getInt("id"));
             d.setTitle(rs.getString("title"));
             d.setContent(rs.getString("content"));
-            d.setCreatedAt(rs.getTimestamp("createdAt").toLocalDateTime());
-            d.setUserId(rs.getInt("UserId"));
+            d.setCreatedAt(rs.getTimestamp("created_at").toLocalDateTime());
+            d.setUserId(rs.getInt("user_id"));
             d.setLikes(rs.getInt("likes"));
             d.setDislikes(rs.getInt("dislikes"));
-            d.setUserName(rs.getString("userName"));
-            d.setUserPhoto(rs.getString("userPhoto"));
+            d.setUserName(rs.getString("user_name"));
+            d.setUserPhoto(rs.getString("user_photo"));
             discussions.add(d);
         }
 
@@ -88,11 +88,11 @@ public class DiscussionService implements Service<Discussion> {
 
     // Get the username with the most discussions posted
     public String getTopContributorUsername() {
-        String sql = "SELECT userName, COUNT(*) AS total FROM discussion GROUP BY userName ORDER BY total DESC LIMIT 1";
+        String sql = "SELECT user_name, COUNT(*) AS total FROM discussion GROUP BY user_name ORDER BY total DESC LIMIT 1";
         try (PreparedStatement ps = cnx.prepareStatement(sql);
              ResultSet rs = ps.executeQuery()) {
             if (rs.next()) {
-                return rs.getString("userName");
+                return rs.getString("user_name");
             }
         } catch (SQLException e) {
             e.printStackTrace();
