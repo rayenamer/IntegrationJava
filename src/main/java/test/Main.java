@@ -1,6 +1,8 @@
 package test;
 
 import services.OffreService;
+import services.DiscussionService;
+import utils.MyDatabase;
 
 import java.sql.SQLException;
 
@@ -15,4 +17,5 @@ public class Main {
             System.err.println(e.getMessage());
         }
     } // ajouter index
+
 }

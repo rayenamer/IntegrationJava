@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controllers.ReplyController"
+      spacing="10"
+      style="-fx-background-color: white; -fx-padding: 20px;"
+      prefWidth="500">
+
+    <!-- Comments Header -->
+    <Label text="Comments" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <!-- Comments List -->
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS"
+                style="-fx-background-color: transparent; -fx-padding: 0;">
+        <VBox fx:id="repliesContainer" spacing="10"/>
+    </ScrollPane>
+
+    <!-- Add Comment Section -->
+    <VBox spacing="10" style="-fx-padding: 10 0 0 0; -fx-border-color: #e4e6eb; -fx-border-width: 1 0 0 0;">
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="👤" style="-fx-font-size: 24px;"/>
+            <TextField fx:id="replyInput" 
+                      promptText="Write a comment..."
+                      HBox.hgrow="ALWAYS"
+                      style="-fx-background-radius: 20px; -fx-padding: 8px;"/>
+            <Button fx:id="replyButton" 
+                    text="Post"
+                    style="-fx-background-color: #1877f2; -fx-text-fill: white; -fx-background-radius: 20px;"/>
+        </HBox>
+    </VBox>
+
+</VBox> 

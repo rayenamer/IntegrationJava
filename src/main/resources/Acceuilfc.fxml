@@ -51,7 +51,7 @@
                     style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
             <Button text="Événements"
                     style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
-            <Button text="Forum et Discussion"
+            <Button text="Forum et Discussion"  onAction="#GoForum"
                     style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20;" />
             <!-- Admin Panel MenuButton -->
             <MenuButton fx:id="adminPanelButton" text="Admin Panel"

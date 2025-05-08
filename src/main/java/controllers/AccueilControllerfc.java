@@ -82,6 +82,37 @@ public class AccueilControllerfc {
     }
 
     @FXML
+    private void GoForum(ActionEvent event) {
+        try {
+            // Vérifier le type d'utilisateur
+            User currentUser = Session.getCurrentUser();
+            System.out.println("Type d'utilisateur actuel : " + (currentUser != null ? currentUser.getType() : "null"));
+
+
+            // Charger la page AjouterOffre.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Discussions.fxml"));
+            Parent root = loader.load();
+
+            // Récupérer la scène actuelle
+            Scene currentScene = offreButton.getScene();
+            if (currentScene != null) {
+                // Remplacer le contenu de la scène
+                currentScene.setRoot(root);
+            } else {
+                // Si pas de scène existante, créer une nouvelle fenêtre
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.setTitle("ajouter une Offre");
+                stage.show();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Erreur", "Impossible de charger la page des offres : " + e.getMessage());
+        }
+    }
+
+    @FXML
     private void handleDeconnexion(ActionEvent event) {
         try {
             Session.clear();

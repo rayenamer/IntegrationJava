@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="PI3A61" />
+        <module name="IntegrationJava" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="PI3A61" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

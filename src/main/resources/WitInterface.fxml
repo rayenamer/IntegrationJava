@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.WitController" stylesheets="@styles.css">
+    <padding>
+        <Insets top="20" right="30" bottom="20" left="30"/>
+    </padding>
+
+    <Label text="Talk to Carrera AI" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+    <TextField fx:id="inputField" promptText="Type your message..." prefWidth="400"/>
+
+    <Button fx:id="sendButton" text="Send" style="-fx-background-color: #4285F4; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+    <TextArea fx:id="responseArea" editable="false" wrapText="true" prefHeight="200" prefWidth="400"
+              style="-fx-control-inner-background: #f9f9f9; -fx-font-size: 14px;"/>
+</VBox>

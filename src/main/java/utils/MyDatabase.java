@@ -39,10 +39,12 @@ public class MyDatabase {
         if (instance == null) {
             instance = new MyDatabase();
         }
+
         return instance;
     }
 
     public Connection getCnx() {
+
         try {
             if (connection == null || connection.isClosed()) {
                 System.out.println("🔄 Reconnexion à la base de données...");
