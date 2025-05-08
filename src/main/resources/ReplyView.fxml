@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="repliesContainer" spacing="10" style="-fx-padding: 10px;">
+    <HBox spacing="10" style="-fx-alignment: center-left;">
+        <TextField fx:id="replyInput" promptText="Write a reply..." style="-fx-background-radius: 20px; -fx-padding: 8px 15px;"/>
+        <Button fx:id="replyButton" text="Reply" style="-fx-background-color: #1877f2; -fx-text-fill: white; -fx-background-radius: 20px;"/>
+    </HBox>
+</VBox> 
