@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controllers.StatistiqueController"
+      spacing="20" alignment="CENTER"
+      style="-fx-background-color: #f8fafc; -fx-padding: 30;">
+
+    <Label text="Statistiques des Utilisateurs"
+           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #4338ca;"/>
+
+    <Label fx:id="totalUsersLabel"
+           style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="50" alignment="CENTER">
+        <PieChart fx:id="userPieChart"
+                  title="Répartition des utilisateurs"
+                  legendVisible="false"
+                  style="-fx-font-size: 14px;"/>
+
+        <VBox fx:id="legendContainer" spacing="15"/>
+    </HBox>
+
+    <Button text="Retour" onAction="#handleRetour"
+            style="-fx-background-color: #4f46e5; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    <Button text="Ferme" onAction="#handleFerme"
+            style="-fx-background-color: #4f46e5; -fx-text-fill: white; -fx-font-weight: bold;"/>
+</VBox>

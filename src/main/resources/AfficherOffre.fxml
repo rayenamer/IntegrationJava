@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane
+        style="-fx-background-color: linear-gradient(to bottom right, #f8fafc, #e0e7ff);"
+        prefWidth="1500.0" prefHeight="900.0"
+        xmlns="http://javafx.com/javafx/17"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="controllers.AfficherOffreController">
+
+
+    <children>
+        <VBox spacing="20" alignment="TOP_CENTER"
+              layoutY="70.0" prefWidth="900.0"
+              AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="70.0">
+
+            <Text text="Liste des offres">
+                <font>
+                    <Font name="System Bold" size="30"/>
+                </font>
+                <VBox.margin>
+                    <Insets top="20" bottom="10"/>
+                </VBox.margin>
+            </Text>
+
+            <!-- Barre de recherche -->
+            <HBox spacing="15" alignment="CENTER">
+                <TextField fx:id="searchField"
+                           promptText="Rechercher une offre..."
+                           maxWidth="700"
+                           style="-fx-font-size: 16px;"/>
+                <Button text="Rechercher"
+                        onAction="#rechercherOffre"
+                        style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 16px;"/>
+            </HBox>
+
+            <!-- Afficher Candidature Button -->
+            <HBox spacing="10" alignment="CENTER">
+                <Button fx:id="AfficherCandidatureBtn" text="Voir les Candidatures"
+                        style="-fx-background-color: #20c997; -fx-text-fill: white; -fx-font-size: 16px;"
+                        onAction="#afficherCandidature"/>
+            </HBox>
+
+            <!-- Liste des offres -->
+            <ListView fx:id="listView"
+                      prefHeight="400.0"
+                      maxWidth="1500.0"
+                      style="-fx-font-size: 16px;"/>
+
+            <!-- Boutons d'action -->
+            <HBox spacing="20" alignment="CENTER" prefWidth="1400.0">
+                <Button fx:id="deleteBtn" text="Supprimer"
+                        onAction="#supprimerOffre"
+                        style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 16px;"/>
+                <Button fx:id="ajouterOffreBtn" text="Ajouter une offre"
+                        onAction="#ajouterOffre"
+                        style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 16px;"/>
+                <Button fx:id="modifierButton" text="Modifier"
+                        onAction="#modifierOffre"
+                        style="-fx-background-color: linear-gradient(to right, #6366f1, #4f46e5);
+                               -fx-text-fill: white;
+                               -fx-font-size: 16px;"/>
+            </HBox>
+
+            <!-- Statistiques Button -->
+            <Button fx:id="statistiquesBtn"
+                    text="📊 Statistiques"
+                    onAction="#afficherStatistiques"
+                    style="-fx-background-color: white; -fx-text-fill: black; -fx-font-size: 16px; -fx-font-weight: bold;
+                           -fx-padding: 10 20; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 4, 0, 0, 2);"/>
+        </VBox>
+    </children>
+</AnchorPane>

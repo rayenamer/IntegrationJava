@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.ModifierOffreController"
+            prefWidth="1500.0" prefHeight="900.0">
+    <children>
+        <VBox spacing="20" alignment="TOP_CENTER"
+              style="-fx-font-size: 16px;"
+              AnchorPane.topAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+
+            <children>
+
+
+                <!-- Titre -->
+                <Text text="Modifier Offre">
+                    <font>
+                        <Font name="System Bold" size="30"/>
+                    </font>
+                </Text>
+
+                <!-- Formulaire -->
+                <GridPane hgap="20" vgap="15" alignment="CENTER">
+                    <padding>
+                        <Insets top="10" left="20" right="20" bottom="10"/>
+                    </padding>
+                    <children>
+
+                        <Label text="nom et prénom" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+                        <TextField fx:id="utilisateurTF" promptText="votre nom" prefWidth="400"
+                                   GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+                        <Label text=" Type Contrat" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="typeContratCB" promptText=" Type Contrat" prefWidth="400"
+                                  GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+
+                        <Label text="Type Offre" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="typeOffreCB" promptText=" Type Offre" prefWidth="400"
+                                  GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+
+                        <Label text="Nom du Poste" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <TextField fx:id="posteTF" promptText="Nom du Poste" prefWidth="400"
+                                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                        <Label text="Entreprise" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                        <TextField fx:id="entrepriseTF" promptText="Entreprise" prefWidth="400"
+                                   GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                        <Label text="Localisation" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                        <TextField fx:id="localisationTF" promptText="Localisation" prefWidth="400"
+                                   GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                        <Label text="Salaire" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                        <TextField fx:id="salaireTF" promptText="Salaire" prefWidth="400"
+                                   GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                        <Label text="Disponible" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                        <CheckBox fx:id="disponibleCB" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+                        <Label text="Image (URL)" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                        <TextField fx:id="imageTF" promptText="Lien image" prefWidth="400"
+                                   GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+
+                    </children>
+                </GridPane>
+
+                <!-- Boutons d'action -->
+                <HBox spacing="15" alignment="CENTER">
+                    <children>
+                        <Button fx:id="modifierBtn" text="Modifier"
+                                style="-fx-background-color: #28a745; -fx-text-fill: white;"
+                                onAction="#modifierOffre"/>
+
+                    </children>
+                </HBox>
+
+            </children>
+            <padding>
+                <Insets top="20" bottom="20" left="50" right="50"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

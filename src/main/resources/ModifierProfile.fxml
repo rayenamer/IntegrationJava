@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.ModifierProfileController"
+            prefWidth="800" prefHeight="700"
+            style="-fx-padding: 30; -fx-background-color: #f1f5f9;">
+
+    <VBox spacing="25" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+
+        <Label text="Modifier Mon Profil"
+               style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #1e3a8a;"/>
+
+        <!-- Formulaire de modification -->
+        <VBox spacing="20"
+              style="-fx-background-color: white; -fx-background-radius: 12px; -fx-padding: 30; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 4);">
+
+            <GridPane hgap="20" vgap="18">
+                <Label text="Nom :" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                       style="-fx-font-size: 16px; -fx-text-fill: #334155;"/>
+                <TextField fx:id="txtNom" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                          style="-fx-font-size: 14px; -fx-padding: 8;"/>
+
+                <Label text="Prénom :" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                       style="-fx-font-size: 16px; -fx-text-fill: #334155;"/>
+                <TextField fx:id="txtPrenom" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                          style="-fx-font-size: 14px; -fx-padding: 8;"/>
+
+                <Label text="Email :" GridPane.rowIndex="2" GridPane.columnIndex="0"
+                       style="-fx-font-size: 16px; -fx-text-fill: #334155;"/>
+                <TextField fx:id="txtEmail" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                          style="-fx-font-size: 14px; -fx-padding: 8;"/>
+
+                <Label text="Téléphone :" GridPane.rowIndex="3" GridPane.columnIndex="0"
+                       style="-fx-font-size: 16px; -fx-text-fill: #334155;"/>
+                <TextField fx:id="txtTel" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                          style="-fx-font-size: 14px; -fx-padding: 8;"/>
+
+                <Label text="Adresse :" GridPane.rowIndex="4" GridPane.columnIndex="0"
+                       style="-fx-font-size: 16px; -fx-text-fill: #334155;"/>
+                <TextField fx:id="txtAdresse" GridPane.rowIndex="4" GridPane.columnIndex="1"
+                          style="-fx-font-size: 14px; -fx-padding: 8;"/>
+
+                <Label text="Domaine :" GridPane.rowIndex="5" GridPane.columnIndex="0"
+                       style="-fx-font-size: 16px; -fx-text-fill: #334155;"/>
+                <TextField fx:id="txtDomaine" GridPane.rowIndex="5" GridPane.columnIndex="1"
+                          style="-fx-font-size: 14px; -fx-padding: 8;"/>
+
+                <Label text="Années d'expérience :" GridPane.rowIndex="6" GridPane.columnIndex="0"
+                       style="-fx-font-size: 16px; -fx-text-fill: #334155;"/>
+                <TextField fx:id="txtAnneesExperience" GridPane.rowIndex="6" GridPane.columnIndex="1"
+                          style="-fx-font-size: 14px; -fx-padding: 8;"/>
+
+                <Label text="CV :" GridPane.rowIndex="7" GridPane.columnIndex="0"
+                       style="-fx-font-size: 16px; -fx-text-fill: #334155;"/>
+                <HBox spacing="10" GridPane.rowIndex="7" GridPane.columnIndex="1">
+                    <TextField fx:id="txtCV" HBox.hgrow="ALWAYS"
+                              style="-fx-font-size: 14px; -fx-padding: 8;"/>
+                    <Button text="Parcourir" onAction="#handleParcourirCV"
+                            style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8px; -fx-padding: 8 20;"/>
+                </HBox>
+            </GridPane>
+        </VBox>
+
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Button fx:id="btnAnnuler" text="Annuler" onAction="#handleAnnuler"
+                    style="-fx-background-color: #64748b; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8px; -fx-padding: 8 20;"/>
+            <Button fx:id="btnEnregistrer" text="Enregistrer" onAction="#handleEnregistrer"
+                    style="-fx-background-color: #4f46e5; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8px; -fx-padding: 8 20;"/>
+        </HBox>
+
+    </VBox>
+</AnchorPane> 

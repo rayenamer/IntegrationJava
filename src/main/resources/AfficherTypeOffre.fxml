@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.AfficherTypeOffreController"
+            style="-fx-background-color: linear-gradient(to bottom right, #f8fafc, #e0e7ff);"
+            prefWidth="1500.0" prefHeight="900.0">
+
+    <children>
+        <VBox alignment="TOP_CENTER" spacing="30.0" prefWidth="600.0" layoutY="50.0" AnchorPane.leftAnchor="300.0">
+            <padding>
+                <Insets top="30" bottom="30" left="30" right="30"/>
+            </padding>
+
+            <!-- Titre -->
+            <Label text="Liste des Types d'Offres"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold;" />
+
+            <!-- ListView des types d'offres -->
+            <ListView fx:id="listView"
+                      maxWidth="500.0"
+                      prefHeight="300.0"
+                      style="-fx-font-size: 16px;" />
+
+            <!-- Ligne de boutons -->
+            <HBox spacing="20" alignment="CENTER">
+                <children>
+                    <Button text="Ajouter"
+                            fx:id="ajouterBtn"
+                            onAction="#ajouterTypeOffre"
+                            style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10px 20px;" />
+
+                    <Button text="Modifier"
+                            fx:id="modifierButton"
+                            onAction="#modifTypeOffre"
+                            style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10px 20px;" />
+
+                    <Button text="Supprimer"
+                            fx:id="supprimerBtn"
+                            onAction="#supprimerTypeOffre"
+                            style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10px 20px;" />
+
+                    <Button fx:id="ajouterOffreBtn"
+                            text="Retour"
+                            onAction="#ajouterOffre"
+                            style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10px 20px;" />
+                </children>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>
