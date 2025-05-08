@@ -113,6 +113,36 @@ public class AccueilControllerfc {
     }
 
     @FXML
+    private void GoEvent(ActionEvent event) {
+        try {
+            User currentUser = Session.getCurrentUser();
+            System.out.println("Type d'utilisateur actuel : " + (currentUser != null ? currentUser.getType() : "null"));
+
+            EventListController EventListController = new EventListController();
+            Scene currentScene = offreButton.getScene();
+
+            if (currentScene != null) {
+                Stage stage = (Stage) currentScene.getWindow();
+                EventListController.show(stage);
+            } else {
+                Stage newStage = new Stage();
+                EventListController.show(newStage);
+                newStage.setTitle("Gestion des Événements");
+                newStage.show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
+
+
+
+    @FXML
     private void handleDeconnexion(ActionEvent event) {
         try {
             Session.clear();

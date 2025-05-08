@@ -2,6 +2,7 @@ package services;
 
 import entities.Evenement;
 import entities.TypeEvent;
+import utils.MyDatabase;
 
 import java.sql.*;
 import java.time.LocalDateTime;
@@ -9,6 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EvenementService {
+    private final MyDatabase database;
+    public EvenementService() {
+        this.database = MyDatabase.getInstance();
+    }
+
     public List<Evenement> findAll() {
         List<Evenement> events = new ArrayList<>();
         String sql = "SELECT e.*, t.nom as type_nom, t.id as type_id FROM evenement e LEFT JOIN type_event t ON e.type_event_id = t.id";

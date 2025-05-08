@@ -123,7 +123,7 @@ public class EvenementController {
         actionsCol.setPrefWidth(220);
         actionsCol.setMinWidth(220);
         styleColumn(actionsCol);
-        actionsCol.setCellFactory(col -> new TableCell<>() {
+        actionsCol.setCellFactory(col -> new TableCell<Evenement, Void>() {
             private final Button editButton = new Button("Modifier");
             private final Button deleteButton = new Button("Supprimer");
 
@@ -133,6 +133,7 @@ public class EvenementController {
                 editButton.setMinWidth(90);
                 editButton.setPrefWidth(90);
                 editButton.setMaxWidth(Double.MAX_VALUE);
+
                 styleButton(deleteButton, "#DC3545");
                 deleteButton.setTooltip(new Tooltip("Supprimer cet événement"));
                 deleteButton.setMinWidth(90);
@@ -140,16 +141,23 @@ public class EvenementController {
                 deleteButton.setMaxWidth(Double.MAX_VALUE);
 
                 editButton.setOnAction(e -> {
-                    Evenement event = getTableView().getItems().get(getIndex());
-                    Stage newStage = new Stage();
-                    newStage.setTitle("Modifier un événement");
-                    showEventForm(newStage, event);
+                    Evenement event = getTableRow().getItem();
+                    if (event != null) {
+                        Stage newStage = new Stage();
+                        newStage.setTitle("Modifier un événement");
+                        showEventForm(newStage, event);
+                    }
                 });
+
                 deleteButton.setOnAction(e -> {
-                    Evenement event = getTableView().getItems().get(getIndex());
-                    if (confirm("Confirmation", "Voulez-vous vraiment supprimer " + event.getNom() + " ?")) {
-                        eventService.delete(event.getId());
-                        loadEvents();
+                    Evenement event = getTableRow().getItem();
+                    if (event != null && confirm("Confirmation", "Voulez-vous vraiment supprimer " + event.getNom() + " ?")) {
+                        try {
+                            eventService.delete(event.getId());
+                            loadEvents();
+                        } catch (Exception ex) {
+                            showAlert("Erreur", "Erreur lors de la suppression : " + ex.getMessage());
+                        }
                     }
                 });
             }
@@ -157,7 +165,7 @@ public class EvenementController {
             @Override
             protected void updateItem(Void item, boolean empty) {
                 super.updateItem(item, empty);
-                if (empty) {
+                if (empty || getTableRow().getItem() == null) {
                     setGraphic(null);
                 } else {
                     HBox buttons = new HBox(10, editButton, deleteButton);

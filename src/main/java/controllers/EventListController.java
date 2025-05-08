@@ -20,6 +20,9 @@ import services.EvenementService;
 import services.TypeEventService;
 import services.WeatherService;
 import utils.Config;
+import utils.Session;
+import java.util.Random;
+
 
 import java.net.URI;
 import java.net.URLEncoder;
@@ -42,10 +45,7 @@ public class EventListController {
     private ObservableList<Evenement> filteredEvents = FXCollections.observableArrayList();
 
     private User currentUser;
-
-    currentUser = Session.getCurrentUser();
-    int loggedInUserId = currentUser.getId();
-
+    private int loggedInUserId;
 
     private String currentLanguage = "FR"; // DeepL language codes
     private VBox mainLayout;
@@ -55,6 +55,19 @@ public class EventListController {
     private GridPane eventGrid; // Store grid for refresh
 
     public void show(Stage stage) {
+        // Initialize currentUser and loggedInUserId
+        currentUser = Session.getCurrentUser();
+        if (currentUser == null) {
+            // Handle case where no user is logged in
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle(translate("Error"));
+            alert.setContentText(translate("No user is logged in."));
+            alert.showAndWait();
+            stage.close(); // Close the stage or redirect to login
+            return;
+        }
+        loggedInUserId = currentUser.getId();
+
         loadEvents();
         mainLayout = createMainLayout(stage);
         Scene scene = new Scene(mainLayout, 900, 600);
@@ -62,6 +75,10 @@ public class EventListController {
         stage.setTitle(translate("Events"));
         stage.show();
     }
+
+    // Rest of the class remains unchanged
+    // ...
+
 
     private void loadEvents() {
         events.setAll(eventService.findAll());

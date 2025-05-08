@@ -1,12 +1,21 @@
 package services;
 
 import entities.TypeEvent;
+import utils.MyDatabase;
+
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TypeEventService {
+    private final MyDatabase database;
+
+    public TypeEventService() {
+        this.database = MyDatabase.getInstance();
+    }
+
+
     public List<TypeEvent> findAll() {
         List<TypeEvent> types = new ArrayList<>();
         try (Connection conn = Database.getConnection();
