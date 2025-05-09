@@ -34,6 +34,8 @@
           AnchorPane.leftAnchor="0.0"
           AnchorPane.rightAnchor="0.0"
           style="-fx-background-color: white; -fx-border-color: #e2e8f0; -fx-border-width: 0 0 1px 0;">
+        <!-- Flèche Back -->
+        <Button text="←" style="-fx-font-size: 18px; -fx-background-color: transparent; -fx-text-fill: #6366f1; -fx-font-weight: bold;" />
         <padding>
             <Insets top="15" right="40" bottom="15" left="40"/>
         </padding>

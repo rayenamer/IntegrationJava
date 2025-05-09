@@ -193,7 +193,8 @@ public class AccueilController {
                 fxmlPath = "/ProfileChercheur.fxml";
             } else if (currentUser instanceof Freelancer) {
                 fxmlPath = "/ProfileCRUD.fxml";
-            } else {
+            }
+            else {
                 showAlert(Alert.AlertType.ERROR, "Erreur", "Type d'utilisateur non supporté.");
                 return;
             }

@@ -218,4 +218,14 @@ public class AjouterOffreController implements Initializable {
             e.printStackTrace();
         }
     }
+    @FXML
+    private Button btnRetour;
+
+    @FXML
+    private void handleRetour(ActionEvent event) {
+
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("Acceuil.fxml"));
+        // Parent root = loader.load();
+        // stage.setScene(new Scene(root));
+    }
 }

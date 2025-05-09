@@ -1,1 +1,50 @@
- 
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.ProfileChercheurController"
+            prefWidth="800" prefHeight="600">
+
+    <!-- Image de profil -->
+    <ImageView fx:id="imageProfil" layoutX="30" layoutY="30" fitHeight="150" fitWidth="150"/>
+
+    <!-- Labels d'informations -->
+    <Label layoutX="200" layoutY="30" text="Nom:"/>
+    <Label fx:id="lblNom" layoutX="270" layoutY="30"/>
+
+    <Label layoutX="200" layoutY="60" text="Prénom:"/>
+    <Label fx:id="lblPrenom" layoutX="270" layoutY="60"/>
+
+    <Label layoutX="200" layoutY="90" text="Email:"/>
+    <Label fx:id="lblEmail" layoutX="270" layoutY="90"/>
+
+    <Label layoutX="200" layoutY="120" text="Téléphone:"/>
+    <Label fx:id="lblTel" layoutX="270" layoutY="120"/>
+
+    <Label layoutX="200" layoutY="150" text="Domaine:"/>
+    <Label fx:id="lblDomaine" layoutX="270" layoutY="150"/>
+
+    <Label layoutX="200" layoutY="180" text="CV:"/>
+    <Label fx:id="lblCV" layoutX="270" layoutY="180" text="Aucun CV"/>
+
+    <!-- TableView -->
+    <TableView fx:id="profileTable" layoutX="30" layoutY="220" prefWidth="740" prefHeight="200">
+        <columns>
+            <TableColumn fx:id="colNom" text="Nom" prefWidth="100"/>
+            <TableColumn fx:id="colPrenom" text="Prénom" prefWidth="100"/>
+            <TableColumn fx:id="colEmail" text="Email" prefWidth="200"/>
+            <TableColumn fx:id="colDomaine" text="Domaine" prefWidth="150"/>
+            <TableColumn fx:id="colTel" text="Téléphone" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <!-- Boutons -->
+    <Button fx:id="btnModifier" layoutX="30" layoutY="440" text="Modifier" onAction="#handleModifier"/>
+    <Button fx:id="btnSupprimer" layoutX="130" layoutY="440" text="Supprimer" onAction="#handleSupprimer"/>
+    <Button fx:id="btnClose" layoutX="230" layoutY="440" text="Fermer" onAction="#handleClose"/>
+    <Button layoutX="330" layoutY="440" text="Télécharger CV" onAction="#handleTelechargerCV"/>
+
+</AnchorPane>

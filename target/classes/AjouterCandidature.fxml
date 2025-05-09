@@ -65,7 +65,7 @@
                 style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 20px;" prefWidth="250"/>
         <Button text="Afficher Candidature" onAction="#afficherCandidature"
                 style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 20px;" prefWidth="250"/>
-        <Button text="Retour" onAction="#afficherOffre"
+        <Button text="Retour" onAction="#handleOffreClick"
                 style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-font-size: 20px;" prefWidth="250"/>
     </HBox>
 

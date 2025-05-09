@@ -32,6 +32,21 @@ public class AfficherOffresUserController {
 
     private ObservableList<Offre> obs;
     private final OffreService offreService = new OffreService();
+     @FXML
+    private Button btnRetour;
+
+    @FXML
+    private void handleRetour(ActionEvent event) {
+        try {
+            javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("/Acceuilfc.fxml"));
+            javafx.scene.Parent root = loader.load();
+            javafx.scene.Scene scene = new javafx.scene.Scene(root);
+            javafx.stage.Stage stage = (javafx.stage.Stage) btnRetour.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     public void initialize() {
