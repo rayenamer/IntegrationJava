@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+        <?import javafx.scene.image.*?>
+        <?import javafx.scene.control.*?>
+        <?import javafx.scene.layout.*?>
+        <?import javafx.geometry.*?>
+        <?import javafx.scene.effect.GaussianBlur?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.IndexController"
+            prefWidth="1200.0" prefHeight="800.0">
+
+    <!-- Image de fond avec effet de flou -->
+    <ImageView fitWidth="1200.0" fitHeight="800.0" preserveRatio="false">
+        <image>
+            <Image url="@styles/careera.png" />
+        </image>
+        <effect>
+            <GaussianBlur radius="12.0" />
+        </effect>
+    </ImageView>
+
+    <!-- Contenu aligné à droite -->
+    <HBox alignment="CENTER_RIGHT"
+          AnchorPane.topAnchor="0.0"
+          AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0"
+          AnchorPane.bottomAnchor="0.0">
+
+        <padding>
+            <Insets right="80.0"/>
+        </padding>
+
+        <VBox spacing="20.0" alignment="CENTER_RIGHT">
+            <Label text="Bienvenue sur CareEra"
+                   style="-fx-font-size: 60px; -fx-font-weight: 800; -fx-text-fill: black; -fx-font-family: 'Segoe UI', 'Roboto', sans-serif;" />
+
+            <Button text="Se connecter"
+                    fx:id="seConnecterButton"
+                    onAction="#handleConnexion"
+                    style="-fx-background-color: #6366f1; -fx-text-fill: white; -fx-font-size: 25px; -fx-font-weight: bold; -fx-padding: 10 30; -fx-background-radius: 10;" />
+        </VBox>
+    </HBox>
+
+</AnchorPane>

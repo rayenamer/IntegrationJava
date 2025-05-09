@@ -1,0 +1,147 @@
+/* Fond avec logo */
+.root {
+    -fx-background-image: url('/styles/careera.png');
+    -fx-background-size: 150% auto;
+    -fx-background-position: center 50%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: linear-gradient(to bottom, #f5f7fa, #c7d2fe);
+}
+.small-upload-button {
+    -fx-background-color: #e2e8f0;
+    -fx-text-fill: #1e293b;
+    -fx-background-radius: 4px;
+    -fx-padding: 4px 8px;
+    -fx-font-size: 12px;
+}
+
+HBox {
+    -fx-spacing: 15px;
+    -fx-alignment: center-left;
+    -fx-padding: 0 0 10px 0;
+}
+/* ScrollPane transparent */
+.transparent-scroll {
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+}
+
+.transparent-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Conteneur centré */
+.centered-container {
+    -fx-alignment: center;
+    -fx-padding: 50px 100px;
+}
+
+/* Formulaire */
+.form-container {
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+    -fx-border-radius: 150px;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 12, 0, 0, 0);
+    -fx-padding: 20px;
+    -fx-spacing: 5px;
+    -fx-max-width: 550px;
+    -fx-min-width: 550px;
+    -fx-border-color: rgba(59, 130, 246, 0.2);
+    -fx-border-width: 1px;
+}
+
+/* Titre */
+.form-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-fill: #2c3e50;
+    -fx-padding: 0 0 20px 0;
+}
+
+/* Champs de formulaire */
+.form-field {
+    -fx-pref-height: 40px;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 80px;
+    -fx-border-color: #d1d5db;
+    -fx-padding: 3 15px;
+    -fx-font-size: 15px;
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+    -fx-max-width: 500px;
+}
+
+.form-field:focused {
+    -fx-border-color: #3b82f6;
+}
+
+/* Texte indicateur */
+.hint-text {
+    -fx-text-fill: #6b7280;
+    -fx-font-size: 12px;
+    -fx-padding: 5px 0 15px 0;
+}
+
+/* ComboBox */
+.form-combo {
+    -fx-pref-height: 80px;
+    -fx-background-radius: 0px;
+    -fx-border-radius: 80px;
+    -fx-font-size: 140px;
+    -fx-max-width: 40px;
+}
+
+/* Sections d'upload */
+.upload-section {
+    -fx-border-style: dashed;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 2px;
+    -fx-border-width: 1px;
+    -fx-padding: 1px;
+    -fx-background-color: rgba(248, 250, 252, 0.7);
+    -fx-background-radius: 8px;
+}
+
+.upload-label {
+    -fx-font-weight: bold;
+}
+
+.upload-button {
+    -fx-background-color: #e5e7eb;
+    -fx-text-fill: #1f2937;
+    -fx-background-radius: 5px;
+    -fx-padding: 8px 15px;
+}
+
+.upload-button:hover {
+    -fx-background-color: #d1d5db;
+}
+
+/* Boutons */
+.primary-button {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px 25px;
+    -fx-font-weight: bold;
+}
+
+.primary-button:hover {
+    -fx-background-color: #2563eb;
+}
+
+.secondary-button {
+    -fx-background-color: #ef4444;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px 25px;
+    -fx-font-weight: bold;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #dc2626;
+}
+
+/* Message de statut */
+.status-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}

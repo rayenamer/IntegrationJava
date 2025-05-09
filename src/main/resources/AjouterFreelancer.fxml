@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.image.ImageView?>
+
+<?import java.lang.String?>
+<AnchorPane xmlns="http://javafx.com/javafx/19"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.AjouterFreelancerController"
+            stylesheets="@styles/form.css"
+            prefWidth="400" prefHeight="300">
+
+    <ScrollPane fitToWidth="true" vbarPolicy="AS_NEEDED" hbarPolicy="NEVER" styleClass="transparent-scroll">
+        <VBox alignment="CENTER" spacing="5" styleClass="centered-container">
+            <!-- Conteneur principal du formulaire -->
+            <VBox styleClass="form-container" alignment="TOP_CENTER" spacing="5">
+                <!-- Titre -->
+                <Text text="Ajouter Freelancer" styleClass="form-title"/>
+                
+                <!-- Informations personnelles -->
+                <HBox spacing="5" alignment="CENTER_LEFT">
+                    <VBox spacing="2" style="-fx-min-width: 150;">
+                        <TextField fx:id="nomField" promptText="Nom" styleClass="form-field"/>
+                        <Label text="Minimum 2 caractères alphabétiques" styleClass="hint-text"/>
+                    </VBox>
+
+                    <VBox spacing="2" style="-fx-min-width: 150;">
+                        <TextField fx:id="prenomField" promptText="Prénom" styleClass="form-field"/>
+                        <Label text="Minimum 2 caractères alphabétiques" styleClass="hint-text"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Email -->
+                <VBox spacing="2" style="-fx-min-width: 150;">
+                    <TextField fx:id="emailField" promptText="Email" styleClass="form-field"/>
+                    <Label text="Format: exemple@domaine.com" styleClass="hint-text"/>
+                </VBox>
+
+                <!-- Mot de passe -->
+                <VBox spacing="2" style="-fx-min-width: 150;">
+                    <PasswordField fx:id="passwordField" promptText="Mot de passe" styleClass="form-field"/>
+                    <Label text="8+ caractères requis" styleClass="hint-text"/>
+                </VBox>
+
+                <VBox spacing="2" style="-fx-min-width: 150;">
+                    <PasswordField fx:id="confirmPasswordField" promptText="Confirmation" styleClass="form-field"/>
+                    <Label text="Doit correspondre" styleClass="hint-text"/>
+                </VBox>
+
+                <!-- Sexe et Téléphone -->
+                <HBox spacing="5" alignment="CENTER">
+                    <VBox spacing="2" style="-fx-min-width: 150;">
+                        <Label text="Sexe:"/>
+                        <ComboBox fx:id="sexeComboBox" promptText="Sélectionnez votre sexe">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Femme"/>
+                                    <String fx:value="Homme"/>
+                                    <String fx:value="Autre"/>
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                    </VBox>
+
+                    <VBox spacing="2" style="-fx-min-width: 150;">
+                        <TextField fx:id="telField" promptText="Téléphone" styleClass="form-field"/>
+                        <Label text="8 chiffres uniquement" styleClass="hint-text"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Domaine et Expérience -->
+                <HBox spacing="5" alignment="CENTER">
+                    <VBox spacing="2" style="-fx-min-width: 150;">
+                        <Label text="Domaine:"/>
+                        <ComboBox fx:id="domaineCombo" promptText="Sélectionnez votre domaine">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Développement Web"/>
+                                    <String fx:value="Développement Mobile"/>
+                                    <String fx:value="Design UI/UX"/>
+                                    <String fx:value="Rédaction Web"/>
+                                    <String fx:value="Marketing Digital"/>
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                    </VBox>
+
+                    <VBox spacing="2" style="-fx-min-width: 150;">
+                        <TextField fx:id="experienceField" promptText="Années d'expérience" styleClass="form-field"/>
+                        <Label text="Nombre d'années" styleClass="hint-text"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Adresse -->
+                <VBox spacing="2">
+                    <TextField fx:id="adresseField" promptText="Adresse complète" styleClass="form-field"/>
+                    <Label text="Rue, Ville, Code postal" styleClass="hint-text"/>
+                </VBox>
+
+                <!-- Photo et CV -->
+                <HBox spacing="5" alignment="CENTER">
+                    <VBox spacing="2" style="-fx-min-width: 150;">
+                        <Label text="Photo de profil" styleClass="upload-label"/>
+                        <Button text="Choisir une photo" onAction="#handlePhotoUpload" styleClass="upload-button"/>
+                        <ImageView fx:id="photoPreview" fitWidth="60" fitHeight="60" styleClass="image-preview"/>
+                    </VBox>
+
+                    <VBox spacing="2" style="-fx-min-width: 150;">
+                        <Label text="CV (PDF)" styleClass="upload-label"/>
+                        <Button text="Choisir un CV" onAction="#handleCVUpload" styleClass="upload-button"/>
+                        <Label fx:id="cvLabel" text="Aucun fichier sélectionné" styleClass="hint-text"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Boutons Valider/Annuler -->
+                <HBox spacing="5" alignment="CENTER">
+                    <Button text="Ajouter" onAction="#ajouterFreelancer" styleClass="primary-button"/>
+                    <Button text="Annuler" onAction="#annuler" styleClass="secondary-button"/>
+                </HBox>
+
+                <!-- Message de statut -->
+                <Label fx:id="statusLabel" styleClass="status-label"/>
+            </VBox>
+        </VBox>
+    </ScrollPane>
+</AnchorPane>

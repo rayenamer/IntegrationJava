@@ -1,13 +1,17 @@
 module java {
-    requires javafx.controls;
     requires javafx.fxml;
     requires com.google.protobuf;
     requires jakarta.mail;
     requires cloudinary.core;
-    requires java.net.http;
     requires com.google.gson;
     requires java.sql;
+    requires java.mail;
+    requires com.github.librepdf.openpdf;
+    requires de.jensd.fx.glyphs.fontawesome;
+    requires jbcrypt;
+    requires javafx.web;
     requires java.desktop;
+    requires cage;
 
     // Ouvrir les packages pour FXML
     opens controllers to javafx.fxml;

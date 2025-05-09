@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<AnchorPane xmlns="http://javafx.com/javafx/19"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.AjouterModerateurController"
+            stylesheets="@styles/form.css"
+            prefWidth="800" prefHeight="700">
+
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="transparent-scroll">
+        <VBox alignment="CENTER" spacing="20" styleClass="centered-container">
+
+            <!-- Conteneur principal du formulaire -->
+            <VBox styleClass="form-container" alignment="TOP_CENTER" spacing="15">
+
+                <!-- Titre -->
+                <Text text="Ajouter Modérateur" styleClass="form-title"/>
+                <HBox spacing="15" alignment="CENTER_LEFT">
+                    <VBox spacing="5" style="-fx-min-width: 250;">
+                        <TextField fx:id="nomField" promptText="Nom" styleClass="form-field"/>
+                        <Label text="Minimum 2 caractères alphabétiques" styleClass="hint-text"/>
+                    </VBox>
+
+                    <VBox spacing="5" style="-fx-min-width: 250;">
+                        <TextField fx:id="prenomField" promptText="Prénom" styleClass="form-field"/>
+                        <Label text="Minimum 2 caractères alphabétiques" styleClass="hint-text"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Champ Email -->
+                <VBox spacing="5" style="-fx-min-width: 250;">
+                    <TextField fx:id="emailField" promptText="Email" styleClass="form-field"/>
+                    <Label text="Format: exemple@domaine.com" styleClass="hint-text"/>
+                </VBox>
+
+                <!-- Champ Mot de passe -->
+                <HBox spacing="15" alignment="CENTER">
+                    <VBox spacing="5" style="-fx-min-width: 250;">
+                        <PasswordField fx:id="passwordField" promptText="Mot de passe" styleClass="form-field"/>
+                        <Label text="8+ caractères requis" styleClass="hint-text"/>
+                    </VBox>
+
+                    <VBox spacing="5" style="-fx-min-width: 250;">
+                        <PasswordField fx:id="confirmPasswordField" promptText="Confirmation" styleClass="form-field"/>
+                        <Label text="Doit correspondre" styleClass="hint-text"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Combo Box Sexe -->
+                <ComboBox fx:id="sexeComboBox" promptText="Sélectionnez votre sexe">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Femme"/>
+                            <String fx:value="Homme"/>
+                            <String fx:value="Autre"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+
+                <!-- Champ Téléphone -->
+                <VBox spacing="5">
+                    <TextField fx:id="telField" promptText="Téléphone" styleClass="form-field"/>
+                    <Label text="8 chiffres uniquement" styleClass="hint-text"/>
+                </VBox>
+
+                <!-- Champ Société -->
+                <TextField fx:id="societeField" promptText="Société" styleClass="form-field"/>
+
+                <!-- Boutons Valider/Annuler -->
+                <HBox spacing="15" alignment="CENTER">
+                    <Button text="Ajouter" onAction="#ajouterModerateur" styleClass="primary-button"/>
+                    <Button text="Annuler" onAction="#annuler" styleClass="secondary-button"/>
+                </HBox>
+
+                <!-- Message de statut -->
+                <Label fx:id="statusLabel" styleClass="status-label"/>
+            </VBox>
+        </VBox>
+    </ScrollPane>
+</AnchorPane>

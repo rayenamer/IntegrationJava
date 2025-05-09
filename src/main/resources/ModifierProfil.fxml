@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.image.ImageView?>
+
+<?import java.lang.String?>
+<AnchorPane xmlns="http://javafx.com/javafx/19"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.ModifierProfilController"
+            stylesheets="@styles/form.css"
+            prefWidth="800" prefHeight="700">
+
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="transparent-scroll">
+        <VBox alignment="CENTER" spacing="20" styleClass="centered-container">
+
+            <VBox styleClass="form-container" alignment="TOP_CENTER" spacing="15">
+
+                <!-- Titre -->
+                <Text text="Modifier Freelancer" styleClass="form-title"/>
+
+                <HBox spacing="15" alignment="CENTER_LEFT">
+                    <VBox spacing="5" style="-fx-min-width: 250;">
+                        <TextField fx:id="nomField" promptText="Nom" styleClass="form-field"/>
+                        <Label text="Minimum 2 caractères alphabétiques" styleClass="hint-text"/>
+                    </VBox>
+
+                    <VBox spacing="5" style="-fx-min-width: 250;">
+                        <TextField fx:id="prenomField" promptText="Prénom" styleClass="form-field"/>
+                        <Label text="Minimum 2 caractères alphabétiques" styleClass="hint-text"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Email -->
+                <VBox spacing="5" style="-fx-min-width: 250;">
+                    <TextField fx:id="emailField" promptText="Email" styleClass="form-field"/>
+                    <Label text="Format: exemple@domaine.com" styleClass="hint-text"/>
+                </VBox>
+
+                <!-- Mot de passe (peut rester vide si non modifié) -->
+                <HBox spacing="15" alignment="CENTER">
+                    <VBox spacing="5" style="-fx-min-width: 250;">
+                        <PasswordField fx:id="passwordField" promptText="Nouveau mot de passe (facultatif)" styleClass="form-field"/>
+                        <Label text="Laisser vide si inchangé" styleClass="hint-text"/>
+                    </VBox>
+
+                    <VBox spacing="5" style="-fx-min-width: 250;">
+                        <PasswordField fx:id="confirmPasswordField" promptText="Confirmation" styleClass="form-field"/>
+                        <Label text="Doit correspondre si rempli" styleClass="hint-text"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Sexe -->
+                <ComboBox fx:id="sexeComboBox" promptText="Sélectionnez votre sexe">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Femme"/>
+                            <String fx:value="Homme"/>
+                            <String fx:value="Autre"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+                <!-- Téléphone -->
+                <VBox spacing="5">
+                    <TextField fx:id="telField" promptText="Téléphone" styleClass="form-field"/>
+                    <Label text="8 chiffres uniquement" styleClass="hint-text"/>
+                </VBox>
+
+                <!-- Photo -->
+                <VBox spacing="10" alignment="CENTER" styleClass="upload-section">
+                    <Label text="Photo de profil" styleClass="upload-label"/>
+                    <Button text="Changer la photo" onAction="#handlePhotoUpload" styleClass="upload-button"/>
+                    <ImageView fx:id="photoPreview" fitWidth="10" fitHeight="1" styleClass="image-preview"/>
+                </VBox>
+
+                <!-- CV -->
+                <VBox spacing="10" alignment="CENTER" styleClass="upload-section">
+                    <Label text="CV (PDF)" styleClass="upload-label"/>
+                    <Button text="Changer le CV" onAction="#handleCVUpload" styleClass="upload-button"/>
+                    <Label fx:id="cvLabel" text="Fichier actuel" styleClass="hint-text"/>
+                </VBox>
+
+                <!-- Adresse -->
+                <TextField fx:id="adresseField" promptText="Adresse" styleClass="form-field"/>
+
+                <!-- Expérience -->
+                <TextField fx:id="experienceField" promptText="Années d'expérience" styleClass="form-field"/>
+
+                <!-- Boutons -->
+                <HBox spacing="15" alignment="CENTER">
+                    <Button text="Modifier" onAction="#modifierFreelancer" styleClass="primary-button"/>
+                    <Button text="Annuler" onAction="#annuler" styleClass="secondary-button"/>
+                </HBox>
+
+                <Label fx:id="statusLabel" styleClass="status-label"/>
+            </VBox>
+        </VBox>
+    </ScrollPane>
+</AnchorPane>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.BlurType?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.paint.Color?>
+
+<VBox xmlns="http://javfx.com/javafx/19"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.CreationCompteController"
+      alignment="CENTER"
+      spacing="25"
+      styleClass="root"
+      stylesheets="@styles/form.css"
+      style="-fx-padding: 300; -fx-background-color: transparent;">
+
+    <!-- Conteneur avec effet de flou -->
+    <StackPane style="-fx-background-color: rgba(255,255,255,0.7); -fx-background-radius: 15px;
+                     -fx-padding: 70px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 0);">
+        <effect>
+            <GaussianBlur radius="5"/>
+        </effect>
+
+        <VBox alignment="CENTER" spacing="20">
+            <!-- Titre -->
+            <Text text="Choisissez votre type de compte"
+                  style="-fx-font-size: 18px;
+                         -fx-font-weight: 600;
+                         -fx-fill: black;"/>
+
+            <!-- Boutons avec la même couleur -->
+            <Button fx:id="freelancerButton"
+                    text="Freelancer"
+                    onAction="#handleFreelancer"
+                    style="-fx-background-color: #3b82f6;
+                           -fx-text-fill: white;
+                           -fx-background-radius: 8;
+                           -fx-font-size: 16px;
+                           -fx-font-weight: 600;
+                           -fx-padding: 12 40;
+                           -fx-cursor: hand;
+                           -fx-min-width: 200px;"/>
+
+            <Button fx:id="chercheurButton"
+                    text="Chercheur"
+                    onAction="#handleChercheur"
+                    style="-fx-background-color: #3b82f6;
+                           -fx-text-fill: white;
+                           -fx-background-radius: 8;
+                           -fx-font-size: 16px;
+                           -fx-font-weight: 600;
+                           -fx-padding: 12 40;
+                           -fx-cursor: hand;
+                           -fx-min-width: 200px;"/>
+
+            <Button fx:id="moderateurButton"
+                    text="Modérateur"
+                    onAction="#handleModerateur"
+                    style="-fx-background-color: #3b82f6;
+                           -fx-text-fill: white;
+                           -fx-background-radius: 8;
+                           -fx-font-size: 16px;
+                           -fx-font-weight: 600;
+                           -fx-padding: 12 40;
+                           -fx-cursor: hand;
+                           -fx-min-width: 200px;"/>
+        </VBox>
+    </StackPane>
+</VBox>

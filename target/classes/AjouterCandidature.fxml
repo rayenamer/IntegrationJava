@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.AjouterCandidatureController"
+            style="-fx-background-color: linear-gradient(to bottom right, #f8fafc, #e0e7ff);"
+            prefWidth="1500.0" prefHeight="900.0">
+
+
+
+    <Label text="Ajouter une candidature" layoutX="550" layoutY="120">
+        <font>
+            <Font name="System Bold" size="48.0"/>
+        </font>
+    </Label>
+
+    <!-- Main content centered in VBox -->
+    <HBox alignment="CENTER" spacing="40" layoutX="300" layoutY="220" prefWidth="900"> <!-- modifié de 180 à 220 -->
+        <VBox spacing="25" alignment="CENTER" prefWidth="700">
+
+            <!-- Choix de l'offre -->
+            <HBox spacing="20" alignment="CENTER">
+                <Label text="Offre :" style="-fx-font-size: 20px;"/>
+                <ComboBox fx:id="offreNomCB" prefWidth="350"/>
+            </HBox>
+
+            <!-- Utilisateur -->
+            <HBox spacing="20" alignment="CENTER">
+                <Label text="Votre Nom:" style="-fx-font-size: 20px;"/>
+                <TextField fx:id="utilisateurTF" prefWidth="350"/>
+            </HBox>
+            <HBox spacing="20" alignment="CENTER">
+                <Label text="Date de soumission:" style="-fx-font-size: 20px;"/>
+                <DatePicker fx:id="dateSoumissionDP" prefWidth="350"/>
+            </HBox>
+            <!-- Statut -->
+            <HBox spacing="20" alignment="CENTER">
+                <Label text="Statut:" style="-fx-font-size: 20px;"/>
+                <ComboBox fx:id="statutCB" prefWidth="350"/>
+            </HBox>
+
+            <!-- CV -->
+            <HBox spacing="20" alignment="CENTER">
+                <Label text="CV (URL):" style="-fx-font-size: 20px;"/>
+                <TextField fx:id="cvTF" prefWidth="350"/>
+            </HBox>
+
+            <!-- Lettre de Motivation -->
+            <HBox spacing="20" alignment="CENTER">
+                <Label text="Lettre de Motivation:" style="-fx-font-size: 20px;"/>
+                <TextArea fx:id="lettreMotivationTA" prefWidth="350" prefHeight="120"/>
+            </HBox>
+
+        </VBox>
+    </HBox>
+
+    <!-- Buttons Section centered -->
+    <HBox spacing="15" alignment="CENTER" layoutX="300" layoutY="700">
+        <Button text="Ajouter Candidature" fx:id="ajouterBtn" onAction="#ajouterCandidature"
+                style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 20px;" prefWidth="250"/>
+        <Button text="Afficher Candidature" onAction="#afficherCandidature"
+                style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 20px;" prefWidth="250"/>
+        <Button text="Retour" onAction="#afficherOffre"
+                style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-font-size: 20px;" prefWidth="250"/>
+    </HBox>
+
+</AnchorPane>

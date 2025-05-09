@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.QuizController" prefWidth="1500.0" prefHeight="900.0"
+            style="-fx-background-color: #f0f4f8;">
+
+    <!-- Main VBox container -->
+    <VBox spacing="20" alignment="CENTER"
+          AnchorPane.topAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.bottomAnchor="50.0">
+
+        <!-- Header Section -->
+        <VBox spacing="10" alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+            <Text text="Quiz de Carrière" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-fill: #2c3e50;"/>
+            <Text text="Testez vos connaissances sur la recherche d'emploi" style="-fx-font-size: 18px; -fx-fill: #7f8c8d;"/>
+
+            <!-- Difficulty Selection -->
+            <HBox spacing="10" alignment="CENTER">
+                <Text text="Niveau de difficulté:" style="-fx-font-size: 16px;"/>
+                <ComboBox fx:id="difficultyComboBox" prefWidth="150"/>
+            </HBox>
+        </VBox>
+
+        <!-- Timer and Progress Section -->
+        <HBox spacing="20" alignment="CENTER">
+            <Text fx:id="timerText" text="⏰ Temps restant: 30" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-fill: #ff6600;"/>
+            <Text fx:id="scoreText" text="Score: 0/0" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-fill: #2c3e50;"/>
+        </HBox>
+
+        <!-- Progress Bar -->
+        <ProgressBar fx:id="progressBar" prefWidth="600" style="-fx-accent: #4e9fd1;"/>
+
+        <!-- Questions Container -->
+        <VBox fx:id="questionsContainer" spacing="15" visible="false"
+              style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;"
+              prefWidth="800" maxWidth="800"/>
+
+        <!-- Buttons Section -->
+        <HBox spacing="20" alignment="CENTER">
+            <!-- Start Quiz Button -->
+            <Button fx:id="startQuizButton" text="🚀 Démarrer le Quiz" onAction="#startQuiz"
+                    style="-fx-font-size: 18px; -fx-padding: 12 24; -fx-background-color: #4e9fd1; -fx-text-fill: white; -fx-background-radius: 8px;"/>
+
+            <!-- Submit Button -->
+            <Button fx:id="submitButton" text="✅ Soumettre" onAction="#submitQuiz"
+                    style="-fx-font-size: 18px; -fx-padding: 12 24; -fx-background-color: #28a745; -fx-text-fill: white; -fx-background-radius: 8px;"
+                    disable="true"/>
+        </HBox>
+    </VBox>
+
+</AnchorPane>

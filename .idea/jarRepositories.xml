@@ -3,18 +3,8 @@
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
       <option name="id" value="central" />
-      <option name="name" value="Maven Central" />
+      <option name="name" value="central" />
       <option name="url" value="https://repo.maven.apache.org/maven2" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="central" />
-      <option name="name" value="Central Repository" />
-      <option name="url" value="https://repo.maven.apache.org/maven2" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="dlsc" />
-      <option name="name" value="DLSC Repository" />
-      <option name="url" value="https://nexus.dlsc.com/repository/maven-public/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="central" />
@@ -25,11 +15,6 @@
       <option name="id" value="jboss.community" />
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="dynomakeRepository" />
-      <option name="name" value="dynomakeRepository" />
-      <option name="url" value="https://maven.dynomake.space/releases" />
     </remote-repository>
   </component>
 </project>

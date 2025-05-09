@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.layout.Region?>
+<AnchorPane prefWidth="1500.0" prefHeight="900.0"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.AjouterTypeOffreController"
+            style="-fx-background-color: linear-gradient(to bottom right, #f8fafc, #e0e7ff);">
+
+    <children>
+        <VBox spacing="30" alignment="TOP_CENTER"
+              prefWidth="600.0"
+              layoutY="80.0"
+              AnchorPane.leftAnchor="300.0">
+            <padding>
+                <Insets top="40" bottom="20" left="50" right="50"/>
+            </padding>
+
+            <!-- Titre -->
+            <Text text="Ajouter Type Offre">
+                <font>
+                    <Font name="System Bold" size="30"/>
+                </font>
+            </Text>
+
+            <!-- Champ de saisie -->
+            <VBox spacing="10" alignment="CENTER">
+                <children>
+                    <Label text="Nom du Type d'Offre" style="-fx-font-size: 16px;"/>
+                    <TextField fx:id="nomTypeOffreTF"
+                               promptText="Ex : Stage, CDI, Freelance..."
+                               maxWidth="350"
+                               style="-fx-font-size: 14px; -fx-padding: 10px;"/>
+                </children>
+            </VBox>
+
+            <!-- Bouton Ajouter -->
+            <HBox spacing="15" alignment="CENTER">
+                <children>
+                    <Button fx:id="ajouterBtn"
+                            text="Ajouter"
+                            onAction="#ajouterTypeOffre"
+                            style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10px 25px;"/>
+                </children>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>
