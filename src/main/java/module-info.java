@@ -12,6 +12,7 @@ module java {
     requires javafx.web;
     requires java.desktop;
     requires cage;
+    requires java.net.http;
 
     // Ouvrir les packages pour FXML
     opens controllers to javafx.fxml;

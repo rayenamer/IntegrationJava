@@ -5,258 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84f41fe2-ffdc-48ee-81c4-5c4b748a903d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AccueilController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AccueilControllerfc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AfficherCandidatureController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AfficherCandidaturesUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AfficherDiscussionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AfficherOffreController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AfficherOffresUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AfficherTypeContratController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AfficherTypeOffreController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AjouterCandidatureController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AjouterChercheurController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AjouterDiscussion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AjouterFreelancerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AjouterModerateurController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AjouterOffreController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AjouterTypeContratController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AjouterTypeOffreController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/ChatbotController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/ConnexionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/CreationCompteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/ForgotPasswordController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/IndexController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/JokeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/MapViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/ModifierDiscussion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/ModifierDiscussionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/ModifierOffreController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/ModifierProfilController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/ModifierProfileChercheurController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/ModifierProfileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/ModifierTypeContratController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/ModifierTypeOffreController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/PDFViewerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/ProfileCRUDController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/ProfileChercheurController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/QuizController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/ReplyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/ResetPasswordController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/StatisticsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/StatistiqueController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/StatistiquesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/WitController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Candidature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Chercheur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Discussion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Freelancer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Moderateur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Offre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/QuizResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Reply.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/TypeContrat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/TypeOffre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/CandidatureService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/ChatbotService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/ChercheurService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/DiscussionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/EmailSender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/FreelancerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/JokeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/MailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/ModerateurService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/OffreService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/PDFService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/QuestionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/QuizResultService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/ReplyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/StatistiqueService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/TypeContratService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/TypeOffreService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/WitAiService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/MainFX.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/TestReply.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/CaptchaGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/CodeGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/DataSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/MyDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Session.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Acceuil.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Acceuilfc.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AfficherCandidature.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AfficherCandidaturesUser.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AfficherOffre.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AfficherOffresUser.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AfficherTypeContrat.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AfficherTypeOffre.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AjouterCandidature.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AjouterChercheur.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AjouterDiscussion.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AjouterFreelancer.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AjouterModerateur.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AjouterOffre.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AjouterTypeContrat.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AjouterTypeOffre.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Chatbot.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Discussions.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ForgotPassword.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/MapView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ModifierDiscussion.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ModifierOffre.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ModifierProfil.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ModifierProfile.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ModifierProfileChercheur.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ModifierTypeContrat.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ModifierTypeOffre.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PDFViewer.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PageConnexion.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PageCreationCompte.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ProfileCRUD.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ProfileChercheur.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Quiz.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Reply.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ReplyView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ResetPassword.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Statistics.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Statistiques.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/WitInterface.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/flyer.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/flyer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/icons.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image/logo1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/careeraflyer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/careeragalss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/careeramain.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/carrera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/flyer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/map-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/profile_icon.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/quiz_icon.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/joke_view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/statistique.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/styles/careera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/styles/form.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/styles/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Acceuil.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/AfficherCandidature.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/AfficherCandidaturesUser.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/AfficherOffre.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/AfficherOffresUser.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/AfficherTypeContrat.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/AfficherTypeOffre.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/AjouterCandidature.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/AjouterDiscussion.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/AjouterOffre.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/AjouterTypeContrat.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/AjouterTypeOffre.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Chatbot.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Discussions.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/MapView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ModifierDiscussion.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ModifierOffre.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ModifierTypeContrat.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ModifierTypeOffre.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/PDFViewer.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Quiz.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Reply.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ReplyView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Statistics.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/Statistiques.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WitInterface.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidatureController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidaturesUserController$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidaturesUserController$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidaturesUserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherDiscussionController$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherDiscussionController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherOffreController$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherOffreController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherTypeContratController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherTypeOffreController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/AjouterCandidatureController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/AjouterDiscussion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/AjouterOffreController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/AjouterTypeContratController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/AjouterTypeOffreController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/ChatbotController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/IndexController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/JokeController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/MapViewController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/ModifierDiscussion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/ModifierDiscussionController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/ModifierOffreController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/ModifierTypeContratController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/ModifierTypeOffreController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/PDFViewerController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/QuizController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/ReplyController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/StatisticsController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/StatistiquesController$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/StatistiquesController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/WitController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/entities/Candidature$StatutCandidature.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/entities/Candidature.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/entities/Discussion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/entities/Offre.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/entities/Question.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/entities/QuizResult.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/entities/Reply.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/entities/TypeContrat.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/entities/TypeOffre.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/entities/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/careeraflyer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/careeragalss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/carrera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/flyer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/map-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/index.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/joke_view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/services/CandidatureService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/services/ChatbotService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/services/DiscussionService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/services/JokeService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/services/OffreService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/services/PDFService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/services/QuestionService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/services/QuizResultService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/services/ReplyService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/services/Service.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/services/TypeContratService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/services/TypeOffreService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/services/WitAiService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/test/MainFX.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/test/TestReply.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/utils/MyDatabase.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/demo-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidatureController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidatureController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/MissionListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/MissionListController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/MissionfreelencerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/MissionfreelencerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/Candidature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Candidature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/Missionfreelencer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Missionfreelencer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/Offre.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Offre.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/MissionfreelencerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/MissionfreelencerService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,19 +35,29 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo">
-    <option name="associatedIndex" value="0" />
-  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2wpwz65XDnirg6brvCQelbIQbvs" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "Application.MainFX.executor": "Run",
-    "git-widget-placeholder": "Merging wiwi",
-    "last_opened_file_path": "C:/Users/wiem/Desktop/IntegrationJava/src/main/resources/styles",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "IntegrationHechGRH",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/hedir/OneDrive/Desktop/IntegrationJava",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -296,13 +65,38 @@
       <recent />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="IntegrationJava" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="IntegrationJava" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="84f41fe2-ffdc-48ee-81c4-5c4b748a903d" name="Changes" comment="" />
       <created>1746738258321</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1746738258321</updated>
+      <workItem from="1746752084681" duration="1696000" />
     </task>
     <servers />
   </component>
