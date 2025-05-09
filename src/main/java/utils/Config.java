@@ -30,7 +30,7 @@ public class Config {
 
     // Database configuration
     public String getDbUrl() {
-        return properties.getProperty("DB_URL", "jdbc:mysql://localhost:3306/3A61");
+        return properties.getProperty("DB_URL", "jdbc:mysql://localhost:3306/careera");
     }
 
     public String getDbUser() {
