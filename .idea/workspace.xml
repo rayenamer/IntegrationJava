@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84f41fe2-ffdc-48ee-81c4-5c4b748a903d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidatureController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidatureController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/MissionListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/MissionListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/MissionfreelencerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/MissionfreelencerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/Candidature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Candidature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/Missionfreelencer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Missionfreelencer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/Offre.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Offre.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/MissionfreelencerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/MissionfreelencerService.class" afterDir="false" />
-    </list>
+    <list default="true" id="84f41fe2-ffdc-48ee-81c4-5c4b748a903d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1746738258321</updated>
-      <workItem from="1746752084681" duration="1696000" />
+      <workItem from="1746752084681" duration="2128000" />
     </task>
     <servers />
   </component>
