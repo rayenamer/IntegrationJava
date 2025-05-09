@@ -63,26 +63,14 @@ public class AfficherTypeOffreController {
         }
     }
     @FXML
-    private void modifTypeOffre(ActionEvent event) {
+    private void handleModifierClick(ActionEvent event) {
         try {
-            TypeOffre selected = listView.getSelectionModel().getSelectedItem();
-            if (selected == null) {
-                showAlert(Alert.AlertType.WARNING, "Attention", "Veuillez sélectionner un élément.");
-                return;
-            }
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ModifierTypeOffre.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/javas/FXML/ModifierTypeOffre.fxml"));
             Parent root = loader.load();
-
-            // Récupérer le contrôleur de la vue chargée
-            ModifierTypeOffreController controller = loader.getController();
-            controller.setTypeOffre(selected); // On lui passe l'objet à modifier
-
             Stage stage = new Stage();
-            stage.setTitle("Modifier un Type d' Offre ");
+            stage.setTitle("Modifier Type Offre");
             stage.setScene(new Scene(root));
             stage.show();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -91,13 +79,40 @@ public class AfficherTypeOffreController {
     @FXML
     private void handleOffreClick(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterOffre.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/javas/FXML/AjouterOffre.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
             stage.setTitle("Ajouter une Offre");
             stage.setScene(new Scene(root));
             stage.show();
-        } catch (Exception e) {
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleAjouterClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/javas/FXML/AjouterTypeOffre.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Ajouter Type Offre");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleRetourClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/javas/FXML/AjouterOffre.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -120,7 +135,7 @@ public class AfficherTypeOffreController {
     @javafx.fxml.FXML
     private void ajouterTypeOffre(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterTypeOffre.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/javas/FXML/AjouterTypeOffre.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
             stage.setTitle("Ajouter un Type d'Offre");
@@ -141,7 +156,7 @@ public class AfficherTypeOffreController {
     @FXML
     public void ajouterOffre(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterOffre.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/javas/FXML/AjouterOffre.fxml"));
             Object root = loader.load();
 
             // Récupérer la scène actuelle à partir de l'événement

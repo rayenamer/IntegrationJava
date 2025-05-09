@@ -253,4 +253,41 @@ public class AccueilController {
         alert.setContentText(message);
         alert.showAndWait();
     }
+    @FXML
+    private void handleFreelanceClick(ActionEvent event) {
+        try {
+            // Vérifier le type d'utilisateur
+            User currentUser = Session.getCurrentUser();
+            System.out.println("Type d'utilisateur actuel : " + (currentUser != null ? currentUser.getType() : "null"));
+
+            if (currentUser != null && "moderateur".equalsIgnoreCase(currentUser.getType())) {
+                // Charger la page AjouterMission.fxml
+                URL url = getClass().getResource("/Missionfreelencer.fxml");
+                if (url == null) {
+                    throw new IOException("FXML file not found: /Missionfreelencer.fxml");
+                }
+                FXMLLoader loader = new FXMLLoader(url);
+                Parent root = loader.load();
+
+                // Récupérer la scène actuelle
+                Scene currentScene = ((Node) event.getSource()).getScene();
+                if (currentScene != null) {
+                    // Remplacer le contenu de la scène
+                    currentScene.setRoot(root);
+                } else {
+                    // Si pas de scène existante, créer une nouvelle fenêtre
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(root));
+                    stage.setTitle("Ajouter une Mission");
+                    stage.show();
+                }
+            } else {
+                System.out.println("Accès refusé - Utilisateur non autorisé");
+                showAlert(Alert.AlertType.WARNING, "Accès restreint", "Cette fonctionnalité est réservée aux modérateurs.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Erreur", "Impossible de charger la page d'ajout de mission : " + e.getMessage());
+        }
+    }
 }

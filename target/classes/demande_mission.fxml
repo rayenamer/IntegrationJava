@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.DemandeMissionController"
+            style="-fx-background-color: #f5f5f5;">
+
+    <VBox alignment="CENTER" spacing="20"
+          AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20"
+          AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+
+        <!-- Header -->
+        <VBox alignment="CENTER" spacing="5">
+            <Text text="Gestion des Candidatures" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-fill: #333333;"/>
+            <Text text="Consultez et gérez les candidatures aux missions" style="-fx-font-size: 16px; -fx-fill: #666666;"/>
+        </VBox>
+
+        <!-- Candidature Table -->
+        <TableView fx:id="candidatureTable" style="-fx-pref-height: 400;">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="missionIdColumn" text="Mission" prefWidth="150"/>
+                <TableColumn fx:id="demandeIdColumn" text="Demande ID" prefWidth="100"/>
+                <TableColumn fx:id="etatColumn" text="État" prefWidth="100"/>
+                <TableColumn fx:id="scoreColumn" text="Score" prefWidth="80"/>
+                <TableColumn fx:id="userIdColumn" text="User ID" prefWidth="80"/>
+                <TableColumn fx:id="userColumn" text="Utilisateur" prefWidth="150"/>
+            </columns>
+        </TableView>
+
+        <!-- Buttons -->
+        <HBox spacing="10" alignment="CENTER">
+            <Button fx:id="accepterButton" text="Accepter" onAction="#handleAccepter"
+                    style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-pref-width: 120;"/>
+            <Button fx:id="supprimerButton" text="Supprimer" onAction="#handleSupprimer"
+                    style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-pref-width: 120;"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.PostulerMissionController"
+            style="-fx-background-color: #f5f5f5;">
+
+    <VBox alignment="CENTER" spacing="20"
+          AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20"
+          AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+
+        <!-- Header -->
+        <VBox alignment="CENTER" spacing="5">
+            <Text text="Formulaire de Candidature" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #333333;"/>
+            <Label fx:id="missionTitleLabel" style="-fx-font-size: 16px; -fx-text-fill: #666666;"/>
+        </VBox>
+
+        <!-- Form -->
+        <VBox spacing="15" style="-fx-background-color: #ffffff; -fx-padding: 20; -fx-border-color: #cccccc; -fx-border-radius: 5;">
+            <!-- Champ caché pour offremissionId -->
+            <TextField fx:id="offreMissionIdField" visible="false" managed="false"/>
+
+            <!-- Champ caché pour userid -->
+            <TextField fx:id="userIdField" visible="false" managed="false"/>
+
+            <!-- Email -->
+            <Label text="Email" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="freelancerEmailField" promptText="Entrez votre email"/>
+
+            <!-- Portfolio -->
+            <Label text="Lien vers votre portfolio" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="portfolioField" promptText="Entrez l'URL de votre portfolio (ex. https://monportfolio.com)"/>
+
+            <!-- Message de motivation -->
+            <Label text="Message de motivation" style="-fx-font-weight: bold;"/>
+            <TextArea fx:id="motivationTextArea" promptText="Expliquez pourquoi vous êtes le meilleur candidat" wrapText="true"/>
+
+            <!-- Boutons -->
+            <HBox spacing="10" alignment="CENTER">
+                <Button fx:id="submitButton" text="Soumettre" onAction="#handleSubmit" style="-fx-background-color: #28a745; -fx-text-fill: white;"/>
+                <Button fx:id="cancelButton" text="Annuler" onAction="#closeWindow" style="-fx-background-color: #dc3545; -fx-text-fill: white;"/>
+            </HBox>
+        </VBox>
+    </VBox>
+</AnchorPane>

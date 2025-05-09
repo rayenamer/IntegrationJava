@@ -15,7 +15,7 @@
       alignment="CENTER"
       spacing="25"
       styleClass="root"
-      stylesheets="@/styles/form.css"
+      stylesheets="@styles/form.css"
       style="-fx-padding: 300; -fx-background-color: transparent;">
 
     <!-- Conteneur avec effet de flou -->

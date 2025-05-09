@@ -1,3 +1,22 @@
+<<<<<<< HEAD
+wiemwebsite\demo\controllers\AdminDashboardController.class
+wiemwebsite\demo\models\Missionfreelencer.class
+wiemwebsite\demo\models\CandidatureMission.class
+wiemwebsite\demo\controllers\DemandeMissionDetailsController.class
+wiemwebsite\demo\services\MissionfreelencerService.class
+wiemwebsite\demo\DatabaseConnection.class
+module-info.class
+wiemwebsite\demo\controllers\MissionfreelencerController.class
+wiemwebsite\demo\models\DemandeMission.class
+wiemwebsite\demo\services\DemandeMissionService$1.class
+wiemwebsite\demo\controllers\PostulerMissionController.class
+wiemwebsite\demo\HelloController.class
+wiemwebsite\demo\services\DemandeMissionService.class
+wiemwebsite\demo\controllers\MissionListController.class
+wiemwebsite\demo\Main.class
+wiemwebsite\demo\controllers\DemandeMissionController.class
+wiemwebsite\demo\HelloApplication.class
+=======
 controllers\StatistiqueController$1.class
 controllers\AfficherCandidatureController$1.class
 controllers\AjouterFreelancerController.class
@@ -35,3 +54,4 @@ services\EmailSender$1.class
 services\EmailSender.class
 controllers\AfficherCandidaturesUserController$2.class
 services\StatistiqueService.class
+>>>>>>> a1d53f897fbe0ae2a606188f416020f656061e6f
