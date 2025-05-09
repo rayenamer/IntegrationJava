@@ -56,7 +56,7 @@ public class AjouterTypeOffreController {
     @FXML
     private void handleOffreClick(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterOffre.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AjouterOffre.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
             stage.setTitle("Ajouter une Offre");
@@ -71,7 +71,7 @@ public class AjouterTypeOffreController {
     @FXML
     private void afficherTypeOffres(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherTypeOffre.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AfficherTypeOffre.fxml"));
             Parent root = loader.load();
             nomTypeOffreTF.getScene().setRoot(root);
         } catch (IOException e) {

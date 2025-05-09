@@ -32,12 +32,12 @@
                 <children>
                     <Button text="Ajouter"
                             fx:id="ajouterBtn"
-                            onAction="#ajouterTypeOffre"
+                            onAction="#handleAjouterClick"
                             style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10px 20px;" />
 
                     <Button text="Modifier"
                             fx:id="modifierButton"
-                            onAction="#modifTypeOffre"
+                            onAction="#handleModifierClick"
                             style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10px 20px;" />
 
                     <Button text="Supprimer"

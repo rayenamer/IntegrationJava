@@ -243,59 +243,41 @@ public class ConnexionController {
     public void handleForgotPasswordPage(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/ForgotPassword.fxml"));
-            if (loader.getLocation() == null) {
-                throw new IOException("Impossible de trouver le fichier FXML: /ForgotPassword.fxml");
-            }
+            loader.setLocation(getClass().getResource("/javas/FXML/ForgotPassword.fxml"));
             Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Récupération du mot de passe");
-            stage.setScene(new Scene(root));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
-            System.err.println("❌ Erreur de chargement FXML: " + e.getMessage());
             e.printStackTrace();
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Erreur de chargement");
-            alert.setHeaderText(null);
-            alert.setContentText("Une erreur est survenue lors du chargement de la page. Veuillez réessayer.");
-            alert.showAndWait();
         }
     }
 
-    // Lors du clic sur "Créer un compte"
     @FXML
     void handleCreationCompte(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/PageCreationCompte.fxml"));
-            if (loader.getLocation() == null) {
-                throw new IOException("Impossible de trouver le fichier FXML: /PageCreationCompte.fxml");
-            }
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/PageCreationCompte.fxml"));
             Parent root = loader.load();
-            Stage stage = (Stage) emailField.getScene().getWindow();
-            stage.setScene(new Scene(root));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
         } catch (IOException e) {
-            System.err.println("❌ Erreur de chargement FXML: " + e.getMessage());
             e.printStackTrace();
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Erreur de chargement");
-            alert.setHeaderText(null);
-            alert.setContentText("Une erreur est survenue lors du chargement de la page. Veuillez réessayer.");
-            alert.showAndWait();
         }
     }
 
     @FXML
     void goToForgotPassword(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ForgotPassword.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/javas/FXML/ForgotPassword.fxml"));
             Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Mot de passe oublié");
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
             stage.show();
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

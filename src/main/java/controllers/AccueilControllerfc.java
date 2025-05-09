@@ -113,6 +113,36 @@ public class AccueilControllerfc {
     }
 
     @FXML
+    private void GoEvent(ActionEvent event) {
+        try {
+            User currentUser = Session.getCurrentUser();
+            System.out.println("Type d'utilisateur actuel : " + (currentUser != null ? currentUser.getType() : "null"));
+
+            EventListController EventListController = new EventListController();
+            Scene currentScene = offreButton.getScene();
+
+            if (currentScene != null) {
+                Stage stage = (Stage) currentScene.getWindow();
+                EventListController.show(stage);
+            } else {
+                Stage newStage = new Stage();
+                EventListController.show(newStage);
+                newStage.setTitle("Gestion des Événements");
+                newStage.show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
+
+
+
+    @FXML
     private void handleDeconnexion(ActionEvent event) {
         try {
             Session.clear();
@@ -209,4 +239,38 @@ public class AccueilControllerfc {
         alert.setContentText(message);
         alert.showAndWait();
     }
-}
+
+    @FXML
+    private void handleFreelanceClick(ActionEvent event) {
+        try {
+            // Vérifier le type d'utilisateur
+            User currentUser = Session.getCurrentUser();
+            System.out.println("Type d'utilisateur actuel : " + (currentUser != null ? currentUser.getType() : "null"));
+
+            if (currentUser != null && ("freelancer".equalsIgnoreCase(currentUser.getType()) || "chercheur".equalsIgnoreCase(currentUser.getType()))) {
+                // Charger la page listmissionfreelencer.fxml
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/listmissionfreelencer.fxml"));
+                Parent root = loader.load();
+
+                // Récupérer la scène actuelle
+                Scene currentScene = ((Node) event.getSource()).getScene();
+                if (currentScene != null) {
+                    // Remplacer le contenu de la scène
+                    currentScene.setRoot(root);
+                } else {
+                    // Si pas de scène existante, créer une nouvelle fenêtre
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(root));
+                    stage.setTitle("Liste des Missions Freelance");
+                    stage.show();
+                }
+            } else {
+                System.out.println("Accès refusé - Utilisateur non autorisé");
+                showAlert(Alert.AlertType.WARNING, "Accès restreint", "Cette fonctionnalité est réservée aux freelencers et chercheurs.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Erreur", "Impossible de charger la page des missions freelance : " + e.getMessage());
+        }
+    }    }
+

@@ -15,7 +15,7 @@
                fitWidth="600.0" fitHeight="700.0"
                AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0"
                style="-fx-border-color: #6366f1; -fx-border-width: 5px; -fx-background-radius: 10px;">
-        <Image url="@/images/flyer.png" />
+        <Image url="@images/flyer.png" />
     </ImageView>
 
     <!-- Navbar -->
@@ -38,9 +38,9 @@
         <HBox spacing="0">
             <Button fx:id="offreButton" text="Offres d'emploi" onAction="#handleOffreClick"
                     style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
-            <Button text="Freelance"
+            <Button text="Freelance" onAction="#handleFreelanceClick"
                     style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
-            <Button text="Événements"
+            <Button text="Événements" onAction="#GoEvent"
                     style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
             <Button text="Forum et Discussion" onAction="#GoForum"
                     style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20;" />
@@ -50,11 +50,9 @@
                         style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;">
                 <items>
                     <MenuItem text="Statistique" onAction="#handleStatistque" />
-
                 </items>
             </MenuButton>
         </HBox>
-
         <!-- Boutons Profil et Déconnexion -->
         <HBox spacing="15" alignment="CENTER_RIGHT">
             <Button fx:id="profileButton" text="Profil" onAction="#handleProfile"
