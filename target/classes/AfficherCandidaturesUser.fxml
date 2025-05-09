@@ -11,6 +11,8 @@
             fx:controller="controllers.AfficherCandidaturesUserController"
             style="-fx-background-color: linear-gradient(to bottom right, #f8fafc, #e0e7ff);"
             prefWidth="1500.0" prefHeight="900.0">
+    <!-- Flèche Back -->
+    
 
 
 

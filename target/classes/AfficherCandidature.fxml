@@ -11,6 +11,8 @@
         xmlns="http://javafx.com/javafx/17"
         xmlns:fx="http://javafx.com/fxml/1"
         fx:controller="controllers.AfficherCandidatureController">
+    <!-- Flèche Back -->
+    
 
 
     <!-- Contenu centré -->

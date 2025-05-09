@@ -1,3 +1,4 @@
+
 package controllers;
 
 import javafx.fxml.FXML;
@@ -29,7 +30,7 @@ public class PDFViewerController {
     @FXML
     public void initialize() {
         webEngine = webView.getEngine();
-        
+
         // Set up close button
         closeButton.setOnAction(event -> {
             Stage stage = (Stage) closeButton.getScene().getWindow();

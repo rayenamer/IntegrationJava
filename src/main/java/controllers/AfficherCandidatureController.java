@@ -39,7 +39,21 @@ public class AfficherCandidatureController {
 
     @FXML
     public void initialize() {
+        // Masquer le bouton Export PDF au départ
+        exportPdfBtn.setVisible(false);
         refreshListView();
+
+        // Ajouter un listener pour la sélection de la candidature
+        listView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                // Vérifier le statut de la candidature
+                if ("ACCEPTEE".equalsIgnoreCase(newValue.getStatut().toString())) {
+                    exportPdfBtn.setVisible(true);  // Afficher le bouton si le statut est "ACCEPTEE"
+                } else {
+                    exportPdfBtn.setVisible(false); // Masquer le bouton sinon
+                }
+            }
+        });
     }
 
     private void refreshListView() {
@@ -55,7 +69,6 @@ public class AfficherCandidatureController {
             // Construire le nom complet
             String nomComplet = utilisateurCourant.getNom() + " " + utilisateurCourant.getPrenom();
 
-
             // Récupérer et filtrer les candidatures appartenant à cet utilisateur
             ObservableList<Candidature> list = FXCollections.observableArrayList(
                     new CandidatureService().getAll().stream()
@@ -64,32 +77,40 @@ public class AfficherCandidatureController {
             );
             listView.setItems(list);
 
-            // Personnalisation de l'affichage de chaque cellule
-            listView.setCellFactory(param -> new ListCell<>() {
+            listView.setCellFactory(param -> new ListCell<Candidature>() {
                 @Override
                 protected void updateItem(Candidature candidature, boolean empty) {
                     super.updateItem(candidature, empty);
                     if (empty || candidature == null) {
                         setText(null);
+                        setStyle(null);
                     } else {
+                        // Affichage des informations de la candidature
                         setText(
-                                "ID Candidature : " + candidature.getId() + "\n" +
-                                        "Offre ID : " + candidature.getOffre().getId() + "\n" +
-                                        "Statut : " + candidature.getStatut() + "\n" +
-                                        "Date de Soumission : " + candidature.getDateSoumission() + "\n" +
-                                        "Utilisateur : " + candidature.getUtilisateur() + "\n" +
-                                        "CV : " + candidature.getCv() + "\n" +
-                                        "Lettre de Motivation : " + candidature.getLettreMotivation()
+                                "ID Candidature : " + candidature.getId() + " || " +
+                                        "Offre ID : " + candidature.getOffre().getId() + " || " +
+                                        "Statut : " + candidature.getStatut() + " || " +
+                                        "Date de Soumission : " + candidature.getDateSoumission()
+
+
                         );
+
+                        // Utilisation de toString() pour comparer l'énumération avec des chaînes
+                        if ("ACCEPTEE".equalsIgnoreCase(candidature.getStatut().toString())) {
+                            setStyle("-fx-background-color: green;");
+                        } else if ("REFUSEE".equalsIgnoreCase(candidature.getStatut().toString())) {
+                            setStyle("-fx-background-color: RED;");
+                        } else {
+                            setStyle("-fx-background-color: orange;");
+                        }
                     }
                 }
             });
+
         } catch (SQLException e) {
             showAlert("Erreur lors du chargement des candidatures : " + e.getMessage());
         }
     }
-
-
 
     @FXML
     private void supprimerCandidature(ActionEvent event) {
@@ -140,7 +161,6 @@ public class AfficherCandidatureController {
             document.close();
         }
     }
-
 
     private void showAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

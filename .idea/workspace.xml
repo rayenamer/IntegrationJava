@@ -6,16 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="84f41fe2-ffdc-48ee-81c4-5c4b748a903d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Candidature.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Candidature.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AfficherCandidatureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AfficherCandidatureController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/PDFViewerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/PDFViewerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Acceuil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Acceuil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Acceuilfc.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Acceuilfc.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherCandidature.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherCandidature.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherCandidaturesUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherCandidaturesUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherOffre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherOffre.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Acceuil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Acceuil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AfficherCandidature.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AfficherCandidature.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AfficherCandidaturesUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AfficherCandidaturesUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AfficherOffre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AfficherOffre.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PDFViewer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PDFViewer.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidatureController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidatureController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/MissionListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/MissionListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/MissionfreelencerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/MissionfreelencerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/Candidature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Candidature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/Missionfreelencer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Missionfreelencer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/Offre.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Offre.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/MissionfreelencerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/MissionfreelencerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/PDFViewerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/PDFViewerController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,10 +40,10 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2wpwz65XDnirg6brvCQelbIQbvs" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -56,7 +61,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
