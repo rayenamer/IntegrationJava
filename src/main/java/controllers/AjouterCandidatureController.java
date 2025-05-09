@@ -155,7 +155,7 @@ public class AjouterCandidatureController {
     @FXML
     private void handleOffreClick(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterOffre.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherOffresUser.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
             stage.setTitle("Ajouter une Offre");

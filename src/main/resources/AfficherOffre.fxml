@@ -67,6 +67,9 @@
                         style="-fx-background-color: linear-gradient(to right, #6366f1, #4f46e5);
                                -fx-text-fill: white;
                                -fx-font-size: 16px;"/>
+                <Button fx:id="btnRetour" text="Retour"
+                    onAction="#handleRetour"    
+                    style="-fx-background-color: #6366f1; -fx-text-fill: white; -fx-font-size: 16px;"/>
             </HBox>
 
             <!-- Statistiques Button -->

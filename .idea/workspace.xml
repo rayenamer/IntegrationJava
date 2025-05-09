@@ -6,21 +6,32 @@
   <component name="ChangeListManager">
     <list default="true" id="84f41fe2-ffdc-48ee-81c4-5c4b748a903d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Candidature.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Candidature.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AccueilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AccueilController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AfficherCandidatureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AfficherCandidatureController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/PDFViewerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/PDFViewerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Acceuil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Acceuil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Acceuilfc.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Acceuilfc.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AfficherCandidaturesUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AfficherCandidaturesUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AfficherOffreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AfficherOffreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AfficherOffresUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AfficherOffresUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AjouterCandidatureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AjouterCandidatureController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AjouterOffreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AjouterOffreController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherCandidature.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherCandidature.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherCandidaturesUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherCandidaturesUser.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherOffre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherOffre.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Acceuil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Acceuil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterCandidature.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterCandidature.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ProfileChercheur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ProfileChercheur.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/AfficherCandidature.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AfficherCandidature.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/AfficherCandidaturesUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AfficherCandidaturesUser.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/AfficherOffre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AfficherOffre.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AjouterCandidature.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AjouterCandidature.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/PDFViewer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PDFViewer.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidatureController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidatureController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/PDFViewerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/PDFViewerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidaturesUserController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidaturesUserController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidaturesUserController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidaturesUserController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidaturesUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidaturesUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/AfficherOffreController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherOffreController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/AfficherOffreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherOffreController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/AjouterCandidatureController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/AjouterCandidatureController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/AjouterOffreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/AjouterOffreController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,22 +60,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.MainFX.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "IntegrationHechGRH",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/hedir/OneDrive/Desktop/IntegrationJava",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainFX.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;IntegrationHechGRH&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/hedir/OneDrive/Desktop/IntegrationJava&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent />
@@ -102,6 +113,8 @@
       <option name="presentableId" value="Default" />
       <updated>1746738258321</updated>
       <workItem from="1746752084681" duration="1696000" />
+      <workItem from="1746774513968" duration="2479000" />
+      <workItem from="1746778579441" duration="3792000" />
     </task>
     <servers />
   </component>

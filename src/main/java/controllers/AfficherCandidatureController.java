@@ -29,6 +29,22 @@ import static utils.Session.getCurrentUser;
 public class AfficherCandidatureController {
 
     @FXML
+    private Button btnRetour;
+
+    @FXML
+    private void handleRetour(ActionEvent event) {
+        try {
+            javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("/Acceuilfc.fxml"));
+            javafx.scene.Parent root = loader.load();
+            javafx.scene.Scene scene = new javafx.scene.Scene(root);
+            javafx.stage.Stage stage = (javafx.stage.Stage) btnRetour.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     private ListView<Candidature> listView;
 
     @FXML

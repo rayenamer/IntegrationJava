@@ -47,6 +47,9 @@
             <Button fx:id="refuserBtn" text="Refuser"
                     onAction="#refuserCandidature"
                     style="-fx-background-color: #ffc107; -fx-text-fill: black; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 5;"/>
+             <Button fx:id="btnRetour" text="Retour"
+                    onAction="#handleRetour"
+                    style="-fx-background-color: #6366f1; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 20; -fx-background-radius: 5;"/>
         </HBox>
 
     </VBox>
