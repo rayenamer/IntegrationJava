@@ -8,7 +8,7 @@ public class MailService {
 
     public static boolean envoyerMail(String destinataire, String code) {
         String emailExpediteur = "choubeniighoffrane@gmail.com";  // Ton email
-        String motDePasse = "kuxwdbzzbxpwzkcd";                   // Ton mot de passe d'email
+        String motDePasse = System.getenv("GMAIL_APP_PASSWORD"); // Mot de passe d'application sécurisé
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");

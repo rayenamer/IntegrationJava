@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.AccueilControllerfc"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <!-- Navbar copiée -->
+    <HBox spacing="0.0"
+          alignment="CENTER_LEFT"
+          AnchorPane.topAnchor="0.0"
+          AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0"
+          style="-fx-background-color: white; -fx-border-color: #e2e8f0; -fx-border-width: 0 0 1px 0;">
+        <Button text="←" style="-fx-font-size: 18px; -fx-background-color: transparent; -fx-text-fill: #6366f1; -fx-font-weight: bold;" />
+        <padding>
+            <Insets top="15" right="40" bottom="15" left="40"/>
+        </padding>
+
+        <Label text="CareEra"
+               style="-fx-font-size: 28px; -fx-text-fill: #4338ca; -fx-font-weight: 800; -fx-font-family: 'Segoe UI', 'Roboto', sans-serif;" />
+
+        <Region HBox.hgrow="ALWAYS" />
+
+        <HBox spacing="0">
+            <Button fx:id="offreButton" text="Offres d'emploi" onAction="#handleOffreClick"
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
+            <Button text="Freelance" onAction="#handleFreelanceClick"
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
+            <Button text="Événements" onAction="#GoEvent"
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
+            <Button text="Forum et Discussion"  onAction="#GoForum"
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20;" />
+            <MenuButton fx:id="adminPanelButton" text="Admin Panel"
+                        visible="false"
+                        style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;">
+                <items>
+                    <MenuItem text="Statistique" onAction="#handleStatistque" />
+                </items>
+            </MenuButton>
+        </HBox>
+
+        <HBox spacing="15" alignment="CENTER_RIGHT">
+            <Button fx:id="profileButton" text="Profil" onAction="#handleProfile"
+                    style="-fx-background-color: #4f46e5; -fx-text-fill: white;
+                           -fx-font-weight: bold; -fx-padding: 8 20;
+                           -fx-background-radius: 5px; -fx-cursor: hand;"/>
+
+            <Button fx:id="logoutButton" text="Déconnexion" onAction="#handleDeconnexion"
+                    style="-fx-background-color: #ef4444; -fx-text-fill: white;
+                           -fx-font-weight: bold; -fx-padding: 8 20;
+                           -fx-background-radius: 5px; -fx-cursor: hand;"/>
+        </HBox>
+    </HBox>
+
+</AnchorPane>

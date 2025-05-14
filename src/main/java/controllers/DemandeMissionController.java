@@ -108,14 +108,14 @@ public class DemandeMissionController {
             return;
         }
 
-        // Validation: Check if score is valid (e.g., non-negative)
+        // Validation: Check if score is valid
         if (selected.getScore() < 0) {
             LOGGER.warning("Tentative d'acceptation d'une candidature avec score invalide, ID=" + selected.getId() + ", Score=" + selected.getScore());
             showAlert(Alert.AlertType.WARNING, "Score invalide", "Le score de la candidature doit être positif.");
             return;
         }
 
-        // Optional: Check if another candidature is already accepted for this mission
+        // Check if another candidature is already accepted for this mission
         try {
             if (demandeMissionService.hasAcceptedCandidature(missionId)) {
                 LOGGER.warning("Tentative d'acceptation alors qu'une candidature est déjà acceptée pour mission ID=" + missionId);
@@ -128,7 +128,7 @@ public class DemandeMissionController {
             return;
         }
 
-        // Confirmation dialog for acceptance
+        // Confirmation dialog
         Alert confirm = new Alert(Alert.AlertType.CONFIRMATION, "Voulez-vous accepter la candidature ID=" + selected.getId() + " ?");
         confirm.showAndWait().ifPresent(response -> {
             if (response == ButtonType.OK) {
@@ -136,21 +136,25 @@ public class DemandeMissionController {
                 try {
                     demandeMissionService.modifierCandidature(selected);
                     String userEmail = demandeMissionService.getUserEmail(selected.getUserid());
-                    if (!userEmail.isEmpty()) {
-                        try {
-                            demandeMissionService.sendAcceptanceEmail(userEmail, selected.getUser(), selected.getMissionTitre());
-                            LOGGER.info("Email envoyé à " + userEmail + " pour la mission " + selected.getMissionTitre());
-                            showAlert(Alert.AlertType.INFORMATION, "Succès", "Email envoyé avec succès à " + userEmail);
-                        } catch (Exception e) {
-                            LOGGER.log(Level.SEVERE, "Échec de l'envoi de l'email à " + userEmail + " : " + e.getMessage(), e);
-                            showAlert(Alert.AlertType.WARNING, "Avertissement", "L'email n'a pas pu être envoyé : " + e.getMessage());
-                        }
-                    } else {
+
+                    // Validate email format
+                    if (userEmail == null || userEmail.trim().isEmpty()) {
                         LOGGER.warning("Aucun email trouvé pour userId=" + selected.getUserid() + ", email non envoyé.");
                         showAlert(Alert.AlertType.WARNING, "Avertissement", "Aucun email trouvé pour cet utilisateur.");
+                    } else if (!isValidEmail(userEmail)) {
+                        LOGGER.warning("Format d'email invalide pour userId=" + selected.getUserid() + ", email=" + userEmail);
+                        showAlert(Alert.AlertType.WARNING, "Avertissement", "L'email de l'utilisateur est invalide.");
+                    } else {
+                        try {
+                            demandeMissionService.sendAcceptanceEmail(userEmail, selected.getUser(), selected.getMissionTitre());
+                            LOGGER.info("Email d'acceptation envoyé à " + userEmail + " pour la mission " + selected.getMissionTitre());
+                            showAlert(Alert.AlertType.INFORMATION, "Succès", "Candidature acceptée et email envoyé à " + userEmail);
+                        } catch (Exception e) {
+                            LOGGER.log(Level.SEVERE, "Échec de l'envoi de l'email à " + userEmail + " : " + e.getMessage(), e);
+                            showAlert(Alert.AlertType.WARNING, "Avertissement", "Candidature acceptée, mais l'email n'a pas pu être envoyé : " + e.getMessage());
+                        }
                     }
                     refreshCandidatures();
-                    showAlert(Alert.AlertType.INFORMATION, "Succès", "Candidature acceptée !");
                 } catch (SQLException e) {
                     LOGGER.log(Level.SEVERE, "Erreur lors de l'acceptation de la candidature ID=" + selected.getId() + " : " + e.getMessage(), e);
                     showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur lors de l'acceptation : " + e.getMessage());
@@ -159,6 +163,11 @@ public class DemandeMissionController {
         });
     }
 
+    // Utility method to validate email format
+    private boolean isValidEmail(String email) {
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        return email != null && email.matches(emailRegex);
+    }
     @FXML
     private void handleSupprimer() {
         CandidatureMission selected = candidatureTable.getSelectionModel().getSelectedItem();

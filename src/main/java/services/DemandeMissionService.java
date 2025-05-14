@@ -5,8 +5,12 @@ import javafx.collections.ObservableList;
 import entities.CandidatureMission;
 import entities.DemandeMission;
 
-import jakarta.mail.*;
-import jakarta.mail.internet.*;
+import javax.mail.*;
+import javax.mail.internet.*;
+
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import java.sql.*;
 import java.util.Properties;
 import java.util.logging.Level;
@@ -149,7 +153,7 @@ public class DemandeMissionService {
         String host = "smtp.gmail.com";
         String port = "465";
         String senderEmail = "khwiemmm@gmail.com";
-        String senderPassword = "hrdo qtwn sugr buxk";
+        String senderPassword = "hrdoqtwnsugrbuxk";
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");

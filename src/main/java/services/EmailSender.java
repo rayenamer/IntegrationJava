@@ -7,7 +7,7 @@ import javax.mail.internet.*;
 public class EmailSender {
     public static void sendEmail(String to, String subject, String content) {
         final String from = "choubeniighoffrane@gmail.com"; // ton email ici
-        final String password = "kuxwdbzzbxpwzkcd"; // mot de passe d'application
+        final String password = System.getenv("GMAIL_APP_PASSWORD"); // mot de passe d'application sécurisé
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");

@@ -14,7 +14,7 @@
     <ImageView fx:id="rightImage"
                fitWidth="600.0" fitHeight="700.0"
                AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0"
-               style="-fx-border-color: #6366f1; -fx-border-width: 5px; -fx-background-radius: 10px;">
+               style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 5); -fx-border-color: #6366f1; -fx-border-width: 4px; -fx-background-radius: 12px;">
         <Image url="@images/flyer.png" />
     </ImageView>
 
@@ -25,8 +25,7 @@
           AnchorPane.leftAnchor="0.0"
           AnchorPane.rightAnchor="0.0"
           style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 3); -fx-border-color: #e2e8f0; -fx-border-width: 0 0 1px 0;">
-        <!-- Flèche Back -->
-        <Button text="←" style="-fx-font-size: 18px; -fx-background-color: transparent; -fx-text-fill: #6366f1; -fx-font-weight: bold;" />
+
         <padding>
             <Insets top="15" right="40" bottom="15" left="40"/>
         </padding>
@@ -39,33 +38,50 @@
         <!-- Boutons avec séparation -->
         <HBox spacing="0">
             <Button fx:id="offreButton" text="Offres d'emploi" onAction="#handleOffreClick"
-                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px;
+                           -fx-font-weight: 700; -fx-padding: 8 20;
+                           -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;
+                           -fx-background-radius: 8px;"/>
             <Button text="Freelance" onAction="#handleFreelanceClick"
-                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px;
+                           -fx-font-weight: 700; -fx-padding: 8 20;
+                           -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;
+                           -fx-background-radius: 8px;"/>
             <Button text="Événements" onAction="#GoEvent"
-                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px;
+                           -fx-font-weight: 700; -fx-padding: 8 20;
+                           -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;
+                           -fx-background-radius: 8px;"/>
             <Button text="Forum et Discussion" onAction="#GoForum"
-                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20;" />
+                    style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px;
+                           -fx-font-weight: 700; -fx-padding: 8 20;
+                           -fx-background-radius: 8px;"/>
             <!-- Admin Panel MenuButton -->
             <MenuButton fx:id="adminPanelButton" text="Admin Panel"
                         visible="false"
-                        style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;">
+                        style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px;
+                               -fx-font-weight: 700; -fx-padding: 8 20;
+                               -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;
+                               -fx-background-radius: 8px;">
                 <items>
                     <MenuItem text="Statistique" onAction="#handleStatistque" />
                 </items>
             </MenuButton>
         </HBox>
+
         <!-- Boutons Profil et Déconnexion -->
         <HBox spacing="15" alignment="CENTER_RIGHT">
             <Button fx:id="profileButton" text="Profil" onAction="#handleProfile"
                     style="-fx-background-color: #4f46e5; -fx-text-fill: white;
                            -fx-font-weight: bold; -fx-padding: 8 20;
-                           -fx-background-radius: 5px; -fx-cursor: hand;"/>
+                           -fx-background-radius: 10px; -fx-cursor: hand;
+                           -fx-effect: dropshadow(gaussian, rgba(79,70,229,0.4), 10, 0, 0, 2);"/>
 
             <Button fx:id="logoutButton" text="Déconnexion" onAction="#handleDeconnexion"
                     style="-fx-background-color: #ef4444; -fx-text-fill: white;
                            -fx-font-weight: bold; -fx-padding: 8 20;
-                           -fx-background-radius: 5px; -fx-cursor: hand;"/>
+                           -fx-background-radius: 10px; -fx-cursor: hand;
+                           -fx-effect: dropshadow(gaussian, rgba(239,68,68,0.4), 10, 0, 0, 2);"/>
         </HBox>
     </HBox>
 

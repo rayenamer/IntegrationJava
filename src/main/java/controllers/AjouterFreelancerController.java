@@ -14,9 +14,14 @@ import javafx.stage.Stage;
 import org.mindrot.jbcrypt.BCrypt;
 import services.UserService;
 import javafx.scene.Parent;
+import utils.PasswordHasher;
 
 import java.io.File;
 import java.util.regex.Pattern;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 public class AjouterFreelancerController {
 
@@ -42,7 +47,7 @@ public class AjouterFreelancerController {
     // Expressions régulières pour validation
     private static final String NAME_PATTERN = "^[a-zA-Z]{2,}(?:\\s[a-zA-Z]{2,})*$";
     private static final String EMAIL_PATTERN = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
-    private static final String PASSWORD_PATTERN = "^(?=.[0-9])(?=.[a-z])(?=.[A-Z])(?=.[@#$%^&+=!])(?=\\S+$).{8,}$";
+    private static final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{8,}$";
     private static final String PHONE_PATTERN = "^[0-9]{8}$";
 
     @FXML
@@ -158,6 +163,7 @@ public class AjouterFreelancerController {
 
         if (passwordField.getText().isEmpty() || !passwordField.getText().matches(PASSWORD_PATTERN)) {
             passwordField.setStyle("-fx-border-color: red;");
+            showStatus("Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.", Color.RED);
             isValid = false;
         }
 
@@ -210,17 +216,27 @@ public class AjouterFreelancerController {
         freelancer.setNom(nomField.getText());
         freelancer.setPrenom(prenomField.getText());
         freelancer.setEmail(emailField.getText());
-        String encryptedPassword = BCrypt.hashpw(passwordField.getText(), BCrypt.gensalt());
+        String encryptedPassword = PasswordHasher.hashpw(passwordField.getText());
         freelancer.setPassword(encryptedPassword);
         freelancer.setSexe(sexeComboBox.getValue());
         freelancer.setTel(telField.getText());
-        freelancer.setPhoto(selectedPhoto.getAbsolutePath());
-        freelancer.setCv(selectedCV.getAbsolutePath());
+        if (selectedPhoto != null) {
+            try {
+                Path destination = Paths.get("src/main/resources/image/" + selectedPhoto.getName());
+                Files.copy(selectedPhoto.toPath(), destination, StandardCopyOption.REPLACE_EXISTING);
+                freelancer.setPhoto(selectedPhoto.getName());
+            } catch (Exception e) {
+                e.printStackTrace();
+                freelancer.setPhoto("");
+            }
+        } else {
+            freelancer.setPhoto("");
+        }
+        freelancer.setCv(selectedCV != null ? selectedCV.getAbsolutePath() : "");
         freelancer.setAdresse(adresseField.getText());
         freelancer.setType("freelancer");
         freelancer.setRoles("[\"ROLE_FREELANCER\"]");
         freelancer.setAnnees_Experience(Integer.parseInt(experienceField.getText()));
-
         return freelancer;
     }
 

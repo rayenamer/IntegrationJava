@@ -61,7 +61,7 @@ public class UserService implements Service<User> {
             switch (user.getType().toLowerCase()) {
                 case "freelancer":
                     if (user instanceof Freelancer freelancer) {
-                        String sqlFree = "INSERT INTO freelancer (user_id, photo, cv, adresse, annees_experience) VALUES (?, ?, ?, ?, ?)";
+                        String sqlFree = "INSERT INTO freelancer (id, photo, cv, adresse, annees_experience) VALUES (?, ?, ?, ?, ?)";
                         PreparedStatement pst = cnx.prepareStatement(sqlFree);
                         pst.setInt(1, userId);
                         pst.setString(2, freelancer.getPhoto());
@@ -79,7 +79,7 @@ public class UserService implements Service<User> {
                             return;
                         }
 
-                        String sqlMod = "INSERT INTO moderateur (user_id, societe) VALUES (?, ?)";
+                        String sqlMod = "INSERT INTO moderateur (id, societe) VALUES (?, ?)";
                         PreparedStatement pst = cnx.prepareStatement(sqlMod);
                         pst.setInt(1, userId);
                         pst.setString(2, moderateur.getSociete());

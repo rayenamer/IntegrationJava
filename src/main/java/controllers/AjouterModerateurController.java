@@ -12,6 +12,7 @@ import org.mindrot.jbcrypt.BCrypt;
 import services.MailService;
 import services.ModerateurService;
 import javafx.scene.Parent;
+import utils.PasswordHasher;
 
 import java.util.Optional;
 import java.util.regex.Pattern;
@@ -76,74 +77,67 @@ public class AjouterModerateurController {
         }
     }
 
+
+
     @FXML
     private void ajouterModerateur(ActionEvent event) {
+        // Validation du formulaire
+        if (!validateForm()) {
+            showStatus("Veuillez corriger les erreurs dans le formulaire", Color.RED);
+            return;
+        }
+
+        // Génération du code de vérification
+        String code = utils.CodeGenerator.genererCode();
+        System.out.println("Code généré : " + code);
+
+        // Envoi du mail
+        boolean envoyerMail = MailService.envoyerMail(emailField.getText(), code);
+        if (!envoyerMail) {
+            showStatus("Erreur lors de l'envoi du mail.", Color.RED);
+            return;
+        }
+
+        // Boîte de dialogue pour la saisie du code utilisateur
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Vérification Email");
+        dialog.setHeaderText("Un code de vérification a été envoyé à " + emailField.getText());
+        dialog.setContentText("Veuillez entrer le code :");
+
+        Optional<String> result = dialog.showAndWait();
+
+        // Si l'utilisateur n'a rien saisi ou a annulé
+        if (!result.isPresent()) {
+            showStatus("Saisie annulée. Inscription interrompue.", Color.RED);
+            return;
+        }
+
+        String codeSaisi = result.get().trim();
+
+        // Vérification du code saisi
+        if (!codeSaisi.equals(code)) {
+            showStatus("Code incorrect. Inscription annulée.", Color.RED);
+            return;
+        }
+
+        // Création du modérateur à partir du formulaire
+        Moderateur moderateur = createModerateurFromForm();
+
         try {
-            // Validation du formulaire
-            if (!validateForm()) {
-                showStatus("Veuillez corriger les erreurs dans le formulaire", Color.RED);
-                return;
-            }
-
-            // Vérification de l'email avant d'envoyer le code
-            try {
-                if (moderateurService.emailExists(emailField.getText())) {
-                    showStatus("Un utilisateur avec cet email existe déjà.", Color.RED);
-                    emailField.setStyle("-fx-border-color: red;");
-                    return;
-                }
-            } catch (RuntimeException e) {
-                showStatus("Erreur lors de la vérification de l'email: " + e.getMessage(), Color.RED);
-                return;
-            }
-
-            // Génération du code de vérification
-            String code = utils.CodeGenerator.genererCode();
-            System.out.println("Code généré : " + code);
-
-            // Envoi du mail
-            boolean envoyerMail = MailService.envoyerMail(emailField.getText(), code);
-            if (!envoyerMail) {
-                showStatus("Erreur lors de l'envoi du mail.", Color.RED);
-                return;
-            }
-
-            // Boîte de dialogue pour la saisie du code utilisateur
-            TextInputDialog dialog = new TextInputDialog();
-            dialog.setTitle("Vérification Email");
-            dialog.setHeaderText("Un code de vérification a été envoyé à " + emailField.getText());
-            dialog.setContentText("Veuillez entrer le code :");
-
-            Optional<String> result = dialog.showAndWait();
-
-            // Si l'utilisateur n'a rien saisi ou a annulé
-            if (!result.isPresent()) {
-                showStatus("Saisie annulée. Inscription interrompue.", Color.RED);
-                return;
-            }
-
-            String codeSaisi = result.get().trim();
-
-            // Vérification du code saisi
-            if (!codeSaisi.equals(code)) {
-                showStatus("Code incorrect. Inscription annulée.", Color.RED);
-                return;
-            }
-
-            // Création du modérateur à partir du formulaire
-            Moderateur moderateur = createModerateurFromForm();
-
             // Ajout du modérateur via le service
             boolean success = moderateurService.ajouterModerateur(moderateur);
             if (success) {
                 showStatus("Modérateur ajouté avec succès !", Color.GREEN);
                 clearForm();
+            } else {
+                showStatus("Erreur lors de l'ajout du modérateur.", Color.RED);
             }
-        } catch (RuntimeException e) {
+        } catch (Exception e) {
             showStatus("Erreur: " + e.getMessage(), Color.RED);
             e.printStackTrace();
         }
     }
+
 
     private boolean validateForm() {
         boolean isValid = true;
@@ -196,7 +190,7 @@ public class AjouterModerateurController {
         moderateur.setNom(nomField.getText());
         moderateur.setPrenom(prenomField.getText());
         moderateur.setEmail(emailField.getText());
-        String encryptedPassword = BCrypt.hashpw(passwordField.getText(), BCrypt.gensalt());
+        String encryptedPassword = PasswordHasher.hashpw(passwordField.getText());
         moderateur.setPassword(encryptedPassword);  // Utilisation du mot de passe crypté
 
         moderateur.setSexe(sexeComboBox.getValue());

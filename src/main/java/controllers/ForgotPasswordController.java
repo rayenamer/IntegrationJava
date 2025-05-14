@@ -6,7 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import services.EmailSender;
 import java.sql.*;
-import java.util.UUID;
+import java.util.Random;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import java.io.IOException;
@@ -27,7 +27,7 @@ public class ForgotPasswordController {
 
         try {
             if (checkEmailExists(email)) {
-                String resetToken = UUID.randomUUID().toString();
+                String resetToken = generateResetToken();
                 if (saveResetToken(email, resetToken)) {
                     sendResetEmail(email, resetToken);
                     showSuccess("Email de réinitialisation envoyé avec succès à " + email);
@@ -39,7 +39,7 @@ public class ForgotPasswordController {
                     openResetPasswordPage();
 
                 } else {
-                    showError("Erreur lors de la génération du lien de réinitialisation");
+                    showError("Erreur lors de la génération du code de réinitialisation");
                 }
             } else {
                 showError("Aucun compte associé à cette adresse email.");
@@ -48,6 +48,13 @@ public class ForgotPasswordController {
             e.printStackTrace();
             showError("Erreur technique : " + e.getMessage());
         }
+    }
+
+    private String generateResetToken() {
+        // Génère un code à 6 chiffres
+        Random random = new Random();
+        int token = 100000 + random.nextInt(900000); // Entre 100000 et 999999
+        return String.valueOf(token);
     }
 
     private boolean checkEmailExists(String email) throws SQLException {
@@ -73,8 +80,6 @@ public class ForgotPasswordController {
 
     private void sendResetEmail(String email, String token) {
         try {
-            String resetLink = "http://localhost:8080/ResetPassword?token=" + token;
-
             String subject = "Réinitialisation de votre mot de passe";
             String content = "Bonjour,\n\n"
                     + "Voici votre code de réinitialisation :\n"

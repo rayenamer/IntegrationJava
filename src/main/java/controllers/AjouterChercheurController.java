@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import org.mindrot.jbcrypt.BCrypt;
 import services.UserService;
 import javafx.scene.Parent;
+import utils.PasswordHasher;
 
 import java.io.File;
 import java.util.regex.Pattern;
@@ -201,7 +202,7 @@ public class AjouterChercheurController {
         chercheur.setNom(nomField.getText());
         chercheur.setPrenom(prenomField.getText());
         chercheur.setEmail(emailField.getText());
-        String encryptedPassword = BCrypt.hashpw(passwordField.getText(), BCrypt.gensalt());
+        String encryptedPassword = PasswordHasher.hashpw(passwordField.getText());
         chercheur.setPassword(encryptedPassword);  // Utilisation du mot de passe crypté
 
         chercheur.setSexe(sexeComboBox.getValue());

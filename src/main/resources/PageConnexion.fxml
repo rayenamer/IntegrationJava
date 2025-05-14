@@ -25,7 +25,7 @@
     <VBox alignment="CENTER" spacing="30"
           style="-fx-padding: 40; -fx-background-color: white; -fx-border-radius: 15; -fx-background-radius: 15;">
 
-        <Label text="Connexion" 
+        <Label text="Connexion"
                style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #4338ca; -fx-font-family: 'Segoe UI', 'Roboto', sans-serif;" />
 
         <TextField fx:id="emailField" promptText="Email"
@@ -40,7 +40,7 @@
 
         <!-- Section CAPTCHA -->
         <VBox spacing="15" alignment="CENTER" style="-fx-background-color: #f8fafc; -fx-padding: 20; -fx-background-radius: 10;">
-            <Label text="Veuillez entrer le texte ci-dessous" 
+            <Label text="Veuillez entrer le texte ci-dessous"
                    style="-fx-font-size: 14px; -fx-text-fill: #4b5563; -fx-font-weight: 500;"/>
             <ImageView fx:id="captchaImage" fitWidth="200" fitHeight="50" preserveRatio="true"/>
             <TextField fx:id="captchaField" promptText="Entrez le texte du CAPTCHA"
@@ -62,7 +62,7 @@
                     style="-fx-background-color: #4f46e5; -fx-text-fill: white;
                            -fx-font-size: 14px; -fx-padding: 12px 30px;
                            -fx-background-radius: 8px; -fx-cursor: hand;"/>
-            
+
             <Button text="Créer un compte" onAction="#handleCreationCompte"
                     style="-fx-background-color: #10b981; -fx-text-fill: white;
                            -fx-font-size: 14px; -fx-padding: 12px 30px;

@@ -12,6 +12,7 @@
           AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20"
           AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
 
+        <fx:include source="navbar.fxml" />
         <Label text="Tableau de Bord Administrateur" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
 
         <Button fx:id="consulterCandidaturesButton" text="Consulter les Candidatures"

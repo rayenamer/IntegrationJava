@@ -73,28 +73,39 @@ public class ProfileCRUDController {
         if (freelancer != null && freelancer.getPhoto() != null && !freelancer.getPhoto().isEmpty()) {
             try {
                 String photoPath = freelancer.getPhoto();
-                // Si le chemin commence par 'c:', ajouter le préfixe 'file:///' pour le rendre valide
-                if (photoPath.startsWith("c:")) {
-                    photoPath = "file:///" + photoPath.replace("\\", "/");
+                Image image = null;
+                // Si le chemin est absolu (Windows ou Linux)
+                if (photoPath.matches("^[a-zA-Z]:\\\\.*") || photoPath.startsWith("/")) {
+                    // Windows: C:\... ou Linux: /home/...
+                    image = new Image("file:" + photoPath.replace("\\", "/"));
+                } else {
+                    // Sinon, chercher dans les ressources du projet
+                    java.net.URL url = getClass().getResource("/image/" + photoPath);
+                    if (url != null) {
+                        image = new Image(url.toExternalForm());
+                    }
                 }
-                Image image = new Image(photoPath);
-                imageProfil.setImage(image);
+                if (image != null && !image.isError()) {
+                    imageProfil.setImage(image);
+                } else {
+                    imageProfil.setImage(getDefaultProfileImage());
+                }
             } catch (Exception e) {
-                System.err.println("Erreur lors du chargement de l'image : " + e.getMessage());
-                // Charger une image par défaut en cas d'erreur
-                loadDefaultImage();
+                System.err.println("Erreur lors du chargement de la photo de profil : " + e.getMessage());
+                imageProfil.setImage(getDefaultProfileImage());
             }
         } else {
-            loadDefaultImage();
+            imageProfil.setImage(getDefaultProfileImage());
         }
     }
 
-    private void loadDefaultImage() {
-        try {
-            Image defaultImage = new Image(getClass().getResourceAsStream("/images/default-profile.png"));
-            imageProfil.setImage(defaultImage);
-        } catch (Exception e) {
-            System.err.println("Erreur lors du chargement de l'image par défaut : " + e.getMessage());
+    private Image getDefaultProfileImage() {
+        java.net.URL url = getClass().getResource("/images/profile_icon.jpeg");
+        if (url != null) {
+            return new Image(url.toExternalForm());
+        } else {
+            System.err.println("Image par défaut non trouvée dans /images/profile_icon.jpeg !");
+            return null;
         }
     }
 
@@ -185,6 +196,18 @@ public class ProfileCRUDController {
     private void handleClose() {
         Stage stage = (Stage) btnClose.getScene().getWindow();
         stage.close();
+    }
+
+    @FXML
+    private void handleModifierAdmin() {
+        // TODO: Implémenter la logique pour modifier les données de l'admin
+        showAlert(Alert.AlertType.INFORMATION, "Modifier Admin", "Fonctionnalité à implémenter.");
+    }
+
+    @FXML
+    private void handleSupprimerAdmin() {
+        // TODO: Implémenter la logique pour supprimer le compte admin
+        showAlert(Alert.AlertType.INFORMATION, "Supprimer Admin", "Fonctionnalité à implémenter.");
     }
 
     private void showAlert(Alert.AlertType type, String title, String message) {

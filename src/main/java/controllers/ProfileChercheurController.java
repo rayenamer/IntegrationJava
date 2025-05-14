@@ -120,7 +120,6 @@ public class ProfileChercheurController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/ModifierProfileChercheur.fxml"));
             Parent root = loader.load();
-
             ModifierProfileChercheurController controller = loader.getController();
             controller.setChercheur(chercheur);
 
@@ -129,9 +128,8 @@ public class ProfileChercheurController {
             stage.setScene(new Scene(root));
             stage.show();
 
-            // Fermer la fenêtre actuelle
-            Stage currentStage = (Stage) btnModifier.getScene().getWindow();
-            currentStage.close();
+            // Ferme cette fenêtre
+            ((Stage) btnModifier.getScene().getWindow()).close();
         } catch (IOException e) {
             e.printStackTrace();
             showAlert(Alert.AlertType.ERROR, "Erreur", "Impossible d'ouvrir la page de modification.");

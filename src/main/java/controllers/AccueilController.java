@@ -16,6 +16,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.Node;
 import javafx.stage.Stage;
 import utils.Session;
+import services.FreelancerService;
+import javafx.scene.image.Image;
 
 import java.io.IOException;
 import java.net.URL;
@@ -211,8 +213,11 @@ public class AccueilController {
                 ProfileChercheurController controller = loader.getController();
                 controller.setChercheur((Chercheur) currentUser);
             } else if (currentUser instanceof Freelancer) {
+                // Correction : charger toutes les données du freelancer depuis la base
+                FreelancerService freelancerService = new FreelancerService();
+                entities.Freelancer fullFreelancer = freelancerService.getFreelancerById(currentUser.getId());
                 ProfileCRUDController controller = loader.getController();
-                controller.setFreelancer((Freelancer) currentUser);
+                controller.setFreelancer(fullFreelancer);
             }
 
             Stage stage = new Stage();

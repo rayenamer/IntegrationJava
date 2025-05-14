@@ -124,7 +124,7 @@ public class ModifierProfileController {
             System.out.println("Nombre de lignes affectées dans user: " + rowsAffectedUser);
 
             // Mise à jour de la table freelancer
-            String queryFreelancer = "UPDATE freelancer SET adresse = ?, annees_experience = ?, cv = ? WHERE user_id = ?";
+            String queryFreelancer = "UPDATE freelancer SET adresse = ?, annees_experience = ?, cv = ? WHERE id = ?";
             stmtFreelancer = connection.prepareStatement(queryFreelancer);
             stmtFreelancer.setString(1, txtAdresse.getText());
             stmtFreelancer.setInt(2, Integer.parseInt(txtAnneesExperience.getText()));
