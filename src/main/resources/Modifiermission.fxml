@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.FXCollections?>
+
+<?import java.lang.String?>
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.MissionfreelencerController"
+            style="-fx-background-color: #f5f5f5;" prefWidth="600" prefHeight="500">
+    <VBox alignment="CENTER" spacing="20"
+          AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20"
+          AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+
+        <!-- Header -->
+        <VBox alignment="CENTER" spacing="5">
+            <Text text="Modifier une Mission" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-fill: #333333;"/>
+            <Text text="Mettez à jour les détails de la mission" style="-fx-font-size: 16px; -fx-fill: #328665;"/>
+        </VBox>
+
+        <!-- Form -->
+        <GridPane hgap="10" vgap="10" alignment="CENTER">
+            <Label text="Titre :" GridPane.columnIndex="0" GridPane.rowIndex="0"
+                   style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+            <TextField fx:id="titreField" promptText="Entrez le titre" prefWidth="300"
+                       GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+            <Label text="Prix (DT) :" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                   style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+            <TextField fx:id="prixField" promptText="Entrez le prix" prefWidth="300"
+                       GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+            <Label text="Description :" GridPane.columnIndex="0" GridPane.rowIndex="2"
+                   style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+            <TextArea fx:id="descriptionField" promptText="Entrez la description" prefWidth="300" prefHeight="100"
+                      GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+            <Label text="Date limite :" GridPane.columnIndex="0" GridPane.rowIndex="3"
+                   style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+            <DatePicker fx:id="datelimitePicker" promptText="Sélectionnez la date limite" prefWidth="300"
+                        GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+            <Label text="Spécialité :" GridPane.columnIndex="0" GridPane.rowIndex="4"
+                   style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+            <ComboBox fx:id="specialiteCombo" prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Design"/>
+                        <String fx:value="Développement"/>
+                        <String fx:value="Marketing"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+
+            <Label text="Date de début :" GridPane.columnIndex="0" GridPane.rowIndex="5"
+                   style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+            <DatePicker fx:id="dateDebutPicker" promptText="Sélectionnez la date de début" prefWidth="300"
+                        GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+            <Label text="URL de l'image :" GridPane.columnIndex="0" GridPane.rowIndex="6"
+                   style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+            <TextField fx:id="imageUrlField" promptText="Entrez l'URL de l'image" prefWidth="300"
+                       GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+            <Label text="User ID :" GridPane.columnIndex="0" GridPane.rowIndex="7"
+                   style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+            <TextField fx:id="userIdField" promptText="Entrez l'ID de l'utilisateur" prefWidth="300"
+                       GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+        </GridPane>
+
+        <!-- Buttons -->
+        <HBox spacing="10" alignment="CENTER">
+            <Button fx:id="saveButton" text="Enregistrer" onAction="#handleSave"
+                    style="-fx-background-color: #328665; -fx-text-fill: white; -fx-pref-width: 150;
+                           -fx-font-size: 14px; -fx-background-radius: 5px;"/>
+            <Button fx:id="cancelButton" text="Annuler" onAction="#handleCancel"
+                    style="-fx-background-color: #ff4d4d; -fx-text-fill: white; -fx-pref-width: 150;
+                           -fx-font-size: 14px; -fx-background-radius: 5px;"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

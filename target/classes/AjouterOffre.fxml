@@ -12,35 +12,26 @@
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="controllers.AjouterOffreController"
             prefWidth="1500.0" prefHeight="900.0">
-
+    <Button text="home"
+    onAction="#home"
+    style="-fx-background-color: transparent;
+    -fx-text-fill: #333;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 10px 20px;
+    -fx-border-color: #333;
+    -fx-border-width: 2px;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-hover: -fx-background-color #f0f0f0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 1, 1);">
+</Button>
     <children>
         <VBox spacing="20" alignment="TOP_CENTER"
               style="-fx-font-size: 16px;"
               AnchorPane.topAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-            <!-- Top section (HBox) -->
-            <HBox spacing="0.0"
-                  alignment="CENTER_LEFT"
-                  style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 3); -fx-border-color: #e2e8f0; -fx-border-width: 0 0 1px 0;" prefWidth="1550">
-                <padding>
-                    <Insets top="15" right="40" bottom="15" left="40"/>
-                </padding>
 
-                <Label text="CareEra"
-                       style="-fx-font-size: 28px; -fx-text-fill: #4338ca; -fx-font-weight: 800; -fx-font-family: 'Segoe UI', 'Roboto', sans-serif;" />
-
-                <Region HBox.hgrow="ALWAYS" />
-
-                <HBox spacing="0">
-                    <Button fx:id="offreButton" text="Offres d'emploi" onAction="#handleOffreClick"
-                            style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
-                    <Button text="Freelance"
-                            style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
-                    <Button text="Événements"
-                            style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20; -fx-border-color: #e2e8f0; -fx-border-width: 0 1px 0 0;" />
-                    <Button text="Forum et Discussion"
-                            style="-fx-background-color: transparent; -fx-text-fill: #1e3a8a; -fx-font-size: 14px; -fx-font-weight: 700; -fx-padding: 8 20;" />
-                </HBox>
-            </HBox>
             <children>
 
                 <!-- Barre de navigation -->

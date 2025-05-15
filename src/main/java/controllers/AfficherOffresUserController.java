@@ -190,4 +190,20 @@ public class AfficherOffresUserController {
         alert.setContentText(message);
         alert.showAndWait();
     }
+
+    @FXML
+    public void home(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Acceuilfc.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Ajouter une Candidature");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            showError("Erreur", "Impossible d'ouvrir la page d'ajout de candidature : " + e.getMessage());
+        }
+    }
+
+
 }

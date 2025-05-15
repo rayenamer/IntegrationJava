@@ -13,7 +13,7 @@
 }
 
 .text-field:focused {
-    -fx-border-color: #2196F3;
+    -fx-border-color: #339160;
 }
 
 /* Button styling */
@@ -23,14 +23,14 @@
 }
 
 .search-button {
-    -fx-background-color: #2196F3;
+    -fx-background-color: #339160;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-padding: 8 15;
 }
 
 .search-button:hover {
-    -fx-background-color: #1976D2;
+    -fx-background-color: #339160;
 }
 
 .action-button {
@@ -42,7 +42,7 @@
 
 .action-button:hover {
     -fx-background-color: #f5f5f5;
-    -fx-border-color: #2196F3;
+    -fx-border-color: #339160;
 }
 
 /* TableView styling */
@@ -51,14 +51,14 @@
 }
 
 .table-view .column-header-background {
-    -fx-background-color: #2196F3;
+    -fx-background-color: #339160;
 }
 
 .table-view .column-header, .table-view .filler {
     -fx-background-color: transparent;
     -fx-size: 45;
     -fx-border-width: 0 0 0 1;
-    -fx-border-color: #1976D2;
+    -fx-border-color: #339160;
 }
 
 .table-view .column-header .label {
@@ -79,7 +79,7 @@
 
 .table-view .table-row-cell:selected {
     -fx-background-color: #e3f2fd;
-    -fx-text-fill: #2196F3;
+    -fx-text-fill: #339160;
 }
 
 .table-view .table-cell {
@@ -110,7 +110,7 @@
 }
 
 .button:hover .glyph-icon {
-    -fx-fill: #2196F3;
+    -fx-fill: #339160;
 } 
 /* Base Styling */
 .root {
@@ -138,7 +138,7 @@
 
 /* Buttons */
 .button {
-    -fx-background-color: #1b74e4;
+    -fx-background-color: #339160;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-background-radius: 6;
@@ -147,11 +147,11 @@
 }
 
 .button:hover {
-    -fx-background-color: #166fe5;
+    -fx-background-color: #339160;
 }
 
 .button:pressed {
-    -fx-background-color: #1464d2;
+    -fx-background-color: #339160;
 }
 
 /* Labels */
@@ -162,7 +162,7 @@
 
 /* Error Label */
 #errorLabel {
-    -fx-text-fill: red;
+    -fx-text-fill: #339160;
     -fx-font-weight: bold;
 }
 
@@ -249,7 +249,7 @@
 
 .action-button:hover {
     -fx-background-color: #f2f3f5;
-    -fx-text-fill: #1877f2;
+    -fx-text-fill: #339160;
 }
 
 .action-button .ikonli-font-icon {
@@ -274,7 +274,7 @@
 .header-title {
     -fx-font-size: 24px;
     -fx-font-weight: bold;
-    -fx-text-fill: #1b74e4;
+    -fx-text-fill: #339160;
 }
 
 /* Root styles */
@@ -295,7 +295,7 @@
 .header-title {
     -fx-font-size: 24px;
     -fx-font-weight: bold;
-    -fx-text-fill: #1b74e4;
+    -fx-text-fill: #339160;
 }
 
 /* Button styles */
@@ -308,30 +308,30 @@
 }
 
 .create-post-button {
-    -fx-background-color: #1877f2;
+    -fx-background-color: #339160;
     -fx-text-fill: white;
 }
 
 .create-post-button:hover {
-    -fx-background-color: #166fe5;
+    -fx-background-color: #339160;
 }
 
 .delete-button {
-    -fx-background-color: #dc3545;
+    -fx-background-color: #339160;
     -fx-text-fill: white;
 }
 
 .delete-button:hover {
-    -fx-background-color: #c82333;
+    -fx-background-color: #339160;
 }
 
 .edit-button {
-    -fx-background-color: #28a745;
+    -fx-background-color: #339160;
     -fx-text-fill: white;
 }
 
 .edit-button:hover {
-    -fx-background-color: #218838;
+    -fx-background-color: #339160;
 }
 
 /* Post card styles */
@@ -404,7 +404,7 @@
 
 .action-icon-button:hover {
     -fx-background-color: #f2f3f5;
-    -fx-text-fill: #1877f2;
+    -fx-text-fill: #339160;
 }
 
 .like-count {
@@ -480,7 +480,7 @@
     -fx-padding: 0;
 }
 .stats-button {
-    -fx-background-color: #4CAF50;
+    -fx-background-color: #339160;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-padding: 8 16;
@@ -490,7 +490,7 @@
 }
 
 .stats-button:hover {
-    -fx-background-color: #45a049;
+    -fx-background-color: #339160;
 }
 .statistics-pane {
     -fx-padding: 20;
@@ -552,7 +552,7 @@
 
 /* Button Styling */
 #sendButton {
-    -fx-background-color: #4285F4;
+    -fx-background-color: #339160;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-padding: 10px 20px;
@@ -563,7 +563,7 @@
 
 /* Button Hover Effect */
 #sendButton:hover {
-    -fx-background-color: #357AE8;
+    -fx-background-color: #339160;
 }
 
 /* TextArea Styling */
@@ -600,7 +600,7 @@ VBox {
 
 /* Button Styling */
 #jokeButton {
-    -fx-background-color: #4CAF50;
+    -fx-background-color: #339160;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-padding: 10px 20px;
@@ -611,7 +611,7 @@ VBox {
 
 /* Button Hover Effect */
 #jokeButton:hover {
-    -fx-background-color: #45a049;
+    -fx-background-color: #339160;
 }
 
 /* TextArea Styling */

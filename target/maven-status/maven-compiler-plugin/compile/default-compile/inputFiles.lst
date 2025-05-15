@@ -39,6 +39,7 @@ C:\Users\hedir\OneDrive\Desktop\IntegrationJava\src\main\java\services\Missionfr
 C:\Users\hedir\OneDrive\Desktop\IntegrationJava\src\main\java\entities\Freelancer.java
 C:\Users\hedir\OneDrive\Desktop\IntegrationJava\src\main\java\services\TypeEventService.java
 C:\Users\hedir\OneDrive\Desktop\IntegrationJava\src\main\java\controllers\MapViewController.java
+C:\Users\hedir\OneDrive\Desktop\IntegrationJava\src\main\java\controllers\ProfileModerateurController.java
 C:\Users\hedir\OneDrive\Desktop\IntegrationJava\src\main\java\entities\Evenement.java
 C:\Users\hedir\OneDrive\Desktop\IntegrationJava\src\main\java\services\ModerateurService.java
 C:\Users\hedir\OneDrive\Desktop\IntegrationJava\src\main\java\services\CloudinaryUploader.java
@@ -46,6 +47,7 @@ C:\Users\hedir\OneDrive\Desktop\IntegrationJava\src\main\java\controllers\Modifi
 C:\Users\hedir\OneDrive\Desktop\IntegrationJava\src\main\java\controllers\ProfileChercheurController.java
 C:\Users\hedir\OneDrive\Desktop\IntegrationJava\src\main\java\utils\HelloApplication.java
 C:\Users\hedir\OneDrive\Desktop\IntegrationJava\src\main\java\controllers\WitController.java
+C:\Users\hedir\OneDrive\Desktop\IntegrationJava\src\main\java\controllers\ModifierProfileModerateurController.java
 C:\Users\hedir\OneDrive\Desktop\IntegrationJava\src\main\java\controllers\AjouterFreelancerController.java
 C:\Users\hedir\OneDrive\Desktop\IntegrationJava\src\main\java\services\EmailSender.java
 C:\Users\hedir\OneDrive\Desktop\IntegrationJava\src\main\java\services\CandidatureService.java

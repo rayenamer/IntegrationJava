@@ -195,8 +195,9 @@ public class AccueilController {
                 fxmlPath = "/ProfileChercheur.fxml";
             } else if (currentUser instanceof Freelancer) {
                 fxmlPath = "/ProfileCRUD.fxml";
-            }
-            else {
+            } else if ("moderateur".equalsIgnoreCase(currentUser.getType())) {
+                fxmlPath = "/ProfileModerateur.fxml";
+            } else {
                 showAlert(Alert.AlertType.ERROR, "Erreur", "Type d'utilisateur non supporté.");
                 return;
             }
@@ -218,7 +219,7 @@ public class AccueilController {
                 entities.Freelancer fullFreelancer = freelancerService.getFreelancerById(currentUser.getId());
                 ProfileCRUDController controller = loader.getController();
                 controller.setFreelancer(fullFreelancer);
-            }
+            } // Pour le modérateur, le contrôleur récupère les infos via la session
 
             Stage stage = new Stage();
             stage.setTitle("Mon Profil");
@@ -251,6 +252,8 @@ public class AccueilController {
                             "Erreur: " + e.getMessage());
         }
     }
+
+
 
     private void showAlert(Alert.AlertType type, String title, String message) {
         Alert alert = new Alert(type);

@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
@@ -21,9 +22,6 @@ import services.TypeEventService;
 import services.WeatherService;
 import utils.Config;
 import utils.Session;
-import java.util.Random;
-
-
 import java.net.URI;
 import java.net.URLEncoder;
 import java.net.http.HttpClient;
@@ -35,7 +33,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 import entities.User;
-
+import javafx.fxml.FXMLLoader;
+import java.io.IOException;
 
 public class EventListController {
     private final EvenementService eventService = new EvenementService();
@@ -75,10 +74,6 @@ public class EventListController {
         stage.setTitle(translate("Events"));
         stage.show();
     }
-
-    // Rest of the class remains unchanged
-    // ...
-
 
     private void loadEvents() {
         events.setAll(eventService.findAll());
@@ -153,9 +148,29 @@ public class EventListController {
             stage.setTitle(translate("Events"));
         });
 
-        HBox languageBox = new HBox(10, new Label(translate("Language")), languageSelector);
-        languageBox.setAlignment(Pos.CENTER_LEFT);
-        languageBox.setPadding(new Insets(10));
+        // Home Button
+        Button homeButton = new Button(translate("Home"));
+        styleButton(homeButton, "#007BFF"); // Blue color for Home button
+        homeButton.setTooltip(new Tooltip(translate("Return to homepage")));
+        homeButton.setOnAction(e -> {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Acceuilfc.fxml"));
+                Parent root = loader.load();
+                Stage newStage = new Stage();
+                newStage.setTitle(translate("Homepage"));
+                newStage.setScene(new Scene(root));
+                newStage.show();
+
+                ((Stage) homeButton.getScene().getWindow()).close();
+            } catch (IOException ex) {
+                showAlert(translate("Error"), translate("Error loading homepage: ") + ex.getMessage());
+            }
+        });
+
+        // Navigation Bar
+        HBox navBox = new HBox(10, new Label(translate("Language")), languageSelector, homeButton);
+        navBox.setAlignment(Pos.CENTER_LEFT);
+        navBox.setPadding(new Insets(10));
 
         // Title
         Label title = new Label(translate("Events"));
@@ -237,7 +252,7 @@ public class EventListController {
         events.addListener((javafx.beans.Observable obs) -> applyFilters(searchField, typeFilter, availabilityFilter));
 
         // Main Layout
-        mainLayout = new VBox(15, languageBox, titleBox, searchFilteredBox, scrollPane);
+        mainLayout = new VBox(15, navBox, titleBox, searchFilteredBox, scrollPane);
         mainLayout.setStyle("-fx-background-color: #E9F9EF;");
         mainLayout.setPadding(new Insets(20));
         return mainLayout;
@@ -398,5 +413,12 @@ public class EventListController {
                 (int) (color.getRed() * 255 * factor),
                 (int) (color.getGreen() * 255 * factor),
                 (int) (color.getBlue() * 255 * factor));
+    }
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(translate(title));
+        alert.setContentText(translate(message));
+        alert.showAndWait();
     }
 }

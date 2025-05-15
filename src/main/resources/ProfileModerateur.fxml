@@ -5,13 +5,13 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controllers.ProfileChercheurController"
+            fx:controller="controllers.ProfileModerateurController"
             prefWidth="800" prefHeight="600"
             style="-fx-padding: 30; -fx-background-color: #f1f5f9;">
 
     <VBox spacing="25" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
 
-        <Label text="Mon Profil Chercheur"
+        <Label text="Mon Profil Modérateur"
                style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #1e3a8a;"/>
 
         <!-- Carte Profil -->
@@ -47,29 +47,22 @@
                 <Label fx:id="lblDomaine" GridPane.rowIndex="2" GridPane.columnIndex="1"
                        style="-fx-font-size: 16px; -fx-text-fill: #1e293b;"/>
 
-                <Label text="Spécialité :" GridPane.rowIndex="3" GridPane.columnIndex="0"
+                <Label text="Société :" GridPane.rowIndex="3" GridPane.columnIndex="0"
                        style="-fx-font-size: 16px; -fx-text-fill: #334155;"/>
-                <Label fx:id="lblSpecialite" GridPane.rowIndex="3" GridPane.columnIndex="1"
-                       style="-fx-font-size: 16px; -fx-text-fill: #1e293b;"/>
-
-                <Label text="CV :" GridPane.rowIndex="4" GridPane.columnIndex="0"
-                       style="-fx-font-size: 16px; -fx-text-fill: #334155;"/>
-                <Label fx:id="lblCV" GridPane.rowIndex="4" GridPane.columnIndex="1"
+                <Label fx:id="lblSociete" GridPane.rowIndex="3" GridPane.columnIndex="1"
                        style="-fx-font-size: 16px; -fx-text-fill: #1e293b;"/>
             </GridPane>
+
+            <!-- Boutons d'action -->
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button fx:id="btnModifier" text="Modifier" onAction="#handleModifier"
+                        style="-fx-background-color: #4f46e5; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8px; -fx-padding: 8 20;"/>
+                <Button fx:id="btnSupprimer" text="Supprimer" onAction="#handleSupprimer"
+                        style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8px; -fx-padding: 8 20;"/>
+                <Button fx:id="btnClose" text="Fermer" onAction="#handleClose"
+                        style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8px; -fx-padding: 8 20;"/>
+            </HBox>
+
         </VBox>
-
-        <!-- Boutons d'action -->
-        <HBox spacing="10" alignment="CENTER_RIGHT">
-            <Button fx:id="btnModifier" text="Modifier" onAction="#handleModifier"
-                    style="-fx-background-color: #4f46e5; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8px; -fx-padding: 8 20;"/>
-            <Button fx:id="btnSupprimer" text="Supprimer" onAction="#handleSupprimer"
-                    style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8px; -fx-padding: 8 20;"/>
-            <Button fx:id="btnClose" text="Fermer" onAction="#handleClose"
-                    style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8px; -fx-padding: 8 20;"/>
-            <Button text="Télécharger CV" onAction="#handleTelechargerCV"
-                    style="-fx-background-color: #10b981; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8px; -fx-padding: 8 20;"/>
-        </HBox>
-
     </VBox>
-</AnchorPane>
+</AnchorPane> 

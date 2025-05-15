@@ -1,7 +1,9 @@
 package controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -13,6 +15,7 @@ import services.CloudinaryUploader;
 import services.MissionfreelencerService;
 
 import java.io.File;
+import java.io.IOException;
 import java.sql.Date;
 
 public class MissionfreelencerController {
@@ -102,6 +105,19 @@ public class MissionfreelencerController {
     }
 
 
+    @FXML
+    public void home(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Acceuil.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Ajouter une Candidature");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            //showError(e.getMessage());
+        }
+    }
     private void redirectToMissionList() {
         try {
             String fxmlPath = "/listmissionfreelencer.fxml";

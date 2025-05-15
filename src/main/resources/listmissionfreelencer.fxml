@@ -10,6 +10,21 @@
 <AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="controllers.MissionListController"
             style="-fx-background-color: #f5f5f5;">
+    <Button text="home"
+            onAction="#home"
+            style="-fx-background-color: transparent;
+               -fx-text-fill: #333;
+               -fx-font-size: 16px;
+               -fx-font-weight: bold;
+               -fx-cursor: hand;
+               -fx-padding: 10px 20px;
+               -fx-border-color: #333;
+               -fx-border-width: 2px;
+               -fx-border-radius: 15px;
+               -fx-background-radius: 15px;
+               -fx-hover: -fx-background-color #f0f0f0;
+               -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 1, 1);">
+    </Button>
 
     <VBox alignment="CENTER" spacing="20"
           AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20"
@@ -18,12 +33,12 @@
         <!-- Header -->
         <VBox alignment="CENTER" spacing="5">
             <Text text="Liste des Missions" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-fill: #333333;"/>
-            <Text text="Découvrez les opportunités pour freelencers" style="-fx-font-size: 16px; -fx-fill: #a10c0c;"/>
+            <Text text="Découvrez les opportunités pour freelencers" style="-fx-font-size: 16px; -fx-fill: #328665;"/>
         </VBox>
 
         <!-- Add Mission Button -->
         <Button fx:id="addMissionButton" text="Ajouter Nouvelle Mission" onAction="#handleAddMission"
-                style="-fx-background-color: #a10c0c; -fx-text-fill: white; -fx-pref-width: 200;"/>
+                style="-fx-background-color: #328665; -fx-text-fill: white; -fx-pref-width: 200;"/>
 
         <!-- Search Bar -->
         <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10;">
@@ -41,7 +56,7 @@
             <TextField fx:id="minPriceFilter" promptText="Prix min" prefWidth="100"/>
             <TextField fx:id="maxPriceFilter" promptText="Prix max" prefWidth="100"/>
             <DatePicker fx:id="dateLimiteFilter" promptText="Date limite" prefWidth="150"/>
-            <Button fx:id="searchButton" text="Rechercher" onAction="#handleSearch" style="-fx-background-color: #a10c0c; -fx-text-fill: white;"/>
+            <Button fx:id="searchButton" text="Rechercher" onAction="#handleSearch" style="-fx-background-color: #328665; -fx-text-fill: white;"/>
         </HBox>
 
         <!-- Mission List -->

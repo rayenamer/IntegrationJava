@@ -5,8 +5,10 @@ import entities.TypeEvent;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
@@ -23,6 +25,7 @@ import services.AIDescriptionService;
 import javafx.application.Platform;
 
 import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -50,6 +53,24 @@ public class EvenementController {
         titleBox.setPadding(new Insets(20, 0, 20, 0));
 
         // Navigation Buttons
+        Button homeButton = new Button("Accueil");
+        styleButton(homeButton, "#007BFF"); // Blue color for Home button
+        homeButton.setTooltip(new Tooltip("Retourner à la page d'accueil"));
+        homeButton.setOnAction(e -> {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Acceuil.fxml"));
+                Parent root = loader.load();
+                Stage newStage = new Stage();
+                newStage.setTitle("Page d'Accueil");
+                newStage.setScene(new Scene(root));
+                newStage.show();
+
+                ((Stage) homeButton.getScene().getWindow()).close();
+            } catch (IOException ex) {
+                showAlert("Erreur", "Erreur lors du chargement de la page d'accueil : " + ex.getMessage());
+            }
+        });
+
         Button viewTypesButton = new Button("Types d'événements");
         styleButton(viewTypesButton, "#1F3A5F");
         viewTypesButton.setTooltip(new Tooltip("Voir tous les types d'événements"));
@@ -64,7 +85,7 @@ public class EvenementController {
             showEventForm(newStage, null);
         });
 
-        HBox navButtons = new HBox(20, viewTypesButton, addButton);
+        HBox navButtons = new HBox(20, homeButton, viewTypesButton, addButton);
         navButtons.setAlignment(Pos.CENTER_LEFT);
         navButtons.setPadding(new Insets(15));
 
@@ -447,7 +468,7 @@ public class EvenementController {
                         selectedType,
                         imageUrl.isEmpty() ? null : imageUrl,
                         event != null ? event.getUserId() : null,
-                        event != null ? event.getParticipantsIds() : null // Fix: Preserve participantsIds
+                        event != null ? event.getParticipantsIds() : null
                 );
                 eventService.save(newEvent);
                 loadEvents();

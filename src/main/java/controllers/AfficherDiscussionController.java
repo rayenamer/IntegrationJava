@@ -446,4 +446,39 @@ public class AfficherDiscussionController implements Initializable {
         alert.setContentText(content);
         alert.showAndWait();
     }
+
+    @FXML
+    public void home(ActionEvent actionEvent) {
+        try {
+            String userType = getCurrentUserType();  // Replace this with your method to get the current user type
+
+            FXMLLoader loader;
+            if ("Freelancer".equals(userType) || "Chercheur".equals(userType)) {
+                loader = new FXMLLoader(getClass().getResource("/Acceuilfc.fxml"));
+            } else if ("Moderateur".equals(userType)) {
+                loader = new FXMLLoader(getClass().getResource("/Acceuil.fxml"));
+            } else {
+                // Handle case for unknown user type or error
+                System.out.println("Unknown user type: " + userType);
+                return;
+            }
+
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Accueil");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            // Handle the exception properly, for example show an error message
+            System.err.println("Error loading the scene: " + e.getMessage());
+        }
+    }
+
+    // This method should return the current user type, replace with your actual logic to get user type
+    private String getCurrentUserType() {
+        // Logic to get current user type (e.g., Freelancer, Chercheur, Moderateur)
+        // This could be based on a session, user role, or any other logic you are using
+        return "Freelancer";  // Example return, change as per your logic
+    }
+
 }

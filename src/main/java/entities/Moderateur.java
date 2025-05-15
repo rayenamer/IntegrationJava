@@ -3,7 +3,6 @@ package entities;
 public class Moderateur extends User {
     private String societe;
 
-
     public Moderateur() {
         super();
     }
@@ -13,7 +12,6 @@ public class Moderateur extends User {
                       String societe) {
         super(id, email, password, nom, prenom, domaine, sexe, tel, type, roles);
         this.societe = societe;
-
     }
 
     // Getters et Setters
@@ -24,7 +22,6 @@ public class Moderateur extends User {
     public void setSociete(String societe) {
         this.societe = societe;
     }
-
 
     @Override
     public String toString() {

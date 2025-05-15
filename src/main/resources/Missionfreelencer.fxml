@@ -11,15 +11,12 @@
             fx:controller="controllers.MissionfreelencerController"
             style="-fx-background-color: #f4f7fb;">
 
+
     <HBox fx:id="mainHBox" spacing="0" alignment="TOP_CENTER"
           AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
           AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
 
-        <!-- Left Side: Branding with Solid Background -->
-        <VBox alignment="CENTER" style="-fx-background-color: #1A3C34;" HBox.hgrow="ALWAYS">
-            <Text text="Mission Freelancer" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-fill: white;"/>
-            <Text text="Connectez-vous avec les meilleurs talents" style="-fx-font-size: 16px; -fx-fill: #A9C7C2; -fx-padding: 10 0 0 0;"/>
-        </VBox>
+
 
         <!-- Right Side: Form -->
         <VBox fx:id="formVBox" spacing="20" alignment="TOP_CENTER" HBox.hgrow="ALWAYS"
@@ -83,6 +80,23 @@
             <Button text="Publier la Mission" onAction="#ajouterMission"
                     styleClass="primary-button" style="-fx-pref-width: 200; -fx-pref-height: 40;"/>
 
+
         </VBox>
     </HBox>
+    <Button text="home"
+            onAction="#home"
+            style="-fx-background-color: transparent;
+               -fx-text-fill: #333;
+               -fx-font-size: 16px;
+               -fx-font-weight: bold;
+               -fx-cursor: hand;
+               -fx-padding: 10px 20px;
+               -fx-border-color: #333;
+               -fx-border-width: 2px;
+               -fx-border-radius: 15px;
+               -fx-background-radius: 15px;
+               -fx-hover: -fx-background-color #f0f0f0;
+               -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 1, 1);">
+    </Button>
+
 </AnchorPane>

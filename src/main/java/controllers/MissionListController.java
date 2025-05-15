@@ -1,6 +1,7 @@
 package controllers;
 
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -36,6 +37,7 @@ public class MissionListController implements Initializable {
     @FXML private Button addMissionButton; // Added for "Ajouter Nouvelle Mission"
 
     private final MissionfreelencerService missionService = new MissionfreelencerService();
+    private Missionfreelencer selectedMission; // Added to resolve 'selectedMission' symbol
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -140,6 +142,53 @@ public class MissionListController implements Initializable {
     }
 
     @FXML
+    private void handleEditSelectedMission() {
+        if (selectedMission == null) {
+            showError("Veuillez sélectionner une mission à modifier.");
+            return;
+        }
+        handleEditMission(selectedMission);
+    }
+
+    private void handleEditMission(Missionfreelencer mission) {
+        try {
+            URL fxmlUrl = getClass().getResource("/Modifiermission.fxml");
+            if (fxmlUrl == null) {
+                LOGGER.severe("Fichier missionfreelancer.fxml introuvable");
+                showError("Erreur : Formulaire de modification de mission introuvable.");
+                return;
+            }
+            FXMLLoader loader = new FXMLLoader(fxmlUrl);
+            Parent root = loader.load();
+
+            MissionfreelencerController controller = loader.getController();
+            if (controller == null) {
+                LOGGER.severe("Contrôleur MissionfreelancerController non trouvé");
+                showError("Erreur : Contrôleur du formulaire non chargé.");
+                return;
+            }
+
+            controller.setMissionListController(this);
+
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setTitle("Modifier Mission - " + (mission.getTitre() != null ? mission.getTitre() : "Mission #" + mission.getId()));
+            stage.setScene(scene);
+
+            URL cssURL = getClass().getResource("/style/missionform.css");
+            if (cssURL != null) {
+                scene.getStylesheets().add(cssURL.toExternalForm());
+            }
+
+            stage.show();
+            LOGGER.info("Fenêtre de modification de mission ouverte pour mission ID=" + mission.getId());
+        } catch (IOException e) {
+            LOGGER.log(Level.SEVERE, "Erreur lors du chargement de missionfreelancer.fxml : " + e.getMessage(), e);
+            showError("Erreur lors de l'ouverture du formulaire de modification : " + e.getMessage());
+        }
+    }
+
+    @FXML
     private void handleAddMission() {
         try {
             URL fxmlUrl = getClass().getResource("/Missionfreelencer.fxml");
@@ -184,7 +233,6 @@ public class MissionListController implements Initializable {
         card.getStyleClass().add("mission-card");
         card.setPadding(new javafx.geometry.Insets(15));
 
-        // Boîte d'informations
         VBox infoBox = new VBox(8);
         infoBox.setPrefWidth(400);
 
@@ -204,7 +252,6 @@ public class MissionListController implements Initializable {
 
         infoBox.getChildren().addAll(titleLabel, budgetLabel, competencesLabel, dateLimiteLabel, dateDebutLabel, descriptionLabel);
 
-        // Boîte droite (image + boutons)
         VBox rightBox = new VBox(10);
         rightBox.setAlignment(javafx.geometry.Pos.CENTER);
 
@@ -222,6 +269,10 @@ public class MissionListController implements Initializable {
         applyButton.getStyleClass().add("apply-button");
         applyButton.setOnAction(e -> handleApply(mission));
 
+        Button editButton = new Button("Modifier");
+        editButton.getStyleClass().add("edit-button");
+        editButton.setOnAction(e -> handleEditMission(mission));
+
         Button deleteButton = new Button("Supprimer");
         deleteButton.getStyleClass().add("delete-button");
         deleteButton.setOnAction(e -> confirmDeleteMission(mission));
@@ -230,7 +281,7 @@ public class MissionListController implements Initializable {
         consulterButton.getStyleClass().add("consulter-button");
         consulterButton.setOnAction(e -> handleConsulterCandidatures(mission));
 
-        buttonBox.getChildren().addAll(applyButton, deleteButton, consulterButton);
+        buttonBox.getChildren().addAll(applyButton, editButton, deleteButton, consulterButton);
         rightBox.getChildren().addAll(imageView, buttonBox);
 
         card.getChildren().addAll(infoBox, rightBox);
@@ -378,5 +429,19 @@ public class MissionListController implements Initializable {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    @FXML
+    public void home(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Acceuilfc.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Ajouter une Candidature");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            showError(e.getMessage());
+        }
     }
 }

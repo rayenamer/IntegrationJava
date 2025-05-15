@@ -9,6 +9,22 @@
       fx:controller="controllers.AfficherDiscussionController"
       spacing="0" 
       stylesheets="@styles.css">
+
+    <Button text="home"
+            onAction="#home"
+            style="-fx-background-color: transparent;
+               -fx-text-fill: #333;
+               -fx-font-size: 16px;
+               -fx-font-weight: bold;
+               -fx-cursor: hand;
+               -fx-padding: 10px 20px;
+               -fx-border-color: #333;
+               -fx-border-width: 2px;
+               -fx-border-radius: 15px;
+               -fx-background-radius: 15px;
+               -fx-hover: -fx-background-color #f0f0f0;
+               -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 1, 1);">
+    </Button>
     
     <!-- Header -->
     <HBox styleClass="header" spacing="10" alignment="CENTER_LEFT" >

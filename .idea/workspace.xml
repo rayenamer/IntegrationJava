@@ -5,44 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84f41fe2-ffdc-48ee-81c4-5c4b748a903d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/navbar.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/navbarfc.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Modifiermission.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AccueilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AccueilController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AdminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AdminDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AjouterChercheurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AjouterChercheurController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AjouterFreelancerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AjouterFreelancerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AjouterModerateurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AjouterModerateurController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ConnexionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/ConnexionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DemandeMissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DemandeMissionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ForgotPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/ForgotPasswordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AccueilControllerfc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AccueilControllerfc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AfficherDiscussionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AfficherDiscussionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AfficherOffresUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AfficherOffresUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AjouterOffreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AjouterOffreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/EvenementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/EvenementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/EventListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/EventListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/MissionListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/MissionListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/MissionfreelencerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/MissionfreelencerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ModifierProfileChercheurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/ModifierProfileChercheurController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ModifierProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/ModifierProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ProfileCRUDController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/ProfileCRUDController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ProfileChercheurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/ProfileChercheurController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ResetPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/ResetPasswordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/DemandeMissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/DemandeMissionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/EmailSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/FreelancerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/FreelancerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/MailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/MailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Acceuil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Acceuil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterFreelancer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterFreelancer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ForgotPassword.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ForgotPassword.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Moderateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Moderateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AfficherOffresUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AfficherOffresUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AjouterOffre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AjouterOffre.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Discussions.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Discussions.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Missionfreelencer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Missionfreelencer.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/ModifierProfileChercheur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ModifierProfileChercheur.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PageConnexion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PageConnexion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ResetPassword.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ResetPassword.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/admin_dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admin_dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ProfileChercheur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ProfileChercheur.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/listmissionfreelencer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/listmissionfreelencer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/navbarfc.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/navbarfc.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Acceuil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Acceuil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/admin_dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/admin_dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AfficherOffresUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AfficherOffresUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AjouterOffre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AjouterOffre.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Discussions.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Discussions.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Missionfreelencer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Missionfreelencer.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/AdminDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/AdminDashboardController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidatureController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidatureController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidaturesUserController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidaturesUserController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidaturesUserController$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidaturesUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherCandidaturesUserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/AfficherDiscussionController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherDiscussionController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/AfficherDiscussionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/AfficherDiscussionController.class" afterDir="false" />
@@ -74,7 +67,6 @@
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/QuizController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/QuizController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/ReplyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/ReplyController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/StatisticsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/StatisticsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/StatistiquesController$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/StatistiquesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/StatistiquesController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/WitController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/WitController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entities/Candidature$StatutCandidature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Candidature$StatutCandidature.class" afterDir="false" />
@@ -90,6 +82,7 @@
       <change beforePath="$PROJECT_DIR$/target/classes/entities/TypeContrat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/TypeContrat.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entities/TypeOffre.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/TypeOffre.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/listmissionfreelencer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/listmissionfreelencer.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/services/CandidatureService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/CandidatureService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/services/ChatbotService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ChatbotService.class" afterDir="false" />
@@ -115,7 +108,6 @@
       <change beforePath="$PROJECT_DIR$/target/classes/utils/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/HelloApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/utils/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/HelloController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/utils/MyDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/MyDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +145,7 @@
     &quot;Application.MainFX.executor&quot;: &quot;Run&quot;,
     &quot;Maven.careera [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;IntegrationHechGRH&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;stableV1&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/hedir/OneDrive/Desktop/IntegrationJava&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -209,7 +201,8 @@
       <workItem from="1747215647360" duration="2482000" />
       <workItem from="1747218395612" duration="1974000" />
       <workItem from="1747220858133" duration="17083000" />
-      <workItem from="1747242961705" duration="6555000" />
+      <workItem from="1747242961705" duration="15880000" />
+      <workItem from="1747298448008" duration="29519000" />
     </task>
     <servers />
   </component>

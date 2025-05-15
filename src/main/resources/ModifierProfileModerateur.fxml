@@ -3,65 +3,40 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.text.Text?>
-<?import javafx.scene.image.ImageView?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controllers.ModifierProfileChercheurController"
-            prefHeight="600.0" prefWidth="800.0"
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.ModifierProfileModerateurController"
+            prefWidth="600" prefHeight="600"
             style="-fx-background-color: #f0f0f0;">
 
     <VBox spacing="20" alignment="CENTER" AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20"
           AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
 
-        <Text style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #333333;">Modifier Mon Profil Chercheur</Text>
+        <Label text="Modifier Mon Profil Modérateur"
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #333333;"/>
 
         <GridPane vgap="15" hgap="15" style="-fx-background-color: #ffffff; -fx-border-radius: 8px; -fx-padding: 20px;">
             <padding>
                 <Insets top="20" right="20" bottom="20" left="20"/>
             </padding>
 
-            <!-- Nom -->
             <Label text="Nom :" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
             <TextField fx:id="txtNom" GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="Entrez votre nom" style="-fx-background-radius: 8px;"/>
 
-            <!-- Prénom -->
             <Label text="Prénom :" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
             <TextField fx:id="txtPrenom" GridPane.rowIndex="1" GridPane.columnIndex="1" promptText="Entrez votre prénom" style="-fx-background-radius: 8px;"/>
 
-            <!-- Email -->
             <Label text="Email :" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
             <TextField fx:id="txtEmail" GridPane.rowIndex="2" GridPane.columnIndex="1" promptText="Entrez votre email" style="-fx-background-radius: 8px;"/>
 
-            <!-- Téléphone -->
             <Label text="Téléphone :" GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
             <TextField fx:id="txtTel" GridPane.rowIndex="3" GridPane.columnIndex="1" promptText="Entrez votre numéro" style="-fx-background-radius: 8px;"/>
 
-            <!-- Domaine -->
             <Label text="Domaine :" GridPane.rowIndex="4" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
             <TextField fx:id="txtDomaine" GridPane.rowIndex="4" GridPane.columnIndex="1" promptText="Entrez votre domaine" style="-fx-background-radius: 8px;"/>
 
-            <!-- Spécialité -->
-            <Label text="Spécialité :" GridPane.rowIndex="5" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
-            <ComboBox fx:id="specialiteCombo" GridPane.rowIndex="5" GridPane.columnIndex="1" promptText="Sélectionnez votre spécialité" style="-fx-background-radius: 8px;"/>
-
-            <!-- CV -->
-            <Label text="CV :" GridPane.rowIndex="6" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
-            <HBox spacing="10" GridPane.rowIndex="6" GridPane.columnIndex="1">
-                <TextField fx:id="txtCV" HBox.hgrow="ALWAYS" promptText="Sélectionnez votre CV" style="-fx-background-radius: 8px;"/>
-                <Button text="Parcourir" onAction="#handleParcourirCV" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 8px;"/>
-            </HBox>
-
-            <!-- Photo -->
-            <Label text="Photo :" GridPane.rowIndex="7" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
-            <VBox spacing="10" GridPane.rowIndex="7" GridPane.columnIndex="1">
-                <HBox spacing="10">
-                    <TextField fx:id="txtPhoto" HBox.hgrow="ALWAYS" promptText="Sélectionnez une photo" style="-fx-background-radius: 8px;"/>
-                    <Button text="Parcourir" onAction="#handleParcourirPhoto" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 8px;"/>
-                </HBox>
-                <ImageView fx:id="imageView" fitWidth="150" fitHeight="150" style="-fx-background-color: #f5f5f5; -fx-background-radius: 75;"/>
-            </VBox>
+            <Label text="Société :" GridPane.rowIndex="5" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="txtSociete" GridPane.rowIndex="5" GridPane.columnIndex="1" promptText="Entrez votre société" style="-fx-background-radius: 8px;"/>
         </GridPane>
 
         <HBox spacing="20" alignment="CENTER">
@@ -71,4 +46,4 @@
                     style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 8px; -fx-padding: 10px 20px;"/>
         </HBox>
     </VBox>
-</AnchorPane>
+</AnchorPane> 

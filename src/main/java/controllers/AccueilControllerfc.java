@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import utils.Session;
 
 import java.io.IOException;
+import java.util.Stack;
 
 public class AccueilControllerfc {
 
@@ -27,6 +28,10 @@ public class AccueilControllerfc {
     private Button logoutButton;
     @FXML
     private Button offreButton;
+    @FXML
+    private Button backButton;
+
+    private static Stack<String> navigationHistory = new Stack<>();
 
     private String userEmail;
     private String userPassword;
@@ -49,67 +54,22 @@ public class AccueilControllerfc {
 
     @FXML
     private void handleOffreClick(ActionEvent event) {
-        try {
-            // Vérifier le type d'utilisateur
-            User currentUser = Session.getCurrentUser();
-            System.out.println("Type d'utilisateur actuel : " + (currentUser != null ? currentUser.getType() : "null"));
-            
-            if (currentUser != null && ("freelancer".equalsIgnoreCase(currentUser.getType()) || "chercheur".equalsIgnoreCase(currentUser.getType()))) {
-                // Charger la page AfficherOffresUser.fxml
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherOffresUser.fxml"));
-                Parent root = loader.load();
-                
-                // Récupérer la scène actuelle
-                Scene currentScene = offreButton.getScene();
-                if (currentScene != null) {
-                    // Remplacer le contenu de la scène
-                    currentScene.setRoot(root);
-                } else {
-                    // Si pas de scène existante, créer une nouvelle fenêtre
-                    Stage stage = new Stage();
-                    stage.setScene(new Scene(root));
-                    stage.setTitle("Liste des Offres");
-                    stage.show();
-                }
-            } else {
-                System.out.println("Accès refusé - Utilisateur non autorisé");
-                showAlert(Alert.AlertType.WARNING, "Accès restreint", "Cette fonctionnalité est réservée aux freelancers et chercheurs.");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            showAlert(Alert.AlertType.ERROR, "Erreur", "Impossible de charger la page des offres : " + e.getMessage());
+        User currentUser = Session.getCurrentUser();
+        System.out.println("Type d'utilisateur actuel : " + (currentUser != null ? currentUser.getType() : "null"));
+
+        if (currentUser != null && ("freelancer".equalsIgnoreCase(currentUser.getType()) || "chercheur".equalsIgnoreCase(currentUser.getType()))) {
+            loadUI("/AfficherOffresUser.fxml");
+        } else {
+            System.out.println("Accès refusé - Utilisateur non autorisé");
+            showAlert(Alert.AlertType.WARNING, "Accès restreint", "Cette fonctionnalité est réservée aux freelancers et chercheurs.");
         }
     }
 
     @FXML
     private void GoForum(ActionEvent event) {
-        try {
-            // Vérifier le type d'utilisateur
-            User currentUser = Session.getCurrentUser();
-            System.out.println("Type d'utilisateur actuel : " + (currentUser != null ? currentUser.getType() : "null"));
-
-
-            // Charger la page AjouterOffre.fxml
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Discussions.fxml"));
-            Parent root = loader.load();
-
-            // Récupérer la scène actuelle
-            Scene currentScene = offreButton.getScene();
-            if (currentScene != null) {
-                // Remplacer le contenu de la scène
-                currentScene.setRoot(root);
-            } else {
-                // Si pas de scène existante, créer une nouvelle fenêtre
-                Stage stage = new Stage();
-                stage.setScene(new Scene(root));
-                stage.setTitle("ajouter une Offre");
-                stage.show();
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            showAlert(Alert.AlertType.ERROR, "Erreur", "Impossible de charger la page des offres : " + e.getMessage());
-        }
+        User currentUser = Session.getCurrentUser();
+        System.out.println("Type d'utilisateur actuel : " + (currentUser != null ? currentUser.getType() : "null"));
+        loadUI("/Discussions.fxml");
     }
 
     @FXML
@@ -136,12 +96,6 @@ public class AccueilControllerfc {
     }
 
 
-
-
-
-
-
-
     @FXML
     private void handleDeconnexion(ActionEvent event) {
         try {
@@ -162,11 +116,31 @@ public class AccueilControllerfc {
 
     private void loadUI(String fxmlPath) {
         try {
-            Node node = FXMLLoader.load(getClass().getResource(fxmlPath));
-            contentPane.getChildren().setAll(node);
+            navigationHistory.push(fxmlPath);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent root = loader.load();
+            Scene currentScene = offreButton.getScene();
+            if (currentScene != null) {
+                Stage stage = (Stage) currentScene.getWindow();
+                stage.setScene(new Scene(root));
+            }
         } catch (IOException e) {
             e.printStackTrace();
-            showAlert(Alert.AlertType.ERROR, "Erreur", "Impossible de charger la vue : " + fxmlPath);
+            showAlert(Alert.AlertType.ERROR, "Erreur de Navigation", "Impossible de charger la page : " + fxmlPath);
+        }
+    }
+
+    @FXML
+    private void handleBack() {
+        if (!navigationHistory.isEmpty()) {
+            navigationHistory.pop(); // Remove current page
+            if (!navigationHistory.isEmpty()) {
+                String previousPage = navigationHistory.pop();
+                loadUI(previousPage);
+            } else {
+                // If no more history, go to default page
+                loadUI("/Acceuilfc.fxml");
+            }
         }
     }
 
@@ -174,7 +148,7 @@ public class AccueilControllerfc {
     private void handleProfile() {
         User currentUser = Session.getCurrentUser();
         System.out.println("Tentative d'affichage du profil...");
-        
+
         if (currentUser == null) {
             System.err.println("Aucun utilisateur trouvé dans la session");
             showAlert(Alert.AlertType.WARNING, "Non connecté", "Aucun utilisateur connecté. Veuillez vous reconnecter.");
@@ -187,10 +161,10 @@ public class AccueilControllerfc {
                 fxmlPath = "/ProfileCRUD.fxml";
                 FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
                 Parent root = loader.load();
-                
+
                 ProfileCRUDController controller = loader.getController();
                 controller.setFreelancer((Freelancer) currentUser);
-                
+
                 Stage stage = new Stage();
                 stage.setTitle("Mon Profil Freelancer");
                 stage.setScene(new Scene(root));
@@ -199,10 +173,10 @@ public class AccueilControllerfc {
                 fxmlPath = "/ProfileChercheur.fxml";
                 FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
                 Parent root = loader.load();
-                
+
                 ProfileChercheurController controller = loader.getController();
                 controller.setChercheur((Chercheur) currentUser);
-                
+
                 Stage stage = new Stage();
                 stage.setTitle("Mon Profil Chercheur");
                 stage.setScene(new Scene(root));
@@ -242,35 +216,14 @@ public class AccueilControllerfc {
 
     @FXML
     private void handleFreelanceClick(ActionEvent event) {
-        try {
-            // Vérifier le type d'utilisateur
-            User currentUser = Session.getCurrentUser();
-            System.out.println("Type d'utilisateur actuel : " + (currentUser != null ? currentUser.getType() : "null"));
+        User currentUser = Session.getCurrentUser();
+        System.out.println("Type d'utilisateur actuel : " + (currentUser != null ? currentUser.getType() : "null"));
 
-            if (currentUser != null && ("freelancer".equalsIgnoreCase(currentUser.getType()) || "chercheur".equalsIgnoreCase(currentUser.getType()))) {
-                // Charger la page listmissionfreelencer.fxml
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/listmissionfreelencer.fxml"));
-                Parent root = loader.load();
-
-                // Récupérer la scène actuelle
-                Scene currentScene = ((Node) event.getSource()).getScene();
-                if (currentScene != null) {
-                    // Remplacer le contenu de la scène
-                    currentScene.setRoot(root);
-                } else {
-                    // Si pas de scène existante, créer une nouvelle fenêtre
-                    Stage stage = new Stage();
-                    stage.setScene(new Scene(root));
-                    stage.setTitle("Liste des Missions Freelance");
-                    stage.show();
-                }
-            } else {
-                System.out.println("Accès refusé - Utilisateur non autorisé");
-                showAlert(Alert.AlertType.WARNING, "Accès restreint", "Cette fonctionnalité est réservée aux freelencers et chercheurs.");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            showAlert(Alert.AlertType.ERROR, "Erreur", "Impossible de charger la page des missions freelance : " + e.getMessage());
+        if (currentUser != null && ("freelancer".equalsIgnoreCase(currentUser.getType()) || "chercheur".equalsIgnoreCase(currentUser.getType()))) {
+            loadUI("/listmissionfreelencer.fxml");
+        } else {
+            System.out.println("Accès refusé - Utilisateur non autorisé");
+            showAlert(Alert.AlertType.WARNING, "Accès restreint", "Cette fonctionnalité est réservée aux freelancers et chercheurs.");
         }
     }    }
 

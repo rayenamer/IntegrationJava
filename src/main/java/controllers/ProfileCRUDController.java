@@ -21,6 +21,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import static java.sql.DriverManager.println;
+
 public class ProfileCRUDController {
 
     @FXML
@@ -51,9 +53,40 @@ public class ProfileCRUDController {
     private Freelancer freelancer;
 
     public void setFreelancer(Freelancer freelancer) {
-        this.freelancer = freelancer;
+        // Charger toutes les données du freelancer depuis la base
+        this.freelancer = fetchFreelancerFromDB(freelancer.getId());
         updateLabels();
         loadProfileImage();
+    }
+
+    private Freelancer fetchFreelancerFromDB(int id) {
+        Freelancer f = new Freelancer();
+        try {
+            Connection cnx = MyDatabase.getInstance().getCnx();
+            PreparedStatement ps = cnx.prepareStatement(
+                "SELECT u.nom, u.prenom, u.email, u.tel, u.domaine, u.sexe, f.photo, f.cv, f.adresse, f.annees_experience " +
+                "FROM user u JOIN freelancer f ON u.id = f.id WHERE u.id = ?");
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                f.setId(id);
+                f.setNom(rs.getString("nom"));
+                f.setPrenom(rs.getString("prenom"));
+                f.setEmail(rs.getString("email"));
+                f.setTel(rs.getString("tel"));
+                f.setDomaine(rs.getString("domaine"));
+                f.setSexe(rs.getString("sexe"));
+                f.setPhoto(rs.getString("photo"));
+                f.setCv(rs.getString("cv"));
+                f.setAdresse(rs.getString("adresse"));
+                f.setAnnees_Experience(rs.getInt("annees_experience"));
+            }
+            rs.close();
+            ps.close();
+        } catch (Exception e) {
+            System.err.println("Erreur lors de la récupération du freelancer : " + e.getMessage());
+        }
+        return f;
     }
 
     private void updateLabels() {
@@ -74,12 +107,12 @@ public class ProfileCRUDController {
             try {
                 String photoPath = freelancer.getPhoto();
                 Image image = null;
-                // Si le chemin est absolu (Windows ou Linux)
+                // Gestion des chemins absolus (Windows, Unix) et relatifs
                 if (photoPath.matches("^[a-zA-Z]:\\\\.*") || photoPath.startsWith("/")) {
-                    // Windows: C:\... ou Linux: /home/...
+                    // Chemin absolu (Windows ou Unix)
                     image = new Image("file:" + photoPath.replace("\\", "/"));
                 } else {
-                    // Sinon, chercher dans les ressources du projet
+                    // Chemin relatif ou ressource
                     java.net.URL url = getClass().getResource("/image/" + photoPath);
                     if (url != null) {
                         image = new Image(url.toExternalForm());
@@ -196,18 +229,6 @@ public class ProfileCRUDController {
     private void handleClose() {
         Stage stage = (Stage) btnClose.getScene().getWindow();
         stage.close();
-    }
-
-    @FXML
-    private void handleModifierAdmin() {
-        // TODO: Implémenter la logique pour modifier les données de l'admin
-        showAlert(Alert.AlertType.INFORMATION, "Modifier Admin", "Fonctionnalité à implémenter.");
-    }
-
-    @FXML
-    private void handleSupprimerAdmin() {
-        // TODO: Implémenter la logique pour supprimer le compte admin
-        showAlert(Alert.AlertType.INFORMATION, "Supprimer Admin", "Fonctionnalité à implémenter.");
     }
 
     private void showAlert(Alert.AlertType type, String title, String message) {
