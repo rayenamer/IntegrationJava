@@ -1,153 +1,35 @@
-Here's a **premium aesthetic `README.md`** for the **JavaFX client of Careera**, designed to impress both technical and non-technical readers with clarity, structure, and elegance:
+# Careera JavaFX Client
 
----
-
-```markdown
-<div align="center">
-  <img src="resources/images/logo.png" alt="Careera Logo" width="120"/>
-  <h1>Careera JavaFX Client</h1>
-  <p align="center">
-    🌟 A modern JavaFX desktop application for <b>Careera</b>, your gateway to career opportunities.<br/>
-    Empowering job seekers, freelancers, and recruiters through seamless interaction.
-  </p>
-</div>
+🌟 **Careera** is a career opportunities platform with both desktop and web clients. This is the **JavaFX-based desktop application** offering a rich, intuitive experience for job seekers, freelancers, and recruiters alike.
 
 ---
 
 ## 📌 Overview
 
-**Careera** is a cross-platform career opportunity platform, offering both **JavaFX** and **Web** clients. This JavaFX client delivers a smooth and interactive desktop experience, tailored for:
+The Careera JavaFX Client allows users to:
 
-- Job seekers
-- Freelancers
-- Recruiters
-- Moderators & Admins
+- Search and apply for job opportunities
+- Post and manage offers
+- Engage in discussions and use a built-in chatbot
+- View statistics, quizzes, and PDF documents
+- Manage user profiles and contracts
+- Access mission features and maps integration
 
-Whether you're applying for jobs, posting offers, moderating users, or exploring mission opportunities, the Careera desktop client has you covered.
+Designed with scalability and aesthetics in mind, this client is a part of the broader Careera ecosystem.
 
 ---
 
 ## 🧩 Features
 
-✨ **Authentication & Profiles**
-- Login / Register
-- Reset / Forgot Password
-- Profile management (Freelancer, Job Seeker, Moderator)
-
-📝 **Opportunities Management**
-- Add / Modify / Delete job offers
-- Apply to offers
-- Contract type management
-
-📊 **Dashboard & Analytics**
-- User & offer statistics
-- PDF Viewer integration
-- Quiz modules for skill assessment
-
-💬 **Communication & AI**
-- In-app chatbot 🤖
-- Discussion boards
-- Smart reply interface
-
-🗺 **Other Goodies**
-- Google Maps integration for job localization
-- Joke view for a fun break 🃏
+- **🔐 Authentication** – Login, Register, Reset Password  
+- **🧑‍💼 Profiles** – Manage profiles for seekers, freelancers, moderators  
+- **📄 Offers & Contracts** – Create, update, browse job offers and contract types  
+- **📊 Analytics** – Dashboard with offer/user stats, quiz scoring, and more  
+- **💬 Communication** – Real-time discussion views, chatbot integration, reply system  
+- **🗺 Location** – Embedded Google Maps for mission geolocation  
+- **🎭 Extras** – Joke view, PDF viewer, skill quizzes  
 
 ---
 
-## 🗂️ Project Structure
+## 📁 Project Structure
 
-```
-
-📁 src/main/java
-├── controllers         # All JavaFX controllers
-├── entities            # Model classes (User, Offer, etc.)
-├── services            # Business logic
-├── utils               # Helper classes & utilities
-
-📁 src/main/resources
-├── image / images      # Icons and visuals
-├── style / styles      # CSS for UI design
-├── \*.fxml              # JavaFX views
-├── credentials.json    # Google API credentials (Maps, etc.)
-
-📁 test                  # Unit tests
-
-📄 pom.xml               # Maven project config
-📄 module-info.java      # JavaFX module declaration
-
-````
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Java 17+
-- Maven 3.8+
-- JavaFX SDK (already handled via Maven)
-
-### Setup
-
-1. **Clone the repo**
-
-   ```bash
-   git clone https://github.com/your-org/careera-desktop.git
-   cd careera-desktop
-````
-
-2. **Build the project**
-
-   ```bash
-   mvn clean install
-   ```
-
-3. **Run the app**
-
-   ```bash
-   mvn javafx:run
-   ```
-
----
-
-## 📸 UI Highlights
-
-| Login                                        | Dashboard                                            | Profile                                          |
-| -------------------------------------------- | ---------------------------------------------------- | ------------------------------------------------ |
-| ![Login](resources/images/login_preview.png) | ![Dashboard](resources/images/dashboard_preview.png) | ![Profile](resources/images/profile_preview.png) |
-
----
-
-## 🤝 Contributing
-
-We welcome contributions from the community! Please:
-
-1. Fork this repo
-2. Create your feature branch: `git checkout -b feature/YourFeature`
-3. Commit your changes: `git commit -m 'Add YourFeature'`
-4. Push to the branch: `git push origin feature/YourFeature`
-5. Open a pull request
-
----
-
-## 📃 License
-
-This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🌍 Connect
-
-* 🌐 [Website](https://careera.app)
-* 💼 [LinkedIn](https://linkedin.com/company/careera)
-* 📧 [support@careera.app](mailto:support@careera.app)
-
-> Empowering careers. Connecting talents. 🚀
-
-```
-
----
-
-Let me know if you'd like me to generate the logo or UI previews mentioned, or adapt this for the web client too.
-```
